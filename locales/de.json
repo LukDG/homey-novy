@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Haube per Bluetooth nicht erreichbar",
-    "no_hood": "Füge zuerst die Novy-Haube hinzu; das Licht läuft über die Haube."
+    "no_hood": "Füge zuerst die Novy-Haube hinzu; das Licht läuft über die Haube.",
+    "repairing": "Reparatur läuft, versuche es gleich noch einmal"
   },
   "feature": {
     "automode": "Automatik",

@@ -1,0 +1,173 @@
+<style>
+  .novy-list { list-style: none; margin: 0; padding: 0; }
+  .novy-list li { display: flex; justify-content: space-between; align-items: center; padding: 12px 8px;
+    border-bottom: 1px solid #ddd; cursor: pointer; }
+  .novy-list li:hover { background: rgba(0,0,0,.04); }
+  .novy-list .meta { color: #888; font-size: 12px; }
+  .novy-tag { background: #2a7de1; color: #fff; border-radius: 10px; padding: 2px 8px; font-size: 11px; }
+  .novy-step { display: none; }
+  .novy-step.active { display: block; }
+  .novy-count { font-size: 40px; font-weight: 600; text-align: center; margin: 16px 0; }
+  .novy-log { max-height: 180px; overflow: auto; font: 11px/1.4 monospace; background: #f4f4f4; padding: 8px;
+    white-space: pre-wrap; word-break: break-all; }
+  .novy-buttons { display: flex; gap: 8px; margin-top: 16px; }
+  .meta { color: #888; font-size: 12px; }
+</style>
+
+<div id="step-scan" class="novy-step active">
+  <p data-i18n="pair.scan_intro"></p>
+  <p id="scan-status" data-i18n="pair.scanning"></p>
+  <ul id="scan-list" class="novy-list"></ul>
+  <div class="novy-buttons">
+    <button id="btn-rescan" class="homey-button-secondary-full" data-i18n="pair.rescan"></button>
+  </div>
+</div>
+
+<div id="step-confirm" class="novy-step">
+  <h2 id="confirm-name"></h2>
+  <p data-i18n="pair.confirm_intro"></p>
+  <ol>
+    <li data-i18n="pair.confirm_1"></li>
+    <li data-i18n="pair.confirm_2"></li>
+    <li data-i18n="pair.confirm_3"></li>
+  </ol>
+  <p class="meta" data-i18n="pair.skip_hint"></p>
+  <div class="novy-buttons">
+    <button id="btn-back" class="homey-button-secondary" data-i18n="pair.back"></button>
+    <button id="btn-start" class="homey-button-primary-full" data-i18n="pair.start"></button>
+  </div>
+  <div class="novy-buttons">
+    <button id="btn-skip" class="homey-button-secondary-full" data-i18n="pair.skip"></button>
+  </div>
+</div>
+
+<div id="step-wait" class="novy-step">
+  <p id="wait-status"></p>
+  <div id="wait-count" class="novy-count"></div>
+  <p id="wait-hint" data-i18n="pair.confirm_now"></p>
+  <details><summary data-i18n="pair.details"></summary><div id="wait-log" class="novy-log"></div></details>
+  <div class="novy-buttons">
+    <button id="btn-cancel" class="homey-button-secondary-full" data-i18n="pair.cancel"></button>
+  </div>
+</div>
+
+<div id="step-failed" class="novy-step">
+  <p data-i18n="pair.failed"></p>
+  <div id="failed-log" class="novy-log"></div>
+  <div class="novy-buttons">
+    <button id="btn-retry" class="homey-button-primary-full" data-i18n="pair.retry"></button>
+  </div>
+</div>
+
+<script type="application/javascript">
+(function () {
+  var SECONDS = 90;
+  var selected = null;
+  var timer = null;
+  var logLines = [];
+
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    el.textContent = Homey.__(el.getAttribute('data-i18n'));
+  });
+  Homey.setTitle(Homey.__('pair.title'));
+
+  function show(id) {
+    document.querySelectorAll('.novy-step').forEach(function (el) { el.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+  }
+
+  function addLog(line) {
+    logLines.push(line);
+    var text = logLines.join('\n');
+    document.getElementById('wait-log').textContent = text;
+    document.getElementById('failed-log').textContent = text;
+  }
+
+  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+
+  function scan() {
+    var list = document.getElementById('scan-list');
+    var status = document.getElementById('scan-status');
+    list.innerHTML = '';
+    status.textContent = Homey.__('pair.scanning');
+    Homey.emit('scan', {}).then(function (devices) {
+      status.textContent = devices.length ? Homey.__('pair.pick') : Homey.__('pair.none');
+      devices.forEach(function (d) {
+        var li = document.createElement('li');
+        var left = document.createElement('div');
+        var name = document.createElement('div');
+        name.textContent = d.name || '(?)';
+        var meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = (d.address || d.uuid) + (d.rssi ? '  ·  ' + d.rssi + ' dBm' : '');
+        left.appendChild(name); left.appendChild(meta);
+        li.appendChild(left);
+        if (d.novy) {
+          var tag = document.createElement('span');
+          tag.className = 'novy-tag'; tag.textContent = 'Novy';
+          li.appendChild(tag);
+        }
+        li.addEventListener('click', function () {
+          selected = d;
+          document.getElementById('confirm-name').textContent = d.name || d.address || d.uuid;
+          show('step-confirm');
+        });
+        list.appendChild(li);
+      });
+    }).catch(function (err) {
+      status.textContent = err.message || String(err);
+    });
+  }
+
+  function start(skip) {
+    logLines = [];
+    addLog('---');
+    var left = SECONDS;
+    document.getElementById('wait-count').textContent = left;
+    document.getElementById('wait-status').textContent = Homey.__('pair.connecting');
+    show('step-wait');
+    stopTimer();
+    timer = setInterval(function () {
+      left = Math.max(0, left - 1);
+      document.getElementById('wait-count').textContent = left;
+    }, 1000);
+    document.getElementById('wait-hint').style.visibility = skip ? 'hidden' : 'visible';
+    Homey.emit('authorize', { uuid: selected.uuid, seconds: skip ? 30 : SECONDS, skip: !!skip }).catch(function (err) {
+      stopTimer();
+      addLog(err.message || String(err));
+      show('step-failed');
+    });
+  }
+
+  Homey.on('log', function (line) { addLog(line); });
+  Homey.on('progress', function (p) {
+    var key = { press_remote: 'pair.press_remote', waiting: 'pair.waiting' }[p.step] || 'pair.connecting';
+    document.getElementById('wait-status').textContent = Homey.__(key);
+  });
+  Homey.on('authorized', function (device) {
+    stopTimer();
+    document.getElementById('wait-status').textContent = Homey.__('pair.success');
+    if (device && device.repair) { setTimeout(function () { Homey.done(); }, 800); return; }
+    Homey.createDevice(device)
+      .then(function () { Homey.done(); })
+      .catch(function (err) { Homey.alert(err.message || String(err)); });
+  });
+  Homey.on('auth_failed', function () {
+    stopTimer();
+    show('step-failed');
+  });
+
+  document.getElementById('btn-rescan').addEventListener('click', scan);
+  document.getElementById('btn-back').addEventListener('click', function () { show('step-scan'); });
+  document.getElementById('btn-start').addEventListener('click', function () { start(false); });
+  document.getElementById('btn-skip').addEventListener('click', function () { start(true); });
+  document.getElementById('btn-retry').addEventListener('click', function () { show('step-confirm'); });
+  document.getElementById('btn-cancel').addEventListener('click', function () {
+    stopTimer();
+    Homey.emit('cancel', {}).catch(function () {});
+    show('step-confirm');
+  });
+
+  scan();
+})();
+</script>

@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Viften kan ikke nås via Bluetooth",
-    "no_hood": "Legg først til Novy-viften; lyset styres via viften."
+    "no_hood": "Legg først til Novy-viften; lyset styres via viften.",
+    "repairing": "Reparasjon pågår, prøv igjen om litt"
   },
   "feature": {
     "automode": "Automodus",

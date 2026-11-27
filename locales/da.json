@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Emhætten kan ikke nås via Bluetooth",
-    "no_hood": "Tilføj først Novy-emhætten; lyset styres via emhætten."
+    "no_hood": "Tilføj først Novy-emhætten; lyset styres via emhætten.",
+    "repairing": "Reparation i gang, prøv igen om lidt"
   },
   "feature": {
     "automode": "Automatisk tilstand",

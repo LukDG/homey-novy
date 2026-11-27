@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Hood not reachable over Bluetooth",
-    "no_hood": "Add the Novy hood first; the light works through it."
+    "no_hood": "Add the Novy hood first; the light works through it.",
+    "repairing": "Repair in progress, try again in a moment"
   },
   "feature": {
     "automode": "Auto mode",

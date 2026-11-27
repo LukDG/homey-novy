@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Fläkten nås inte via Bluetooth",
-    "no_hood": "Lägg först till Novy-fläkten; belysningen styrs via fläkten."
+    "no_hood": "Lägg först till Novy-fläkten; belysningen styrs via fläkten.",
+    "repairing": "Reparation pågår, försök igen om en stund"
   },
   "feature": {
     "automode": "Autoläge",

@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Hotte injoignable en Bluetooth",
-    "no_hood": "Ajoutez d'abord la hotte Novy ; l'éclairage passe par la hotte."
+    "no_hood": "Ajoutez d'abord la hotte Novy ; l'éclairage passe par la hotte.",
+    "repairing": "Réparation en cours, réessayez dans un instant"
   },
   "feature": {
     "automode": "Mode auto",

@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Dampkap niet bereikbaar via Bluetooth",
-    "no_hood": "Voeg eerst de Novy-dampkap toe; het licht werkt via de kap."
+    "no_hood": "Voeg eerst de Novy-dampkap toe; het licht werkt via de kap.",
+    "repairing": "Herstel bezig, probeer zo meteen opnieuw"
   },
   "feature": {
     "automode": "Automodus",

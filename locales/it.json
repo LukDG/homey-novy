@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Cappa non raggiungibile via Bluetooth",
-    "no_hood": "Aggiungi prima la cappa Novy; la luce funziona tramite la cappa."
+    "no_hood": "Aggiungi prima la cappa Novy; la luce funziona tramite la cappa.",
+    "repairing": "Riparazione in corso, riprova tra poco"
   },
   "feature": {
     "automode": "Modalità automatica",

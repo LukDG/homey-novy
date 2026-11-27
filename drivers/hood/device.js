@@ -37,14 +37,8 @@ class NovyHoodDevice extends Homey.Device {
 
     await this._migrateCapabilities();
 
-    this.client = new NovyBleClient({
-      homey: this.homey,
-      peripheralUuid: this.getData().id,
-      log: (...args) => this.log(...args),
-    });
-    this.client.on('state', state => this._applyState(state).catch(this.error));
-    this.client.on('disconnect', () => this._schedulePoll(1000));
-    this.client.on('rssi', rssi => this._setInfo({ signal: this._signalText(rssi) }).catch(this.error));
+    this._paused = false;
+    this._createClient();
 
     this.registerCapabilityListener('onoff', value => this.setFan(value));
     this.registerCapabilityListener('dim', value => this.setFanSpeed(Math.round(value * 100)));
@@ -56,6 +50,48 @@ class NovyHoodDevice extends Homey.Device {
 
     this._schedulePoll(2000);
     this.log('Novy hood initialised', this.getName());
+  }
+
+  _peripheralUuid() {
+    return this.getStoreValue('peripheralUuid') || this.getData().id;
+  }
+
+  _createClient() {
+    if (this.client) this.client.removeAllListeners();
+    this.client = new NovyBleClient({
+      homey: this.homey,
+      peripheralUuid: this._peripheralUuid(),
+      log: (...args) => this.log(...args),
+    });
+    this.client.on('state', state => this._applyState(state).catch(this.error));
+    this.client.on('disconnect', () => this._schedulePoll(1000));
+    this.client.on('rssi', rssi => this._setInfo({ signal: this._signalText(rssi) }).catch(this.error));
+  }
+
+  // ---------------------------------------------------------------- repair
+
+  async pauseForRepair() {
+    this._paused = true;
+    if (this._pollTimer) this.homey.clearTimeout(this._pollTimer);
+    this._pollTimer = null;
+    await this.client.disconnect().catch(() => {});
+    this.log('Repair: polling paused, Bluetooth link released');
+  }
+
+  async applyRepair(adv, firmware) {
+    await this.setStoreValue('peripheralUuid', adv.uuid);
+    await this.setStoreValue('address', adv.address || '');
+    await this._setInfo({ ble_address: adv.address || '-', ble_name: adv.localName || '-', firmware: firmware || '-' });
+    if (typeof adv.rssi === 'number') await this._setInfo({ signal: this._signalText(adv.rssi) });
+  }
+
+  async resumeAfterRepair() {
+    if (!this._paused) return;
+    this._paused = false;
+    this._failCount = 0;
+    this._createClient(); // fresh client, possibly with the newly found Bluetooth id
+    this.log('Repair finished, reconnecting to', this._peripheralUuid());
+    this._schedulePoll(500);
   }
 
   async _migrateCapabilities() {
@@ -100,7 +136,7 @@ class NovyHoodDevice extends Homey.Device {
   // ---------------------------------------------------------------- polling
 
   _schedulePoll(delayMs) {
-    if (this._deleted) return;
+    if (this._deleted || this._paused) return;
     if (this._pollTimer) this.homey.clearTimeout(this._pollTimer);
     const interval = Math.max(2, Number(this.getSetting('poll_interval')) || 5) * 1000;
     this._pollTimer = this.homey.setTimeout(() => this._poll(), delayMs ?? interval);
@@ -108,9 +144,11 @@ class NovyHoodDevice extends Homey.Device {
 
   async _poll() {
     this._pollTimer = null;
+    if (this._paused) return;
     const keepConnected = this.getSetting('keep_connected') !== false;
     try {
       await this.client.connect();
+      if (this._paused) { await this.client.disconnect().catch(() => {}); return; }
       const extended = !keepConnected || this._pollCount % EXTENDED_EVERY === 0;
       // the first frame right after connecting is sometimes lost: retry once
       await this.client.send(CMD.STATUS, 0).catch(err => {
@@ -148,6 +186,7 @@ class NovyHoodDevice extends Homey.Device {
 
   /** Connect if needed, send commands, refresh status. */
   async _command(commands, refreshCmd = CMD.STATUS) {
+    if (this._paused) throw new Error(this.homey.__('error.repairing'));
     try {
       await this.client.connect();
       for (const [cmd, ...args] of commands) {

@@ -23,6 +23,21 @@ class NovyHoodDriver extends Homey.Driver {
    *      'progress' and 'log' events; the result as 'authorized' or 'auth_failed'.
    */
   async onPair(session) {
+    this._setupSession(session, null);
+  }
+
+  /**
+   * Repair: same screens as pairing. The device first releases its own Bluetooth link, a fresh
+   * scan looks for the hood, and after a successful connection (with or without confirmation on
+   * the remote) the device uses the hood that was found, even if its Bluetooth id changed.
+   */
+  async onRepair(session, device) {
+    this.log('Repair started for', device.getName());
+    await device.pauseForRepair();
+    this._setupSession(session, device);
+  }
+
+  _setupSession(session, repairDevice) {
     let advertisements = [];
     let attempt = null; // { cancelled, client }
 
@@ -55,12 +70,16 @@ class NovyHoodDriver extends Homey.Driver {
       const client = new NovyBleClient({ homey: this.homey, peripheralUuid: uuid, log: (...a) => this.log(...a) });
       client.advertisement = adv;
       attempt = { cancelled: false, client };
-      this._authorize(session, adv, attempt, Math.max(15, Number(seconds) || 90), skip === true).catch(this.error);
+      this._authorize(session, adv, attempt, Math.max(15, Number(seconds) || 90), skip === true, repairDevice)
+        .catch(this.error);
       return true;
     });
 
     session.setHandler('cancel', stopAttempt);
-    session.setHandler('disconnect', stopAttempt);
+    session.setHandler('disconnect', async () => {
+      await stopAttempt();
+      if (repairDevice) await repairDevice.resumeAfterRepair().catch(this.error);
+    });
   }
 
   /**
@@ -72,7 +91,7 @@ class NovyHoodDriver extends Homey.Driver {
    *   [213;0]  OEM id
    * With skip=true the confirmation is skipped (the official app also offers that).
    */
-  async _authorize(session, adv, attempt, seconds, skip) {
+  async _authorize(session, adv, attempt, seconds, skip, repairDevice) {
     const { client } = attempt;
     const emit = (event, data) => session.emit(event, data).catch(() => {});
     const log = line => { this.log('[pair]', line); emit('log', line); };
@@ -123,6 +142,12 @@ class NovyHoodDriver extends Homey.Driver {
           await client.disconnect().catch(() => {});
           if (attempt.cancelled) return;
           log(skip ? 'status ok (confirmation skipped)' : 'confirmed by remote');
+          if (repairDevice) {
+            await repairDevice.applyRepair(adv, firmware);
+            log(`repaired: ${repairDevice.getName()} now uses ${adv.address || adv.uuid}`);
+            emit('authorized', { repair: true });
+            return;
+          }
           emit('authorized', {
             name: adv.localName || 'Novy',
             data: { id: adv.uuid },

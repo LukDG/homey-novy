@@ -1,4 +1,19 @@
 {
+  "2026.1127.4": {
+    "en": "New repair function for the hood: it releases the Bluetooth connection, searches for the hood again and reconnects, optionally with confirmation on the remote.",
+    "nl": "Nieuwe herstelfunctie voor de dampkap: ze laat de Bluetooth-verbinding los, zoekt de kap opnieuw en verbindt opnieuw, eventueel met bevestiging op de afstandsbediening.",
+    "de": "Neue Reparaturfunktion für die Haube: Sie gibt die Bluetooth-Verbindung frei, sucht die Haube neu und verbindet sich wieder, wahlweise mit Bestätigung auf der Fernbedienung.",
+    "fr": "Nouvelle fonction de réparation pour la hotte : elle libère la connexion Bluetooth, recherche à nouveau la hotte et se reconnecte, avec confirmation sur la télécommande si vous le souhaitez.",
+    "it": "Nuova funzione di riparazione per la cappa: rilascia la connessione Bluetooth, cerca di nuovo la cappa e si ricollega, eventualmente con conferma sul telecomando.",
+    "sv": "Ny reparationsfunktion för fläkten: den släpper Bluetooth-anslutningen, söker efter fläkten igen och ansluter på nytt, vid behov med bekräftelse på fjärrkontrollen.",
+    "no": "Ny reparasjonsfunksjon for viften: den slipper Bluetooth-tilkoblingen, søker etter viften på nytt og kobler til igjen, eventuelt med bekreftelse på fjernkontrollen.",
+    "es": "Nueva función de reparación para la campana: libera la conexión Bluetooth, vuelve a buscar la campana y se reconecta, opcionalmente con confirmación en el mando.",
+    "da": "Ny reparationsfunktion til emhætten: den slipper Bluetooth-forbindelsen, søger emhætten igen og forbinder på ny, eventuelt med bekræftelse på fjernbetjeningen.",
+    "ru": "Новая функция восстановления для вытяжки: освобождает Bluetooth-соединение, заново ищет вытяжку и подключается, при желании с подтверждением на пульте.",
+    "pl": "Nowa funkcja naprawy okapu: zwalnia połączenie Bluetooth, ponownie wyszukuje okap i łączy się, opcjonalnie z potwierdzeniem na pilocie.",
+    "ko": "후드용 새 복구 기능: Bluetooth 연결을 해제하고 후드를 다시 찾아 연결합니다. 필요하면 리모컨으로 확인할 수 있습니다.",
+    "ar": "وظيفة إصلاح جديدة للشفاط: تحرر اتصال Bluetooth وتبحث عن الشفاط من جديد وتعيد الاتصال، مع تأكيد اختياري بجهاز التحكم عن بُعد."
+  },
   "2026.1127.3": {
     "en": "The device settings now show the Bluetooth signal strength of the hood, so you can see whether Homey is close enough.",
     "nl": "De toestelinstellingen tonen nu de Bluetooth-signaalsterkte van de kap, zodat je ziet of Homey dichtbij genoeg staat.",

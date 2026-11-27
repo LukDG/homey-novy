@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Campana inaccesible por Bluetooth",
-    "no_hood": "Añade primero la campana Novy; la luz funciona a través de ella."
+    "no_hood": "Añade primero la campana Novy; la luz funciona a través de ella.",
+    "repairing": "Reparación en curso, inténtalo de nuevo en un momento"
   },
   "feature": {
     "automode": "Modo automático",

@@ -147,6 +147,7 @@
   Homey.on('authorized', function (device) {
     stopTimer();
     document.getElementById('wait-status').textContent = Homey.__('pair.success');
+    if (device && device.repair) { setTimeout(function () { Homey.done(); }, 800); return; }
     Homey.createDevice(device)
       .then(function () { Homey.done(); })
       .catch(function (err) { Homey.alert(err.message || String(err)); });

@@ -1,7 +1,8 @@
 {
   "error": {
     "unreachable": "Okap nieosiągalny przez Bluetooth",
-    "no_hood": "Najpierw dodaj okap Novy; oświetlenie działa przez okap."
+    "no_hood": "Najpierw dodaj okap Novy; oświetlenie działa przez okap.",
+    "repairing": "Trwa naprawa, spróbuj ponownie za chwilę"
   },
   "feature": {
     "automode": "Tryb automatyczny",
