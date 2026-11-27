@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Dampkap niet bereikbaar via Bluetooth"
+  },
+  "feature": {
+    "automode": "Automodus",
+    "keylock": "Toetsenvergrendeling",
+    "carbon": "Koolstoffilter vervangen"
+  },
+  "pair": {
+    "title": "Novy dampkap verbinden",
+    "scan_intro": "Zorg dat de dampkap onder spanning staat en dat de Novy-app op je gsm gesloten is.",
+    "scanning": "Zoeken naar Bluetooth-toestellen…",
+    "pick": "Kies je dampkap:",
+    "none": "Niets gevonden. Ga dichter bij Homey staan en zoek opnieuw.",
+    "rescan": "Opnieuw zoeken",
+    "not_found": "Toestel niet meer gevonden, zoek opnieuw.",
+    "confirm_intro": "Net als de Novy-app vraagt Homey de dampkap om een bevestiging met de afstandsbediening.",
+    "confirm_1": "Tik op Start. De kap gaat uit en wacht op bevestiging.",
+    "confirm_2": "Druk op de aan/uit-knop van je Novy-afstandsbediening.",
+    "confirm_3": "Zodra de kap bevestigt, wordt het toestel toegevoegd.",
+    "back": "Terug",
+    "start": "Start",
+    "connecting": "Verbinden…",
+    "waiting": "Verbonden – wacht op bevestiging…",
+    "confirm_now": "Druk nu op de aan/uit-knop van je Novy-afstandsbediening.",
+    "details": "Technische details",
+    "cancel": "Annuleren",
+    "success": "Bevestigd!",
+    "failed": "De kap gaf geen antwoord. Kopieer de technische details hieronder en probeer opnieuw.",
+    "retry": "Opnieuw proberen",
+    "press_remote": "Wacht op de aan/uit-knop van de afstandsbediening…",
+    "skip": "Toevoegen zonder bevestiging",
+    "skip_hint": "Ook de Novy-app laat je deze stap overslaan; gebruik dit als je afstandsbediening niet bij de hand is."
+  },
+  "settings": {
+    "title": "Logboek",
+    "intro": "Wat de app doet en welke fouten optreden: Bluetooth-verbinding, commando's naar de dampkap en hun antwoorden. Het logboek staat alleen in het werkgeheugen (max. 256 KB, oudste regels eerst weg) en begint leeg na een herstart.",
+    "enabled": "Logboek bijhouden",
+    "filter": "Filter (bv. fout, TX, ACK)",
+    "only_errors": "Alleen fouten",
+    "refresh": "Vernieuwen",
+    "copy": "Kopiëren",
+    "clear": "Wissen",
+    "loading": "Laden…",
+    "no_match": "Geen regels voor deze filter.",
+    "empty": "Het logboek is nog leeg.",
+    "load_failed": "Kon het logboek niet laden:",
+    "size": "{size} KB van {max} KB",
+    "lines": "{n} regels",
+    "save_failed": "Opslaan mislukt",
+    "log_on": "Logboek staat aan",
+    "log_off": "Logboek staat uit",
+    "cleared": "Logboek gewist",
+    "copied": "Gekopieerd",
+    "confirm_clear": "Het volledige logboek wissen?"
+  },
+  "status": {
+    "off": "Uit",
+    "running": "Aan",
+    "boost": "Boost",
+    "afterrun": "Nalopen"
+  }
+}

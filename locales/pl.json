@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Okap nieosiągalny przez Bluetooth"
+  },
+  "feature": {
+    "automode": "Tryb automatyczny",
+    "keylock": "Blokada przycisków",
+    "carbon": "Wymień filtr węglowy"
+  },
+  "pair": {
+    "title": "Połącz okap Novy",
+    "scan_intro": "Upewnij się, że okap jest zasilany, a aplikacja Novy na telefonie jest zamknięta.",
+    "scanning": "Wyszukiwanie urządzeń Bluetooth…",
+    "pick": "Wybierz swój okap:",
+    "none": "Nic nie znaleziono. Podejdź bliżej Homey i wyszukaj ponownie.",
+    "rescan": "Szukaj ponownie",
+    "not_found": "Nie znaleziono już urządzenia, wyszukaj ponownie.",
+    "confirm_intro": "Tak jak aplikacja Novy, Homey prosi okap o potwierdzenie pilotem.",
+    "confirm_1": "Dotknij Start. Okap wyłączy się i będzie czekał na potwierdzenie.",
+    "confirm_2": "Naciśnij przycisk wł./wył. na pilocie Novy.",
+    "confirm_3": "Gdy okap potwierdzi, urządzenie zostanie dodane.",
+    "back": "Wstecz",
+    "start": "Start",
+    "connecting": "Łączenie…",
+    "waiting": "Połączono – oczekiwanie na potwierdzenie…",
+    "confirm_now": "Naciśnij teraz przycisk wł./wył. na pilocie Novy.",
+    "details": "Szczegóły techniczne",
+    "cancel": "Anuluj",
+    "success": "Potwierdzono!",
+    "failed": "Okap nie odpowiedział. Skopiuj poniższe szczegóły techniczne i spróbuj ponownie.",
+    "retry": "Spróbuj ponownie",
+    "press_remote": "Oczekiwanie na przycisk wł./wył. na pilocie…",
+    "skip": "Dodaj bez potwierdzenia",
+    "skip_hint": "Aplikacja Novy też pozwala pominąć ten krok; użyj tego, jeśli nie masz pilota pod ręką."
+  },
+  "settings": {
+    "title": "Dziennik",
+    "intro": "Co robi aplikacja i jakie występują błędy: połączenie Bluetooth, polecenia do okapu i jego odpowiedzi. Dziennik jest przechowywany tylko w pamięci (maks. 256 KB, najstarsze wiersze usuwane jako pierwsze) i po ponownym uruchomieniu jest pusty.",
+    "enabled": "Prowadź dziennik",
+    "filter": "Filtr (np. błąd, TX, ACK)",
+    "only_errors": "Tylko błędy",
+    "refresh": "Odśwież",
+    "copy": "Kopiuj",
+    "clear": "Wyczyść",
+    "loading": "Ładowanie…",
+    "no_match": "Brak wierszy dla tego filtra.",
+    "empty": "Dziennik jest jeszcze pusty.",
+    "load_failed": "Nie udało się wczytać dziennika:",
+    "size": "{size} KB z {max} KB",
+    "lines": "Wiersze: {n}",
+    "save_failed": "Zapis nie powiódł się",
+    "log_on": "Dziennik włączony",
+    "log_off": "Dziennik wyłączony",
+    "cleared": "Dziennik wyczyszczony",
+    "copied": "Skopiowano",
+    "confirm_clear": "Wyczyścić cały dziennik?"
+  },
+  "status": {
+    "off": "Wył.",
+    "running": "Pracuje",
+    "boost": "Boost",
+    "afterrun": "Opóźnione wyłączenie"
+  }
+}

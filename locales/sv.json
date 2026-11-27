@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Fläkten nås inte via Bluetooth"
+  },
+  "feature": {
+    "automode": "Autoläge",
+    "keylock": "Knapplås",
+    "carbon": "Byt kolfilter"
+  },
+  "pair": {
+    "title": "Anslut Novy-fläkt",
+    "scan_intro": "Se till att fläkten har ström och att Novy-appen i telefonen är stängd.",
+    "scanning": "Söker efter Bluetooth-enheter…",
+    "pick": "Välj din fläkt:",
+    "none": "Inget hittades. Gå närmare Homey och sök igen.",
+    "rescan": "Sök igen",
+    "not_found": "Enheten hittas inte längre, sök igen.",
+    "confirm_intro": "Precis som Novy-appen ber Homey fläkten om en bekräftelse med fjärrkontrollen.",
+    "confirm_1": "Tryck på Start. Fläkten stängs av och väntar på bekräftelse.",
+    "confirm_2": "Tryck på av/på-knappen på din Novy-fjärrkontroll.",
+    "confirm_3": "Så snart fläkten bekräftar läggs enheten till.",
+    "back": "Tillbaka",
+    "start": "Start",
+    "connecting": "Ansluter…",
+    "waiting": "Ansluten – väntar på bekräftelse…",
+    "confirm_now": "Tryck nu på av/på-knappen på din Novy-fjärrkontroll.",
+    "details": "Tekniska detaljer",
+    "cancel": "Avbryt",
+    "success": "Bekräftat!",
+    "failed": "Fläkten svarade inte. Kopiera de tekniska detaljerna nedan och försök igen.",
+    "retry": "Försök igen",
+    "press_remote": "Väntar på av/på-knappen på fjärrkontrollen…",
+    "skip": "Lägg till utan bekräftelse",
+    "skip_hint": "Även Novy-appen låter dig hoppa över detta steg; använd det om fjärrkontrollen inte finns till hands."
+  },
+  "settings": {
+    "title": "Logg",
+    "intro": "Vad appen gör och vilka fel som uppstår: Bluetooth-anslutning, kommandon till fläkten och dess svar. Loggen finns bara i arbetsminnet (max. 256 KB, äldsta raderna tas bort först) och är tom efter en omstart.",
+    "enabled": "För logg",
+    "filter": "Filter (t.ex. fel, TX, ACK)",
+    "only_errors": "Endast fel",
+    "refresh": "Uppdatera",
+    "copy": "Kopiera",
+    "clear": "Rensa",
+    "loading": "Laddar…",
+    "no_match": "Inga rader för detta filter.",
+    "empty": "Loggen är fortfarande tom.",
+    "load_failed": "Kunde inte läsa in loggen:",
+    "size": "{size} KB av {max} KB",
+    "lines": "{n} rader",
+    "save_failed": "Det gick inte att spara",
+    "log_on": "Loggen är på",
+    "log_off": "Loggen är av",
+    "cleared": "Loggen rensad",
+    "copied": "Kopierat",
+    "confirm_clear": "Rensa hela loggen?"
+  },
+  "status": {
+    "off": "Av",
+    "running": "Igång",
+    "boost": "Boost",
+    "afterrun": "Fördröjd avstängning"
+  }
+}

@@ -1,0 +1,2025 @@
+{
+  "id": "be.lukdg.novy",
+  "version": "2026.1127.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Novy Bluetooth",
+    "nl": "Novy Bluetooth",
+    "de": "Novy Bluetooth",
+    "fr": "Novy Bluetooth",
+    "it": "Novy Bluetooth",
+    "sv": "Novy Bluetooth",
+    "no": "Novy Bluetooth",
+    "es": "Novy Bluetooth",
+    "da": "Novy Bluetooth",
+    "ru": "Novy Bluetooth",
+    "pl": "Novy Bluetooth",
+    "ko": "Novy Bluetooth",
+    "ar": "Novy Bluetooth"
+  },
+  "description": {
+    "en": "Your cooker hood, in tune with your kitchen",
+    "nl": "Je dampkap, afgestemd op je keuken",
+    "de": "Deine Dunstabzugshaube, abgestimmt auf deine Küche",
+    "fr": "Votre hotte, en accord avec votre cuisine",
+    "it": "La tua cappa, in sintonia con la tua cucina",
+    "sv": "Din köksfläkt, i takt med ditt kök",
+    "no": "Kjøkkenviften din, i takt med kjøkkenet ditt",
+    "es": "Tu campana, en sintonía con tu cocina",
+    "da": "Din emhætte, i takt med dit køkken",
+    "ru": "Ваша вытяжка в гармонии с вашей кухней",
+    "pl": "Twój okap w zgodzie z Twoją kuchnią",
+    "ko": "주방에 맞춘 레인지 후드",
+    "ar": "شفّاطك، متناغم مع مطبخك"
+  },
+  "tags": {
+    "en": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "cooker hood"
+    ],
+    "nl": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "dampkap"
+    ],
+    "de": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "Dunstabzugshaube"
+    ],
+    "fr": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "hotte"
+    ],
+    "it": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "cappa"
+    ],
+    "sv": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "köksfläkt"
+    ],
+    "no": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "kjøkkenvifte"
+    ],
+    "es": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "campana extractora"
+    ],
+    "da": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "emhætte"
+    ],
+    "ru": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "вытяжка"
+    ],
+    "pl": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "okap"
+    ],
+    "ko": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "레인지 후드"
+    ],
+    "ar": [
+      "novy",
+      "pureline",
+      "intouch",
+      "bluetooth",
+      "ble",
+      "شفاط المطبخ"
+    ]
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [
+    "homey:wireless:ble"
+  ],
+  "brandColor": "#1F2A33",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Luk De Groote",
+    "email": "luk@lukdg.be"
+  },
+  "support": "https://github.com/LukDG",
+  "source": "https://github.com/LukDG/be.lukdg.novy",
+  "api": {
+    "getLog": {
+      "method": "GET",
+      "path": "/log"
+    },
+    "clearLog": {
+      "method": "DELETE",
+      "path": "/log"
+    }
+  },
+  "capabilities": {
+    "novy_status": {
+      "type": "enum",
+      "title": {
+        "en": "Status",
+        "nl": "Status",
+        "de": "Status",
+        "fr": "État",
+        "it": "Stato",
+        "sv": "Status",
+        "no": "Status",
+        "es": "Estado",
+        "da": "Status",
+        "ru": "Состояние",
+        "pl": "Stan",
+        "ko": "상태",
+        "ar": "الحالة"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icon.svg",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Arrêt",
+            "it": "Spento",
+            "sv": "Av",
+            "no": "Av",
+            "es": "Apagado",
+            "da": "Slukket",
+            "ru": "Выкл.",
+            "pl": "Wył.",
+            "ko": "꺼짐",
+            "ar": "إيقاف"
+          }
+        },
+        {
+          "id": "running",
+          "title": {
+            "en": "Running",
+            "nl": "Aan",
+            "de": "Läuft",
+            "fr": "En marche",
+            "it": "In funzione",
+            "sv": "Igång",
+            "no": "Går",
+            "es": "En marcha",
+            "da": "Kører",
+            "ru": "Работает",
+            "pl": "Pracuje",
+            "ko": "작동 중",
+            "ar": "قيد التشغيل"
+          }
+        },
+        {
+          "id": "boost",
+          "title": {
+            "en": "Boost",
+            "nl": "Boost",
+            "de": "Boost",
+            "fr": "Boost",
+            "it": "Boost",
+            "sv": "Boost",
+            "no": "Boost",
+            "es": "Boost",
+            "da": "Boost",
+            "ru": "Ускорение",
+            "pl": "Boost",
+            "ko": "부스트",
+            "ar": "تعزيز"
+          }
+        },
+        {
+          "id": "afterrun",
+          "title": {
+            "en": "Run-on",
+            "nl": "Nalopen",
+            "de": "Nachlauf",
+            "fr": "Arrêt différé",
+            "it": "Spegnimento ritardato",
+            "sv": "Fördröjd avstängning",
+            "no": "Forsinket avslåing",
+            "es": "Apagado retardado",
+            "da": "Forsinket slukning",
+            "ru": "Отложенное выключение",
+            "pl": "Opóźnione wyłączenie",
+            "ko": "지연 꺼짐",
+            "ar": "إيقاف مؤجل"
+          }
+        }
+      ]
+    },
+    "novy_timer": {
+      "type": "number",
+      "title": {
+        "en": "Timer remaining",
+        "nl": "Timer resterend",
+        "de": "Restzeit Timer",
+        "fr": "Minuterie restante",
+        "it": "Timer residuo",
+        "sv": "Återstående timer",
+        "no": "Gjenstående tid",
+        "es": "Temporizador restante",
+        "da": "Resterende timer",
+        "ru": "Осталось по таймеру",
+        "pl": "Pozostały czas",
+        "ko": "남은 타이머",
+        "ar": "الوقت المتبقي"
+      },
+      "units": {
+        "en": "min",
+        "nl": "min",
+        "de": "min",
+        "fr": "min",
+        "it": "min",
+        "sv": "min",
+        "no": "min",
+        "es": "min",
+        "da": "min",
+        "ru": "мин",
+        "pl": "min",
+        "ko": "분",
+        "ar": "د"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/timer.svg",
+      "insights": false
+    },
+    "novy_grease_hours": {
+      "type": "number",
+      "title": {
+        "en": "Grease filter remaining",
+        "nl": "Vetfilter resterend",
+        "de": "Fettfilter Restzeit",
+        "fr": "Filtre à graisse restant",
+        "it": "Filtro grassi residuo",
+        "sv": "Fettfilter kvar",
+        "no": "Fettfilter gjenstår",
+        "es": "Filtro de grasa restante",
+        "da": "Fedtfilter tilbage",
+        "ru": "Ресурс жирового фильтра",
+        "pl": "Filtr tłuszczowy – pozostało",
+        "ko": "남은 기름 필터 시간",
+        "ar": "المتبقي لمرشح الدهون"
+      },
+      "units": {
+        "en": "h",
+        "nl": "u",
+        "de": "h",
+        "fr": "h",
+        "it": "h",
+        "sv": "h",
+        "no": "t",
+        "es": "h",
+        "da": "t",
+        "ru": "ч",
+        "pl": "godz.",
+        "ko": "시간",
+        "ar": "س"
+      },
+      "decimals": 1,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/filter.svg",
+      "insights": true
+    }
+  },
+  "drivers": [
+    {
+      "id": "hood",
+      "name": {
+        "en": "Novy hood (Bluetooth)",
+        "nl": "Novy dampkap (Bluetooth)",
+        "de": "Novy Dunstabzugshaube (Bluetooth)",
+        "fr": "Hotte Novy (Bluetooth)",
+        "it": "Cappa Novy (Bluetooth)",
+        "sv": "Novy köksfläkt (Bluetooth)",
+        "no": "Novy kjøkkenvifte (Bluetooth)",
+        "es": "Campana Novy (Bluetooth)",
+        "da": "Novy emhætte (Bluetooth)",
+        "ru": "Вытяжка Novy (Bluetooth)",
+        "pl": "Okap Novy (Bluetooth)",
+        "ko": "Novy 레인지 후드 (Bluetooth)",
+        "ar": "شفاط Novy (Bluetooth)"
+      },
+      "class": "fan",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "ble"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "onoff.light",
+        "dim.light",
+        "light_temperature",
+        "onoff.recirculate",
+        "novy_status",
+        "novy_timer",
+        "alarm_generic",
+        "novy_grease_hours"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Fan",
+            "nl": "Ventilator",
+            "de": "Lüfter",
+            "fr": "Ventilateur",
+            "it": "Ventola",
+            "sv": "Fläkt",
+            "no": "Vifte",
+            "es": "Ventilador",
+            "da": "Blæser",
+            "ru": "Вентилятор",
+            "pl": "Wentylator",
+            "ko": "팬",
+            "ar": "المروحة"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Fan speed",
+            "nl": "Ventilatorsnelheid",
+            "de": "Lüftergeschwindigkeit",
+            "fr": "Vitesse du ventilateur",
+            "it": "Velocità ventola",
+            "sv": "Fläkthastighet",
+            "no": "Viftehastighet",
+            "es": "Velocidad del ventilador",
+            "da": "Blæserhastighed",
+            "ru": "Скорость вентилятора",
+            "pl": "Prędkość wentylatora",
+            "ko": "팬 속도",
+            "ar": "سرعة المروحة"
+          }
+        },
+        "onoff.light": {
+          "title": {
+            "en": "Light",
+            "nl": "Verlichting",
+            "de": "Licht",
+            "fr": "Éclairage",
+            "it": "Luce",
+            "sv": "Belysning",
+            "no": "Lys",
+            "es": "Luz",
+            "da": "Lys",
+            "ru": "Освещение",
+            "pl": "Oświetlenie",
+            "ko": "조명",
+            "ar": "الإضاءة"
+          }
+        },
+        "dim.light": {
+          "title": {
+            "en": "Light brightness",
+            "nl": "Helderheid verlichting",
+            "de": "Helligkeit Licht",
+            "fr": "Luminosité de l'éclairage",
+            "it": "Luminosità luce",
+            "sv": "Ljusstyrka belysning",
+            "no": "Lysstyrke",
+            "es": "Brillo de la luz",
+            "da": "Lysstyrke",
+            "ru": "Яркость освещения",
+            "pl": "Jasność oświetlenia",
+            "ko": "조명 밝기",
+            "ar": "سطوع الإضاءة"
+          }
+        },
+        "light_temperature": {
+          "title": {
+            "en": "Light colour temperature",
+            "nl": "Kleurtemperatuur verlichting",
+            "de": "Farbtemperatur Licht",
+            "fr": "Température de couleur",
+            "it": "Temperatura colore luce",
+            "sv": "Färgtemperatur belysning",
+            "no": "Fargetemperatur lys",
+            "es": "Temperatura de color de la luz",
+            "da": "Farvetemperatur lys",
+            "ru": "Цветовая температура",
+            "pl": "Temperatura barwowa oświetlenia",
+            "ko": "조명 색온도",
+            "ar": "درجة حرارة لون الإضاءة"
+          }
+        },
+        "onoff.recirculate": {
+          "title": {
+            "en": "Recirculation mode",
+            "nl": "Recirculatie",
+            "de": "Umluftbetrieb",
+            "fr": "Mode recyclage",
+            "it": "Modalità ricircolo",
+            "sv": "Recirkulationsläge",
+            "no": "Resirkulasjonsmodus",
+            "es": "Modo recirculación",
+            "da": "Recirkulationstilstand",
+            "ru": "Режим рециркуляции",
+            "pl": "Tryb recyrkulacji",
+            "ko": "재순환 모드",
+            "ar": "وضع إعادة التدوير"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Clean grease filter",
+            "nl": "Vetfilter reinigen",
+            "de": "Fettfilter reinigen",
+            "fr": "Nettoyer le filtre à graisse",
+            "it": "Pulire filtro grassi",
+            "sv": "Rengör fettfilter",
+            "no": "Rengjør fettfilter",
+            "es": "Limpiar filtro de grasa",
+            "da": "Rens fedtfilter",
+            "ru": "Очистить жировой фильтр",
+            "pl": "Wyczyść filtr tłuszczowy",
+            "ko": "기름 필터 청소",
+            "ar": "نظّف مرشح الدهون"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/hood/assets/images/small.png",
+        "large": "/drivers/hood/assets/images/large.png",
+        "xlarge": "/drivers/hood/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "authorize"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection",
+            "nl": "Verbinding",
+            "de": "Verbindung",
+            "fr": "Connexion",
+            "it": "Connessione",
+            "sv": "Anslutning",
+            "no": "Tilkobling",
+            "es": "Conexión",
+            "da": "Forbindelse",
+            "ru": "Подключение",
+            "pl": "Połączenie",
+            "ko": "연결",
+            "ar": "الاتصال"
+          },
+          "children": [
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval",
+                "nl": "Poll-interval",
+                "de": "Abfrageintervall",
+                "fr": "Intervalle d'interrogation",
+                "it": "Intervallo di interrogazione",
+                "sv": "Avläsningsintervall",
+                "no": "Avlesningsintervall",
+                "es": "Intervalo de consulta",
+                "da": "Aflæsningsinterval",
+                "ru": "Интервал опроса",
+                "pl": "Interwał odpytywania",
+                "ko": "폴링 간격",
+                "ar": "فترة الاستطلاع"
+              },
+              "value": 5,
+              "min": 2,
+              "max": 300,
+              "units": {
+                "en": "s",
+                "nl": "s",
+                "de": "s",
+                "fr": "s",
+                "it": "s",
+                "sv": "s",
+                "no": "s",
+                "es": "s",
+                "da": "s",
+                "ru": "с",
+                "pl": "s",
+                "ko": "초",
+                "ar": "ث"
+              },
+              "hint": {
+                "en": "How often Homey reads the hood status.",
+                "nl": "Hoe vaak Homey de status van de dampkap uitleest.",
+                "de": "Wie oft Homey den Status der Haube abfragt.",
+                "fr": "À quelle fréquence Homey lit l'état de la hotte.",
+                "it": "Ogni quanto Homey legge lo stato della cappa.",
+                "sv": "Hur ofta Homey läser fläktens status.",
+                "no": "Hvor ofte Homey leser statusen til viften.",
+                "es": "Cada cuánto Homey lee el estado de la campana.",
+                "da": "Hvor ofte Homey læser emhættens status.",
+                "ru": "Как часто Homey считывает состояние вытяжки.",
+                "pl": "Jak często Homey odczytuje stan okapu.",
+                "ko": "Homey가 후드 상태를 읽는 주기입니다.",
+                "ar": "عدد مرات قراءة Homey لحالة الشفاط."
+              }
+            },
+            {
+              "id": "keep_connected",
+              "type": "checkbox",
+              "label": {
+                "en": "Keep Bluetooth connection open",
+                "nl": "Bluetooth-verbinding openhouden",
+                "de": "Bluetooth-Verbindung offen halten",
+                "fr": "Garder la connexion Bluetooth ouverte",
+                "it": "Mantieni aperta la connessione Bluetooth",
+                "sv": "Håll Bluetooth-anslutningen öppen",
+                "no": "Hold Bluetooth-tilkoblingen åpen",
+                "es": "Mantener abierta la conexión Bluetooth",
+                "da": "Hold Bluetooth-forbindelsen åben",
+                "ru": "Держать Bluetooth-соединение открытым",
+                "pl": "Utrzymuj połączenie Bluetooth",
+                "ko": "Bluetooth 연결 유지",
+                "ar": "إبقاء اتصال Bluetooth مفتوحًا"
+              },
+              "value": true,
+              "hint": {
+                "en": "Fastest response. While Homey is connected, the Novy phone app usually cannot connect. Turn off to connect only per poll (use a longer poll interval then, e.g. 30 s).",
+                "nl": "Snelste reactie. Zolang Homey verbonden is, kan de Novy-app op je gsm meestal niet verbinden. Zet uit om alleen per poll te verbinden (kies dan een langer interval, bv. 30 s).",
+                "de": "Schnellste Reaktion. Solange Homey verbunden ist, kann sich die Novy-App auf dem Handy meist nicht verbinden. Ausschalten, um nur pro Abfrage zu verbinden (dann ein längeres Intervall wählen, z. B. 30 s).",
+                "fr": "Réaction la plus rapide. Tant que Homey est connecté, l'app Novy de votre téléphone ne peut généralement pas se connecter. Désactivez pour ne vous connecter qu'à chaque interrogation (choisissez alors un intervalle plus long, p. ex. 30 s).",
+                "it": "Risposta più rapida. Finché Homey è connesso, l'app Novy sul telefono di solito non riesce a connettersi. Disattiva per connetterti solo a ogni interrogazione (scegli allora un intervallo più lungo, es. 30 s).",
+                "sv": "Snabbast svar. Så länge Homey är anslutet kan Novy-appen i telefonen oftast inte ansluta. Stäng av för att bara ansluta vid varje avläsning (välj då ett längre intervall, t.ex. 30 s).",
+                "no": "Raskest respons. Så lenge Homey er tilkoblet, kan Novy-appen på telefonen vanligvis ikke koble til. Slå av for bare å koble til ved hver avlesning (velg da et lengre intervall, f.eks. 30 s).",
+                "es": "Respuesta más rápida. Mientras Homey está conectado, la app Novy del móvil normalmente no puede conectarse. Desactívalo para conectar solo en cada consulta (elige entonces un intervalo más largo, p. ej. 30 s).",
+                "da": "Hurtigste svar. Så længe Homey er forbundet, kan Novy-appen på telefonen som regel ikke forbinde. Slå fra for kun at forbinde ved hver aflæsning (vælg så et længere interval, f.eks. 30 s).",
+                "ru": "Самый быстрый отклик. Пока Homey подключён, приложение Novy на телефоне обычно не может подключиться. Выключите, чтобы подключаться только при каждом опросе (тогда выберите интервал подлиннее, например 30 с).",
+                "pl": "Najszybsza reakcja. Gdy Homey jest połączony, aplikacja Novy na telefonie zwykle nie może się połączyć. Wyłącz, aby łączyć się tylko przy każdym odpytaniu (wybierz wtedy dłuższy interwał, np. 30 s).",
+                "ko": "가장 빠른 반응입니다. Homey가 연결되어 있는 동안에는 휴대폰의 Novy 앱이 보통 연결할 수 없습니다. 끄면 폴링할 때만 연결합니다(이 경우 30초 등 더 긴 간격을 선택하세요).",
+                "ar": "أسرع استجابة. أثناء اتصال Homey، لا يستطيع تطبيق Novy على هاتفك الاتصال عادةً. أوقفه للاتصال عند كل استطلاع فقط (واختر حينها فترة أطول، مثل 30 ث)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Behaviour",
+            "nl": "Gedrag",
+            "de": "Verhalten",
+            "fr": "Comportement",
+            "it": "Comportamento",
+            "sv": "Beteende",
+            "no": "Oppførsel",
+            "es": "Comportamiento",
+            "da": "Adfærd",
+            "ru": "Поведение",
+            "pl": "Zachowanie",
+            "ko": "동작",
+            "ar": "السلوك"
+          },
+          "children": [
+            {
+              "id": "light_on_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Light on uses",
+                "nl": "Licht aan gebruikt",
+                "de": "Licht an verwendet",
+                "fr": "L'allumage utilise",
+                "it": "Accensione luce usa",
+                "sv": "Tänd belysning använder",
+                "no": "Lys på bruker",
+                "es": "Encender la luz usa",
+                "da": "Lys tændt bruger",
+                "ru": "Включение света использует",
+                "pl": "Włączenie światła używa",
+                "ko": "조명 켜기 방식",
+                "ar": "تشغيل الإضاءة يستخدم"
+              },
+              "value": "white",
+              "values": [
+                {
+                  "id": "white",
+                  "label": {
+                    "en": "White (functional) preset",
+                    "nl": "Wit (functioneel)",
+                    "de": "Weiß (funktional)",
+                    "fr": "Blanc (fonctionnel)",
+                    "it": "Bianco (funzionale)",
+                    "sv": "Vitt (funktionellt)",
+                    "no": "Hvitt (funksjonelt)",
+                    "es": "Blanco (funcional)",
+                    "da": "Hvidt (funktionelt)",
+                    "ru": "Белый (рабочий)",
+                    "pl": "Biały (funkcjonalny)",
+                    "ko": "흰색 (기능)",
+                    "ar": "أبيض (وظيفي)"
+                  }
+                },
+                {
+                  "id": "ambi",
+                  "label": {
+                    "en": "Ambient preset",
+                    "nl": "Sfeerlicht (ambi)",
+                    "de": "Stimmungslicht",
+                    "fr": "Ambiance",
+                    "it": "Atmosfera",
+                    "sv": "Stämningsljus",
+                    "no": "Stemningslys",
+                    "es": "Ambiente",
+                    "da": "Stemningslys",
+                    "ru": "Атмосферный",
+                    "pl": "Nastrojowe",
+                    "ko": "분위기 조명",
+                    "ar": "إضاءة الأجواء"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Hood info",
+            "nl": "Info dampkap",
+            "de": "Hauben-Info",
+            "fr": "Infos hotte",
+            "it": "Info cappa",
+            "sv": "Fläktinfo",
+            "no": "Info om viften",
+            "es": "Info de la campana",
+            "da": "Info om emhætten",
+            "ru": "Сведения о вытяжке",
+            "pl": "Informacje o okapie",
+            "ko": "후드 정보",
+            "ar": "معلومات الشفاط"
+          },
+          "children": [
+            {
+              "id": "ble_name",
+              "type": "label",
+              "label": {
+                "en": "Bluetooth name",
+                "nl": "Bluetooth-naam",
+                "de": "Bluetooth-Name",
+                "fr": "Nom Bluetooth",
+                "it": "Nome Bluetooth",
+                "sv": "Bluetooth-namn",
+                "no": "Bluetooth-navn",
+                "es": "Nombre Bluetooth",
+                "da": "Bluetooth-navn",
+                "ru": "Имя Bluetooth",
+                "pl": "Nazwa Bluetooth",
+                "ko": "Bluetooth 이름",
+                "ar": "اسم Bluetooth"
+              },
+              "value": "-"
+            },
+            {
+              "id": "ble_address",
+              "type": "label",
+              "label": {
+                "en": "Bluetooth address",
+                "nl": "Bluetooth-adres",
+                "de": "Bluetooth-Adresse",
+                "fr": "Adresse Bluetooth",
+                "it": "Indirizzo Bluetooth",
+                "sv": "Bluetooth-adress",
+                "no": "Bluetooth-adresse",
+                "es": "Dirección Bluetooth",
+                "da": "Bluetooth-adresse",
+                "ru": "Адрес Bluetooth",
+                "pl": "Adres Bluetooth",
+                "ko": "Bluetooth 주소",
+                "ar": "عنوان Bluetooth"
+              },
+              "value": "-"
+            },
+            {
+              "id": "firmware",
+              "type": "label",
+              "label": {
+                "en": "Firmware",
+                "nl": "Firmware",
+                "de": "Firmware",
+                "fr": "Micrologiciel",
+                "it": "Firmware",
+                "sv": "Firmware",
+                "no": "Fastvare",
+                "es": "Firmware",
+                "da": "Firmware",
+                "ru": "Прошивка",
+                "pl": "Oprogramowanie",
+                "ko": "펌웨어",
+                "ar": "البرنامج الثابت"
+              },
+              "value": "-"
+            },
+            {
+              "id": "fan_hours",
+              "type": "label",
+              "label": {
+                "en": "Fan operating hours",
+                "nl": "Draaiuren ventilator",
+                "de": "Betriebsstunden Lüfter",
+                "fr": "Heures de fonctionnement du ventilateur",
+                "it": "Ore di funzionamento ventola",
+                "sv": "Drifttimmar fläkt",
+                "no": "Driftstimer vifte",
+                "es": "Horas de funcionamiento del ventilador",
+                "da": "Driftstimer blæser",
+                "ru": "Наработка вентилятора (ч)",
+                "pl": "Godziny pracy wentylatora",
+                "ko": "팬 작동 시간",
+                "ar": "ساعات تشغيل المروحة"
+              },
+              "value": "-"
+            },
+            {
+              "id": "led_hours",
+              "type": "label",
+              "label": {
+                "en": "LED operating hours",
+                "nl": "Branduren LED",
+                "de": "Betriebsstunden LED",
+                "fr": "Heures de fonctionnement LED",
+                "it": "Ore di funzionamento LED",
+                "sv": "Drifttimmar LED",
+                "no": "Driftstimer LED",
+                "es": "Horas de funcionamiento LED",
+                "da": "Driftstimer LED",
+                "ru": "Наработка LED (ч)",
+                "pl": "Godziny pracy LED",
+                "ko": "LED 작동 시간",
+                "ar": "ساعات تشغيل LED"
+              },
+              "value": "-"
+            },
+            {
+              "id": "serial",
+              "type": "label",
+              "label": {
+                "en": "Serial number",
+                "nl": "Serienummer",
+                "de": "Seriennummer",
+                "fr": "Numéro de série",
+                "it": "Numero di serie",
+                "sv": "Serienummer",
+                "no": "Serienummer",
+                "es": "Número de serie",
+                "da": "Serienummer",
+                "ru": "Серийный номер",
+                "pl": "Numer seryjny",
+                "ko": "일련번호",
+                "ar": "الرقم التسلسلي"
+              },
+              "value": "-"
+            },
+            {
+              "id": "product_type",
+              "type": "label",
+              "label": {
+                "en": "Product type",
+                "nl": "Producttype",
+                "de": "Produkttyp",
+                "fr": "Type de produit",
+                "it": "Tipo di prodotto",
+                "sv": "Produkttyp",
+                "no": "Produkttype",
+                "es": "Tipo de producto",
+                "da": "Produkttype",
+                "ru": "Тип изделия",
+                "pl": "Typ produktu",
+                "ko": "제품 유형",
+                "ar": "نوع المنتج"
+              },
+              "value": "-"
+            },
+            {
+              "id": "features",
+              "type": "label",
+              "label": {
+                "en": "Detected features",
+                "nl": "Gevonden functies",
+                "de": "Erkannte Funktionen",
+                "fr": "Fonctions détectées",
+                "it": "Funzioni rilevate",
+                "sv": "Hittade funktioner",
+                "no": "Funne funksjoner",
+                "es": "Funciones detectadas",
+                "da": "Fundne funktioner",
+                "ru": "Найденные функции",
+                "pl": "Wykryte funkcje",
+                "ko": "감지된 기능",
+                "ar": "الميزات المكتشفة"
+              },
+              "value": "-"
+            },
+            {
+              "id": "carbon_remaining",
+              "type": "label",
+              "label": {
+                "en": "Carbon filter remaining (raw)",
+                "nl": "Koolstoffilter resterend (ruw)",
+                "de": "Aktivkohlefilter Rest (roh)",
+                "fr": "Filtre à charbon restant (brut)",
+                "it": "Filtro carbone residuo (grezzo)",
+                "sv": "Kolfilter kvar (rå)",
+                "no": "Kullfilter gjenstår (rå)",
+                "es": "Filtro de carbón restante (bruto)",
+                "da": "Kulfilter tilbage (rå)",
+                "ru": "Ресурс угольного фильтра (сырое)",
+                "pl": "Filtr węglowy – pozostało (surowe)",
+                "ko": "남은 탄소 필터 (원시값)",
+                "ar": "المتبقي لمرشح الكربون (خام)"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "status_changed",
+        "title": {
+          "en": "Status changed",
+          "nl": "Status veranderde",
+          "de": "Status hat sich geändert",
+          "fr": "L'état a changé",
+          "it": "Lo stato è cambiato",
+          "sv": "Status ändrades",
+          "no": "Status endret seg",
+          "es": "El estado cambió",
+          "da": "Status ændrede sig",
+          "ru": "Состояние изменилось",
+          "pl": "Stan się zmienił",
+          "ko": "상태가 변경됨",
+          "ar": "تغيّرت الحالة"
+        },
+        "tokens": [
+          {
+            "name": "status",
+            "type": "string",
+            "title": {
+              "en": "Status",
+              "nl": "Status",
+              "de": "Status",
+              "fr": "État",
+              "it": "Stato",
+              "sv": "Status",
+              "no": "Status",
+              "es": "Estado",
+              "da": "Status",
+              "ru": "Состояние",
+              "pl": "Stan",
+              "ko": "상태",
+              "ar": "الحالة"
+            },
+            "example": {
+              "en": "Boost",
+              "nl": "Boost",
+              "de": "Boost",
+              "fr": "Boost",
+              "it": "Boost",
+              "sv": "Boost",
+              "no": "Boost",
+              "es": "Boost",
+              "da": "Boost",
+              "ru": "Ускорение",
+              "pl": "Boost",
+              "ko": "부스트",
+              "ar": "تعزيز"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "light_turned_on",
+        "title": {
+          "en": "Light turned on",
+          "nl": "Verlichting ging aan",
+          "de": "Licht ging an",
+          "fr": "L'éclairage s'est allumé",
+          "it": "La luce si è accesa",
+          "sv": "Belysningen tändes",
+          "no": "Lyset ble slått på",
+          "es": "La luz se encendió",
+          "da": "Lyset blev tændt",
+          "ru": "Освещение включилось",
+          "pl": "Oświetlenie zostało włączone",
+          "ko": "조명이 켜짐",
+          "ar": "تم تشغيل الإضاءة"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "light_turned_off",
+        "title": {
+          "en": "Light turned off",
+          "nl": "Verlichting ging uit",
+          "de": "Licht ging aus",
+          "fr": "L'éclairage s'est éteint",
+          "it": "La luce si è spenta",
+          "sv": "Belysningen släcktes",
+          "no": "Lyset ble slått av",
+          "es": "La luz se apagó",
+          "da": "Lyset blev slukket",
+          "ru": "Освещение выключилось",
+          "pl": "Oświetlenie zostało wyłączone",
+          "ko": "조명이 꺼짐",
+          "ar": "تم إيقاف الإضاءة"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "grease_filter_dirty",
+        "title": {
+          "en": "Grease filter needs cleaning",
+          "nl": "Vetfilter moet gereinigd worden",
+          "de": "Fettfilter muss gereinigt werden",
+          "fr": "Le filtre à graisse doit être nettoyé",
+          "it": "Il filtro grassi va pulito",
+          "sv": "Fettfiltret behöver rengöras",
+          "no": "Fettfilteret må rengjøres",
+          "es": "Hay que limpiar el filtro de grasa",
+          "da": "Fedtfilteret skal renses",
+          "ru": "Жировой фильтр нужно очистить",
+          "pl": "Filtr tłuszczowy wymaga czyszczenia",
+          "ko": "기름 필터 청소 필요",
+          "ar": "يجب تنظيف مرشح الدهون"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "carbon_filter_dirty",
+        "title": {
+          "en": "Carbon filter needs replacing",
+          "nl": "Koolstoffilter moet vervangen worden",
+          "de": "Aktivkohlefilter muss ersetzt werden",
+          "fr": "Le filtre à charbon doit être remplacé",
+          "it": "Il filtro al carbone va sostituito",
+          "sv": "Kolfiltret behöver bytas",
+          "no": "Kullfilteret må byttes",
+          "es": "Hay que cambiar el filtro de carbón",
+          "da": "Kulfilteret skal udskiftes",
+          "ru": "Угольный фильтр нужно заменить",
+          "pl": "Filtr węglowy wymaga wymiany",
+          "ko": "탄소 필터 교체 필요",
+          "ar": "يجب استبدال مرشح الكربون"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "light_is_on",
+        "title": {
+          "en": "Light !{{is|is not}} on",
+          "nl": "Verlichting !{{is|is niet}} aan",
+          "de": "Licht ist !{{an|nicht an}}",
+          "fr": "L'éclairage !{{est|n'est pas}} allumé",
+          "it": "La luce !{{è|non è}} accesa",
+          "sv": "Belysningen !{{är|är inte}} tänd",
+          "no": "Lyset !{{er|er ikke}} på",
+          "es": "La luz !{{está|no está}} encendida",
+          "da": "Lyset !{{er|er ikke}} tændt",
+          "ru": "Освещение !{{включено|не включено}}",
+          "pl": "Oświetlenie !{{jest|nie jest}} włączone",
+          "ko": "조명이 !{{켜져 있음|켜져 있지 않음}}",
+          "ar": "الإضاءة !{{مشغّلة|غير مشغّلة}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "automode_is_on",
+        "title": {
+          "en": "Auto mode !{{is|is not}} on",
+          "nl": "Automodus !{{staat|staat niet}} aan",
+          "de": "Automatik ist !{{an|nicht an}}",
+          "fr": "Le mode auto !{{est|n'est pas}} activé",
+          "it": "La modalità automatica !{{è|non è}} attiva",
+          "sv": "Autoläget !{{är|är inte}} på",
+          "no": "Automodus !{{er|er ikke}} på",
+          "es": "El modo automático !{{está|no está}} activado",
+          "da": "Automatisk tilstand !{{er|er ikke}} slået til",
+          "ru": "Автоматический режим !{{включён|не включён}}",
+          "pl": "Tryb automatyczny !{{jest|nie jest}} włączony",
+          "ko": "자동 모드가 !{{켜져 있음|켜져 있지 않음}}",
+          "ar": "الوضع التلقائي !{{مفعّل|غير مفعّل}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "keylock_is_on",
+        "title": {
+          "en": "Keypad lock !{{is|is not}} on",
+          "nl": "Toetsenvergrendeling !{{staat|staat niet}} aan",
+          "de": "Tastensperre ist !{{an|nicht an}}",
+          "fr": "Le verrouillage des touches !{{est|n'est pas}} activé",
+          "it": "Il blocco tasti !{{è|non è}} attivo",
+          "sv": "Knapplåset !{{är|är inte}} på",
+          "no": "Tastelåsen !{{er|er ikke}} på",
+          "es": "El bloqueo de teclas !{{está|no está}} activado",
+          "da": "Tastelåsen !{{er|er ikke}} slået til",
+          "ru": "Блокировка кнопок !{{включена|не включена}}",
+          "pl": "Blokada przycisków !{{jest|nie jest}} włączona",
+          "ko": "키 잠금이 !{{켜져 있음|켜져 있지 않음}}",
+          "ar": "قفل الأزرار !{{مفعّل|غير مفعّل}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "recirculate_is_on",
+        "title": {
+          "en": "Recirculation !{{is|is not}} on",
+          "nl": "Recirculatie !{{staat|staat niet}} aan",
+          "de": "Umluft ist !{{an|nicht an}}",
+          "fr": "Le recyclage !{{est|n'est pas}} activé",
+          "it": "Il ricircolo !{{è|non è}} attivo",
+          "sv": "Recirkulation !{{är|är inte}} på",
+          "no": "Resirkulasjon !{{er|er ikke}} på",
+          "es": "La recirculación !{{está|no está}} activada",
+          "da": "Recirkulation !{{er|er ikke}} slået til",
+          "ru": "Рециркуляция !{{включена|не включена}}",
+          "pl": "Recyrkulacja !{{jest|nie jest}} włączona",
+          "ko": "재순환이 !{{켜져 있음|켜져 있지 않음}}",
+          "ar": "إعادة التدوير !{{مفعّلة|غير مفعّلة}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "status_is",
+        "title": {
+          "en": "Status !{{is|is not}}…",
+          "nl": "Status !{{is|is niet}}…",
+          "de": "Status !{{ist|ist nicht}}…",
+          "fr": "L'état !{{est|n'est pas}}…",
+          "it": "Lo stato !{{è|non è}}…",
+          "sv": "Status !{{är|är inte}}…",
+          "no": "Status !{{er|er ikke}}…",
+          "es": "El estado !{{es|no es}}…",
+          "da": "Status !{{er|er ikke}}…",
+          "ru": "Состояние !{{—|не}}…",
+          "pl": "Stan !{{to|to nie}}…",
+          "ko": "상태 !{{일치|불일치}}…",
+          "ar": "الحالة !{{هي|ليست}}…"
+        },
+        "titleFormatted": {
+          "en": "Status !{{is|is not}} [[status]]",
+          "nl": "Status !{{is|is niet}} [[status]]",
+          "de": "Status !{{ist|ist nicht}} [[status]]",
+          "fr": "L'état !{{est|n'est pas}} [[status]]",
+          "it": "Lo stato !{{è|non è}} [[status]]",
+          "sv": "Status !{{är|är inte}} [[status]]",
+          "no": "Status !{{er|er ikke}} [[status]]",
+          "es": "El estado !{{es|no es}} [[status]]",
+          "da": "Status !{{er|er ikke}} [[status]]",
+          "ru": "Состояние !{{—|не}} [[status]]",
+          "pl": "Stan !{{to|to nie}} [[status]]",
+          "ko": "상태가 [[status]] !{{임|이 아님}}",
+          "ar": "الحالة !{{هي|ليست}} [[status]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "dropdown",
+            "name": "status",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Arrêt",
+                  "it": "Spento",
+                  "sv": "Av",
+                  "no": "Av",
+                  "es": "Apagado",
+                  "da": "Slukket",
+                  "ru": "Выкл.",
+                  "pl": "Wył.",
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
+                }
+              },
+              {
+                "id": "running",
+                "label": {
+                  "en": "Running",
+                  "nl": "Aan",
+                  "de": "Läuft",
+                  "fr": "En marche",
+                  "it": "In funzione",
+                  "sv": "Igång",
+                  "no": "Går",
+                  "es": "En marcha",
+                  "da": "Kører",
+                  "ru": "Работает",
+                  "pl": "Pracuje",
+                  "ko": "작동 중",
+                  "ar": "قيد التشغيل"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "nl": "Boost",
+                  "de": "Boost",
+                  "fr": "Boost",
+                  "it": "Boost",
+                  "sv": "Boost",
+                  "no": "Boost",
+                  "es": "Boost",
+                  "da": "Boost",
+                  "ru": "Ускорение",
+                  "pl": "Boost",
+                  "ko": "부스트",
+                  "ar": "تعزيز"
+                }
+              },
+              {
+                "id": "afterrun",
+                "label": {
+                  "en": "Run-on",
+                  "nl": "Nalopen",
+                  "de": "Nachlauf",
+                  "fr": "Arrêt différé",
+                  "it": "Spegnimento ritardato",
+                  "sv": "Fördröjd avstängning",
+                  "no": "Forsinket avslåing",
+                  "es": "Apagado retardado",
+                  "da": "Forsinket slukning",
+                  "ru": "Отложенное выключение",
+                  "pl": "Opóźnione wyłączenie",
+                  "ko": "지연 꺼짐",
+                  "ar": "إيقاف مؤجل"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "fan_speed_set",
+        "title": {
+          "en": "Set fan speed",
+          "nl": "Zet ventilatorsnelheid",
+          "de": "Lüftergeschwindigkeit einstellen",
+          "fr": "Régler la vitesse du ventilateur",
+          "it": "Imposta velocità ventola",
+          "sv": "Ställ in fläkthastighet",
+          "no": "Still inn viftehastighet",
+          "es": "Ajustar velocidad del ventilador",
+          "da": "Indstil blæserhastighed",
+          "ru": "Задать скорость вентилятора",
+          "pl": "Ustaw prędkość wentylatora",
+          "ko": "팬 속도 설정",
+          "ar": "ضبط سرعة المروحة"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[speed]] %",
+          "nl": "Zet ventilatorsnelheid op [[speed]] %",
+          "de": "Lüftergeschwindigkeit auf [[speed]] % stellen",
+          "fr": "Régler la vitesse du ventilateur à [[speed]] %",
+          "it": "Imposta la velocità ventola a [[speed]] %",
+          "sv": "Ställ in fläkthastigheten på [[speed]] %",
+          "no": "Still viftehastigheten til [[speed]] %",
+          "es": "Ajustar la velocidad del ventilador a [[speed]] %",
+          "da": "Indstil blæserhastigheden til [[speed]] %",
+          "ru": "Задать скорость вентилятора [[speed]] %",
+          "pl": "Ustaw prędkość wentylatora na [[speed]] %",
+          "ko": "팬 속도를 [[speed]] %로 설정",
+          "ar": "اضبط سرعة المروحة على [[speed]] %"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "range",
+            "name": "speed",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": " %",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "fan_delayed_off",
+        "title": {
+          "en": "Run on and switch off",
+          "nl": "Nalopen en uitschakelen",
+          "de": "Nachlauf und ausschalten",
+          "fr": "Arrêt différé",
+          "it": "Spegnimento ritardato",
+          "sv": "Fördröjd avstängning",
+          "no": "Forsinket avslåing",
+          "es": "Apagado retardado",
+          "da": "Forsinket slukning",
+          "ru": "Отложенное выключение",
+          "pl": "Opóźnione wyłączenie",
+          "ko": "지연 꺼짐",
+          "ar": "إيقاف مؤجل"
+        },
+        "titleFormatted": {
+          "en": "Run on at low speed for [[minutes]] minutes, then switch off",
+          "nl": "Naloop op lage snelheid gedurende [[minutes]] minuten, daarna uit",
+          "de": "[[minutes]] Minuten auf niedriger Stufe nachlaufen, dann ausschalten",
+          "fr": "Tourner à vitesse réduite pendant [[minutes]] minutes, puis s'arrêter",
+          "it": "Funzionare a bassa velocità per [[minutes]] minuti, poi spegnere",
+          "sv": "Kör på låg hastighet i [[minutes]] minuter, stäng sedan av",
+          "no": "Kjør på lav hastighet i [[minutes]] minutter, slå deretter av",
+          "es": "Funcionar a baja velocidad durante [[minutes]] minutos y luego apagar",
+          "da": "Kør på lav hastighed i [[minutes]] minutter, sluk derefter",
+          "ru": "Работать на низкой скорости [[minutes]] мин, затем выключить",
+          "pl": "Pracuj na niskiej prędkości przez [[minutes]] min, potem wyłącz",
+          "ko": "[[minutes]]분 동안 저속으로 작동한 후 끄기",
+          "ar": "تشغيل بسرعة منخفضة لمدة [[minutes]] دقائق ثم الإيقاف"
+        },
+        "hint": {
+          "en": "Lowers the fan to the hood's switch-off speed. Cancelled when the speed is raised or the fan is switched off.",
+          "nl": "Zet de ventilator op de uitschakelsnelheid van de kap. Wordt geannuleerd als de snelheid verhoogd of de ventilator uitgezet wordt.",
+          "de": "Senkt den Lüfter auf die Ausschaltstufe der Haube. Wird abgebrochen, wenn die Geschwindigkeit erhöht oder der Lüfter ausgeschaltet wird.",
+          "fr": "Abaisse le ventilateur à la vitesse d'arrêt de la hotte. Annulé si la vitesse est augmentée ou si le ventilateur est arrêté.",
+          "it": "Porta la ventola alla velocità di spegnimento della cappa. Viene annullato se la velocità viene aumentata o la ventola spenta.",
+          "sv": "Sänker fläkten till avstängningshastigheten. Avbryts om hastigheten höjs eller fläkten stängs av.",
+          "no": "Senker viften til avslåingshastigheten. Avbrytes hvis hastigheten økes eller viften slås av.",
+          "es": "Baja el ventilador a la velocidad de apagado de la campana. Se cancela si se sube la velocidad o se apaga el ventilador.",
+          "da": "Sænker blæseren til emhættens slukkehastighed. Annulleres, hvis hastigheden øges eller blæseren slukkes.",
+          "ru": "Снижает скорость до скорости выключения вытяжки. Отменяется, если скорость повышена или вентилятор выключен.",
+          "pl": "Zmniejsza prędkość do prędkości wyłączania okapu. Anulowane, gdy prędkość zostanie zwiększona lub wentylator wyłączony.",
+          "ko": "팬을 후드의 끄기 속도로 낮춥니다. 속도를 높이거나 팬을 끄면 취소됩니다.",
+          "ar": "يخفض المروحة إلى سرعة الإيقاف الخاصة بالشفاط. يُلغى عند رفع السرعة أو إيقاف المروحة."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "min": 1,
+            "max": 120,
+            "step": 1,
+            "placeholder": {
+              "en": "5",
+              "nl": "5",
+              "de": "5",
+              "fr": "5",
+              "it": "5",
+              "sv": "5",
+              "no": "5",
+              "es": "5",
+              "da": "5",
+              "ru": "5",
+              "pl": "5",
+              "ko": "5",
+              "ar": "5"
+            }
+          }
+        ]
+      },
+      {
+        "id": "light_on_preset",
+        "title": {
+          "en": "Turn light on",
+          "nl": "Zet verlichting aan",
+          "de": "Licht einschalten",
+          "fr": "Allumer l'éclairage",
+          "it": "Accendi la luce",
+          "sv": "Tänd belysningen",
+          "no": "Slå på lyset",
+          "es": "Encender la luz",
+          "da": "Tænd lyset",
+          "ru": "Включить освещение",
+          "pl": "Włącz oświetlenie",
+          "ko": "조명 켜기",
+          "ar": "شغّل الإضاءة"
+        },
+        "titleFormatted": {
+          "en": "Turn light on in [[preset]] mode",
+          "nl": "Zet verlichting aan in [[preset]]-modus",
+          "de": "Licht im Modus [[preset]] einschalten",
+          "fr": "Allumer l'éclairage en mode [[preset]]",
+          "it": "Accendi la luce in modalità [[preset]]",
+          "sv": "Tänd belysningen i läget [[preset]]",
+          "no": "Slå på lyset i modus [[preset]]",
+          "es": "Encender la luz en modo [[preset]]",
+          "da": "Tænd lyset i tilstanden [[preset]]",
+          "ru": "Включить освещение в режиме [[preset]]",
+          "pl": "Włącz oświetlenie w trybie [[preset]]",
+          "ko": "[[preset]] 모드로 조명 켜기",
+          "ar": "شغّل الإضاءة في وضع [[preset]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "dropdown",
+            "name": "preset",
+            "values": [
+              {
+                "id": "white",
+                "label": {
+                  "en": "white",
+                  "nl": "wit",
+                  "de": "weiß",
+                  "fr": "blanc",
+                  "it": "bianco",
+                  "sv": "vitt",
+                  "no": "hvitt",
+                  "es": "blanco",
+                  "da": "hvidt",
+                  "ru": "белый",
+                  "pl": "biały",
+                  "ko": "흰색",
+                  "ar": "أبيض"
+                }
+              },
+              {
+                "id": "ambi",
+                "label": {
+                  "en": "ambient",
+                  "nl": "sfeer",
+                  "de": "Stimmung",
+                  "fr": "ambiance",
+                  "it": "atmosfera",
+                  "sv": "stämning",
+                  "no": "stemning",
+                  "es": "ambiente",
+                  "da": "stemning",
+                  "ru": "атмосферный",
+                  "pl": "nastrojowy",
+                  "ko": "분위기",
+                  "ar": "الأجواء"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "light_off",
+        "title": {
+          "en": "Turn light off",
+          "nl": "Zet verlichting uit",
+          "de": "Licht ausschalten",
+          "fr": "Éteindre l'éclairage",
+          "it": "Spegni la luce",
+          "sv": "Släck belysningen",
+          "no": "Slå av lyset",
+          "es": "Apagar la luz",
+          "da": "Sluk lyset",
+          "ru": "Выключить освещение",
+          "pl": "Wyłącz oświetlenie",
+          "ko": "조명 끄기",
+          "ar": "أطفئ الإضاءة"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "light_brightness_set",
+        "title": {
+          "en": "Set light brightness",
+          "nl": "Zet helderheid verlichting",
+          "de": "Helligkeit einstellen",
+          "fr": "Régler la luminosité",
+          "it": "Imposta luminosità",
+          "sv": "Ställ in ljusstyrka",
+          "no": "Still inn lysstyrke",
+          "es": "Ajustar brillo",
+          "da": "Indstil lysstyrke",
+          "ru": "Задать яркость освещения",
+          "pl": "Ustaw jasność oświetlenia",
+          "ko": "조명 밝기 설정",
+          "ar": "ضبط سطوع الإضاءة"
+        },
+        "titleFormatted": {
+          "en": "Set light brightness to [[brightness]] %",
+          "nl": "Zet helderheid verlichting op [[brightness]] %",
+          "de": "Helligkeit auf [[brightness]] % stellen",
+          "fr": "Régler la luminosité à [[brightness]] %",
+          "it": "Imposta la luminosità a [[brightness]] %",
+          "sv": "Ställ in ljusstyrkan på [[brightness]] %",
+          "no": "Still lysstyrken til [[brightness]] %",
+          "es": "Ajustar el brillo a [[brightness]] %",
+          "da": "Indstil lysstyrken til [[brightness]] %",
+          "ru": "Задать яркость освещения [[brightness]] %",
+          "pl": "Ustaw jasność oświetlenia na [[brightness]] %",
+          "ko": "조명 밝기를 [[brightness]] %로 설정",
+          "ar": "اضبط سطوع الإضاءة على [[brightness]] %"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "range",
+            "name": "brightness",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": " %",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "recirculate_set",
+        "title": {
+          "en": "Set recirculation",
+          "nl": "Zet recirculatie",
+          "de": "Umluft einstellen",
+          "fr": "Régler le recyclage",
+          "it": "Imposta ricircolo",
+          "sv": "Ställ in recirkulation",
+          "no": "Still inn resirkulasjon",
+          "es": "Ajustar recirculación",
+          "da": "Indstil recirkulation",
+          "ru": "Задать рециркуляцию",
+          "pl": "Ustaw recyrkulację",
+          "ko": "재순환 설정",
+          "ar": "ضبط إعادة التدوير"
+        },
+        "titleFormatted": {
+          "en": "Turn recirculation [[state]]",
+          "nl": "Zet recirculatie [[state]]",
+          "de": "Umluft: [[state]]",
+          "fr": "Recyclage : [[state]]",
+          "it": "Ricircolo: [[state]]",
+          "sv": "Recirkulation: [[state]]",
+          "no": "Resirkulasjon: [[state]]",
+          "es": "Recirculación: [[state]]",
+          "da": "Recirkulation: [[state]]",
+          "ru": "Рециркуляция: [[state]]",
+          "pl": "Recyrkulacja: [[state]]",
+          "ko": "재순환: [[state]]",
+          "ar": "إعادة التدوير: [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "on",
+                  "nl": "aan",
+                  "de": "an",
+                  "fr": "activé",
+                  "it": "attivo",
+                  "sv": "på",
+                  "no": "på",
+                  "es": "activado",
+                  "da": "til",
+                  "ru": "вкл.",
+                  "pl": "wł.",
+                  "ko": "켜기",
+                  "ar": "تشغيل"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "off",
+                  "nl": "uit",
+                  "de": "aus",
+                  "fr": "désactivé",
+                  "it": "disattivo",
+                  "sv": "av",
+                  "no": "av",
+                  "es": "desactivado",
+                  "da": "fra",
+                  "ru": "выкл.",
+                  "pl": "wył.",
+                  "ko": "끄기",
+                  "ar": "إيقاف"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "automode_set",
+        "title": {
+          "en": "Set auto mode",
+          "nl": "Zet automodus",
+          "de": "Automatik einstellen",
+          "fr": "Régler le mode auto",
+          "it": "Imposta modalità automatica",
+          "sv": "Ställ in autoläge",
+          "no": "Still inn automodus",
+          "es": "Ajustar modo automático",
+          "da": "Indstil automatisk tilstand",
+          "ru": "Задать автоматический режим",
+          "pl": "Ustaw tryb automatyczny",
+          "ko": "자동 모드 설정",
+          "ar": "ضبط الوضع التلقائي"
+        },
+        "titleFormatted": {
+          "en": "Turn auto mode [[state]]",
+          "nl": "Zet automodus [[state]]",
+          "de": "Automatik: [[state]]",
+          "fr": "Mode auto : [[state]]",
+          "it": "Modalità automatica: [[state]]",
+          "sv": "Autoläge: [[state]]",
+          "no": "Automodus: [[state]]",
+          "es": "Modo automático: [[state]]",
+          "da": "Automatisk tilstand: [[state]]",
+          "ru": "Автоматический режим: [[state]]",
+          "pl": "Tryb automatyczny: [[state]]",
+          "ko": "자동 모드: [[state]]",
+          "ar": "الوضع التلقائي: [[state]]"
+        },
+        "hint": {
+          "en": "Only for hoods with an air quality sensor.",
+          "nl": "Enkel voor kappen met luchtkwaliteitssensor.",
+          "de": "Nur für Hauben mit Luftqualitätssensor.",
+          "fr": "Uniquement pour les hottes avec capteur de qualité de l'air.",
+          "it": "Solo per cappe con sensore di qualità dell'aria.",
+          "sv": "Endast för fläktar med luftkvalitetssensor.",
+          "no": "Kun for vifter med luftkvalitetssensor.",
+          "es": "Solo para campanas con sensor de calidad del aire.",
+          "da": "Kun til emhætter med luftkvalitetssensor.",
+          "ru": "Только для вытяжек с датчиком качества воздуха.",
+          "pl": "Tylko dla okapów z czujnikiem jakości powietrza.",
+          "ko": "공기질 센서가 있는 후드 전용입니다.",
+          "ar": "فقط للشفاطات المزودة بمستشعر جودة الهواء."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "on",
+                  "nl": "aan",
+                  "de": "an",
+                  "fr": "activé",
+                  "it": "attivo",
+                  "sv": "på",
+                  "no": "på",
+                  "es": "activado",
+                  "da": "til",
+                  "ru": "вкл.",
+                  "pl": "wł.",
+                  "ko": "켜기",
+                  "ar": "تشغيل"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "off",
+                  "nl": "uit",
+                  "de": "aus",
+                  "fr": "désactivé",
+                  "it": "disattivo",
+                  "sv": "av",
+                  "no": "av",
+                  "es": "desactivado",
+                  "da": "fra",
+                  "ru": "выкл.",
+                  "pl": "wył.",
+                  "ko": "끄기",
+                  "ar": "إيقاف"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "keylock_set",
+        "title": {
+          "en": "Set keypad lock",
+          "nl": "Zet toetsenvergrendeling",
+          "de": "Tastensperre einstellen",
+          "fr": "Régler le verrouillage des touches",
+          "it": "Imposta blocco tasti",
+          "sv": "Ställ in knapplås",
+          "no": "Still inn tastelås",
+          "es": "Ajustar bloqueo de teclas",
+          "da": "Indstil tastelås",
+          "ru": "Задать блокировку кнопок",
+          "pl": "Ustaw blokadę przycisków",
+          "ko": "키 잠금 설정",
+          "ar": "ضبط قفل الأزرار"
+        },
+        "titleFormatted": {
+          "en": "Turn keypad lock [[state]]",
+          "nl": "Zet toetsenvergrendeling [[state]]",
+          "de": "Tastensperre: [[state]]",
+          "fr": "Verrouillage des touches : [[state]]",
+          "it": "Blocco tasti: [[state]]",
+          "sv": "Knapplås: [[state]]",
+          "no": "Tastelås: [[state]]",
+          "es": "Bloqueo de teclas: [[state]]",
+          "da": "Tastelås: [[state]]",
+          "ru": "Блокировка кнопок: [[state]]",
+          "pl": "Blokada przycisków: [[state]]",
+          "ko": "키 잠금: [[state]]",
+          "ar": "قفل الأزرار: [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "on",
+                  "nl": "aan",
+                  "de": "an",
+                  "fr": "activé",
+                  "it": "attivo",
+                  "sv": "på",
+                  "no": "på",
+                  "es": "activado",
+                  "da": "til",
+                  "ru": "вкл.",
+                  "pl": "wł.",
+                  "ko": "켜기",
+                  "ar": "تشغيل"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "off",
+                  "nl": "uit",
+                  "de": "aus",
+                  "fr": "désactivé",
+                  "it": "disattivo",
+                  "sv": "av",
+                  "no": "av",
+                  "es": "desactivado",
+                  "da": "fra",
+                  "ru": "выкл.",
+                  "pl": "wył.",
+                  "ko": "끄기",
+                  "ar": "إيقاف"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reset_carbon_filter",
+        "title": {
+          "en": "Reset carbon filter indicator",
+          "nl": "Reset koolstoffilter-indicatie",
+          "de": "Aktivkohlefilter-Anzeige zurücksetzen",
+          "fr": "Réinitialiser l'indicateur du filtre à charbon",
+          "it": "Azzera indicatore filtro carbone",
+          "sv": "Återställ kolfilterindikatorn",
+          "no": "Tilbakestill kullfilterindikatoren",
+          "es": "Restablecer indicador del filtro de carbón",
+          "da": "Nulstil kulfilterindikatoren",
+          "ru": "Сбросить индикатор угольного фильтра",
+          "pl": "Zresetuj wskaźnik filtra węglowego",
+          "ko": "탄소 필터 표시 초기화",
+          "ar": "إعادة ضبط مؤشر مرشح الكربون"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "reset_grease_filter",
+        "title": {
+          "en": "Reset grease filter indicator",
+          "nl": "Reset vetfilter-indicatie",
+          "de": "Fettfilter-Anzeige zurücksetzen",
+          "fr": "Réinitialiser l'indicateur du filtre à graisse",
+          "it": "Azzera indicatore filtro grassi",
+          "sv": "Återställ fettfilterindikatorn",
+          "no": "Tilbakestill fettfilterindikatoren",
+          "es": "Restablecer indicador del filtro de grasa",
+          "da": "Nulstil fedtfilterindikatoren",
+          "ru": "Сбросить индикатор жирового фильтра",
+          "pl": "Zresetuj wskaźnik filtra tłuszczowego",
+          "ko": "기름 필터 표시 초기화",
+          "ar": "إعادة ضبط مؤشر مرشح الدهون"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "power_button",
+        "title": {
+          "en": "Press power button",
+          "nl": "Druk op aan/uit-knop",
+          "de": "Ein/Aus-Taste drücken",
+          "fr": "Appuyer sur le bouton marche/arrêt",
+          "it": "Premi il tasto on/off",
+          "sv": "Tryck på av/på-knappen",
+          "no": "Trykk på av/på-knappen",
+          "es": "Pulsar el botón de encendido",
+          "da": "Tryk på tænd/sluk-knappen",
+          "ru": "Нажать кнопку питания",
+          "pl": "Naciśnij przycisk wł./wył.",
+          "ko": "전원 버튼 누르기",
+          "ar": "اضغط زر التشغيل/الإيقاف"
+        },
+        "hint": {
+          "en": "Same as the power button on the remote.",
+          "nl": "Zelfde als de aan/uit-knop op de afstandsbediening.",
+          "de": "Wie die Ein/Aus-Taste der Fernbedienung.",
+          "fr": "Identique au bouton marche/arrêt de la télécommande.",
+          "it": "Come il tasto on/off del telecomando.",
+          "sv": "Samma som av/på-knappen på fjärrkontrollen.",
+          "no": "Samme som av/på-knappen på fjernkontrollen.",
+          "es": "Igual que el botón de encendido del mando.",
+          "da": "Samme som tænd/sluk-knappen på fjernbetjeningen.",
+          "ru": "То же, что кнопка питания на пульте.",
+          "pl": "To samo co przycisk wł./wył. na pilocie.",
+          "ko": "리모컨의 전원 버튼과 같습니다.",
+          "ar": "مثل زر التشغيل/الإيقاف في جهاز التحكم عن بُعد."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "store_default_speed",
+        "title": {
+          "en": "Store current speed as default",
+          "nl": "Huidige snelheid opslaan als standaard",
+          "de": "Aktuelle Geschwindigkeit als Standard speichern",
+          "fr": "Enregistrer la vitesse actuelle par défaut",
+          "it": "Salva la velocità attuale come predefinita",
+          "sv": "Spara aktuell hastighet som standard",
+          "no": "Lagre nåværende hastighet som standard",
+          "es": "Guardar la velocidad actual como predeterminada",
+          "da": "Gem nuværende hastighed som standard",
+          "ru": "Сохранить текущую скорость по умолчанию",
+          "pl": "Zapisz bieżącą prędkość jako domyślną",
+          "ko": "현재 속도를 기본값으로 저장",
+          "ar": "احفظ السرعة الحالية كافتراضية"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          }
+        ]
+      },
+      {
+        "id": "send_raw_command",
+        "title": {
+          "en": "Send raw command",
+          "nl": "Stuur ruw commando",
+          "de": "Rohbefehl senden",
+          "fr": "Envoyer une commande brute",
+          "it": "Invia comando grezzo",
+          "sv": "Skicka rått kommando",
+          "no": "Send råkommando",
+          "es": "Enviar comando sin procesar",
+          "da": "Send råkommando",
+          "ru": "Отправить необработанную команду",
+          "pl": "Wyślij surowe polecenie",
+          "ko": "원시 명령 보내기",
+          "ar": "أرسل أمرًا خامًا"
+        },
+        "titleFormatted": {
+          "en": "Send raw command [[command]]",
+          "nl": "Stuur ruw commando [[command]]",
+          "de": "Rohbefehl [[command]] senden",
+          "fr": "Envoyer la commande brute [[command]]",
+          "it": "Invia il comando grezzo [[command]]",
+          "sv": "Skicka rått kommando [[command]]",
+          "no": "Send råkommando [[command]]",
+          "es": "Enviar el comando sin procesar [[command]]",
+          "da": "Send råkommando [[command]]",
+          "ru": "Отправить команду [[command]]",
+          "pl": "Wyślij surowe polecenie [[command]]",
+          "ko": "원시 명령 [[command]] 보내기",
+          "ar": "أرسل الأمر الخام [[command]]"
+        },
+        "hint": {
+          "en": "For testing, e.g. 28;1;50. The reply is written to the app log.",
+          "nl": "Om te testen, bv. 28;1;50. Het antwoord komt in het app-log.",
+          "de": "Zum Testen, z. B. 28;1;50. Die Antwort steht im App-Protokoll.",
+          "fr": "Pour tester, p. ex. 28;1;50. La réponse est écrite dans le journal de l'app.",
+          "it": "Per test, es. 28;1;50. La risposta viene scritta nel registro dell'app.",
+          "sv": "För test, t.ex. 28;1;50. Svaret skrivs till appens logg.",
+          "no": "For testing, f.eks. 28;1;50. Svaret skrives til appens logg.",
+          "es": "Para pruebas, p. ej. 28;1;50. La respuesta se escribe en el registro de la app.",
+          "da": "Til test, f.eks. 28;1;50. Svaret skrives i appens log.",
+          "ru": "Для проверки, например 28;1;50. Ответ записывается в журнал приложения.",
+          "pl": "Do testów, np. 28;1;50. Odpowiedź trafia do dziennika aplikacji.",
+          "ko": "테스트용입니다(예: 28;1;50). 응답은 앱 로그에 기록됩니다.",
+          "ar": "للاختبار، مثل 28;1;50. يُكتب الرد في سجل التطبيق."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hood"
+          },
+          {
+            "type": "text",
+            "name": "command",
+            "placeholder": {
+              "en": "28;1;50",
+              "nl": "28;1;50",
+              "de": "28;1;50",
+              "fr": "28;1;50",
+              "it": "28;1;50",
+              "sv": "28;1;50",
+              "no": "28;1;50",
+              "es": "28;1;50",
+              "da": "28;1;50",
+              "ru": "28;1;50",
+              "pl": "28;1;50",
+              "ko": "28;1;50",
+              "ar": "28;1;50"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

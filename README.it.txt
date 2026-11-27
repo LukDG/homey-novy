@@ -1,0 +1,1 @@
+Aumenta l'aspirazione quando sale la CO2 in cucina, abbassa le luci della cappa per la cena o ricevi un promemoria quando il filtro grassi va pulito. Homey comunica direttamente con la tua cappa Novy via Bluetooth, senza cloud: velocità della ventola, illuminazione, ricircolo e spegnimento ritardato, e sulle cappe con sensore di qualità dell'aria anche temperatura, umidità e CO2.

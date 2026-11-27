@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Hotte injoignable en Bluetooth"
+  },
+  "feature": {
+    "automode": "Mode auto",
+    "keylock": "Verrouillage des touches",
+    "carbon": "Remplacer le filtre à charbon"
+  },
+  "pair": {
+    "title": "Connecter la hotte Novy",
+    "scan_intro": "Vérifiez que la hotte est sous tension et que l'app Novy de votre téléphone est fermée.",
+    "scanning": "Recherche d'appareils Bluetooth…",
+    "pick": "Choisissez votre hotte :",
+    "none": "Rien trouvé. Rapprochez-vous de Homey et relancez la recherche.",
+    "rescan": "Rechercher à nouveau",
+    "not_found": "Appareil introuvable, relancez la recherche.",
+    "confirm_intro": "Comme l'app Novy, Homey demande à la hotte une confirmation avec la télécommande.",
+    "confirm_1": "Appuyez sur Démarrer. La hotte s'éteint et attend la confirmation.",
+    "confirm_2": "Appuyez sur le bouton marche/arrêt de votre télécommande Novy.",
+    "confirm_3": "Dès que la hotte confirme, l'appareil est ajouté.",
+    "back": "Retour",
+    "start": "Démarrer",
+    "connecting": "Connexion…",
+    "waiting": "Connecté – en attente de confirmation…",
+    "confirm_now": "Appuyez maintenant sur le bouton marche/arrêt de votre télécommande Novy.",
+    "details": "Détails techniques",
+    "cancel": "Annuler",
+    "success": "Confirmé !",
+    "failed": "La hotte n'a pas répondu. Copiez les détails techniques ci-dessous et réessayez.",
+    "retry": "Réessayer",
+    "press_remote": "En attente du bouton marche/arrêt de la télécommande…",
+    "skip": "Ajouter sans confirmation",
+    "skip_hint": "L'app Novy permet aussi de sauter cette étape ; utilisez-la si la télécommande n'est pas à portée de main."
+  },
+  "settings": {
+    "title": "Journal",
+    "intro": "Ce que fait l'app et les erreurs rencontrées : connexion Bluetooth, commandes envoyées à la hotte et ses réponses. Le journal reste en mémoire uniquement (max. 256 Ko, lignes les plus anciennes supprimées en premier) et repart vide après un redémarrage.",
+    "enabled": "Tenir le journal",
+    "filter": "Filtre (p. ex. erreur, TX, ACK)",
+    "only_errors": "Erreurs seulement",
+    "refresh": "Actualiser",
+    "copy": "Copier",
+    "clear": "Effacer",
+    "loading": "Chargement…",
+    "no_match": "Aucune ligne pour ce filtre.",
+    "empty": "Le journal est encore vide.",
+    "load_failed": "Impossible de charger le journal :",
+    "size": "{size} Ko sur {max} Ko",
+    "lines": "{n} lignes",
+    "save_failed": "Échec de l'enregistrement",
+    "log_on": "Journal activé",
+    "log_off": "Journal désactivé",
+    "cleared": "Journal effacé",
+    "copied": "Copié",
+    "confirm_clear": "Effacer tout le journal ?"
+  },
+  "status": {
+    "off": "Arrêt",
+    "running": "En marche",
+    "boost": "Boost",
+    "afterrun": "Arrêt différé"
+  }
+}

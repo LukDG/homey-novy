@@ -1,0 +1,1 @@
+Turn up the extractor when the CO2 in your kitchen rises, dim the hood lights for dinner, or get a reminder when the grease filter needs cleaning. Homey talks directly to your Novy cooker hood over Bluetooth, without a cloud: fan speed, lighting, recirculation and run-on, and on hoods with an air quality sensor also temperature, humidity and CO2.

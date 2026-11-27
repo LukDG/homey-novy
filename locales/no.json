@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Viften kan ikke nås via Bluetooth"
+  },
+  "feature": {
+    "automode": "Automodus",
+    "keylock": "Tastelås",
+    "carbon": "Bytt kullfilter"
+  },
+  "pair": {
+    "title": "Koble til Novy-vifte",
+    "scan_intro": "Sørg for at viften har strøm og at Novy-appen på telefonen er lukket.",
+    "scanning": "Søker etter Bluetooth-enheter…",
+    "pick": "Velg viften din:",
+    "none": "Ingenting funnet. Gå nærmere Homey og søk igjen.",
+    "rescan": "Søk igjen",
+    "not_found": "Enheten finnes ikke lenger, søk igjen.",
+    "confirm_intro": "Akkurat som Novy-appen ber Homey viften om en bekreftelse med fjernkontrollen.",
+    "confirm_1": "Trykk på Start. Viften slås av og venter på bekreftelse.",
+    "confirm_2": "Trykk på av/på-knappen på Novy-fjernkontrollen.",
+    "confirm_3": "Så snart viften bekrefter, legges enheten til.",
+    "back": "Tilbake",
+    "start": "Start",
+    "connecting": "Kobler til…",
+    "waiting": "Tilkoblet – venter på bekreftelse…",
+    "confirm_now": "Trykk nå på av/på-knappen på Novy-fjernkontrollen.",
+    "details": "Tekniske detaljer",
+    "cancel": "Avbryt",
+    "success": "Bekreftet!",
+    "failed": "Viften svarte ikke. Kopier de tekniske detaljene nedenfor og prøv igjen.",
+    "retry": "Prøv igjen",
+    "press_remote": "Venter på av/på-knappen på fjernkontrollen…",
+    "skip": "Legg til uten bekreftelse",
+    "skip_hint": "Også Novy-appen lar deg hoppe over dette trinnet; bruk det hvis fjernkontrollen ikke er for hånden."
+  },
+  "settings": {
+    "title": "Logg",
+    "intro": "Hva appen gjør og hvilke feil som oppstår: Bluetooth-tilkobling, kommandoer til viften og svarene. Loggen ligger bare i minnet (maks. 256 KB, eldste linjer fjernes først) og er tom etter en omstart.",
+    "enabled": "Før logg",
+    "filter": "Filter (f.eks. feil, TX, ACK)",
+    "only_errors": "Bare feil",
+    "refresh": "Oppdater",
+    "copy": "Kopier",
+    "clear": "Tøm",
+    "loading": "Laster…",
+    "no_match": "Ingen linjer for dette filteret.",
+    "empty": "Loggen er fortsatt tom.",
+    "load_failed": "Kunne ikke laste loggen:",
+    "size": "{size} KB av {max} KB",
+    "lines": "{n} linjer",
+    "save_failed": "Lagring mislyktes",
+    "log_on": "Loggen er på",
+    "log_off": "Loggen er av",
+    "cleared": "Loggen tømt",
+    "copied": "Kopiert",
+    "confirm_clear": "Tømme hele loggen?"
+  },
+  "status": {
+    "off": "Av",
+    "running": "Går",
+    "boost": "Boost",
+    "afterrun": "Forsinket avslåing"
+  }
+}

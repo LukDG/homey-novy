@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Campana inaccesible por Bluetooth"
+  },
+  "feature": {
+    "automode": "Modo automático",
+    "keylock": "Bloqueo de teclas",
+    "carbon": "Cambiar filtro de carbón"
+  },
+  "pair": {
+    "title": "Conectar campana Novy",
+    "scan_intro": "Asegúrate de que la campana tiene corriente y de que la app Novy del móvil está cerrada.",
+    "scanning": "Buscando dispositivos Bluetooth…",
+    "pick": "Elige tu campana:",
+    "none": "No se encontró nada. Acércate a Homey y vuelve a buscar.",
+    "rescan": "Buscar de nuevo",
+    "not_found": "Dispositivo ya no encontrado, vuelve a buscar.",
+    "confirm_intro": "Igual que la app Novy, Homey pide a la campana una confirmación con el mando.",
+    "confirm_1": "Pulsa Iniciar. La campana se apaga y espera la confirmación.",
+    "confirm_2": "Pulsa el botón de encendido de tu mando Novy.",
+    "confirm_3": "En cuanto la campana confirme, se añade el dispositivo.",
+    "back": "Atrás",
+    "start": "Iniciar",
+    "connecting": "Conectando…",
+    "waiting": "Conectado – esperando confirmación…",
+    "confirm_now": "Pulsa ahora el botón de encendido de tu mando Novy.",
+    "details": "Detalles técnicos",
+    "cancel": "Cancelar",
+    "success": "¡Confirmado!",
+    "failed": "La campana no respondió. Copia los detalles técnicos de abajo y vuelve a intentarlo.",
+    "retry": "Reintentar",
+    "press_remote": "Esperando el botón de encendido del mando…",
+    "skip": "Añadir sin confirmación",
+    "skip_hint": "La app Novy también permite saltar este paso; úsalo si no tienes el mando a mano."
+  },
+  "settings": {
+    "title": "Registro",
+    "intro": "Lo que hace la app y los errores que ocurren: conexión Bluetooth, comandos a la campana y sus respuestas. El registro solo se guarda en memoria (máx. 256 KB, se eliminan primero las líneas más antiguas) y empieza vacío tras un reinicio.",
+    "enabled": "Mantener registro",
+    "filter": "Filtro (p. ej. error, TX, ACK)",
+    "only_errors": "Solo errores",
+    "refresh": "Actualizar",
+    "copy": "Copiar",
+    "clear": "Borrar",
+    "loading": "Cargando…",
+    "no_match": "No hay líneas para este filtro.",
+    "empty": "El registro aún está vacío.",
+    "load_failed": "No se pudo cargar el registro:",
+    "size": "{size} KB de {max} KB",
+    "lines": "{n} líneas",
+    "save_failed": "Error al guardar",
+    "log_on": "Registro activado",
+    "log_off": "Registro desactivado",
+    "cleared": "Registro borrado",
+    "copied": "Copiado",
+    "confirm_clear": "¿Borrar todo el registro?"
+  },
+  "status": {
+    "off": "Apagado",
+    "running": "En marcha",
+    "boost": "Boost",
+    "afterrun": "Apagado retardado"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Haube per Bluetooth nicht erreichbar"
+  },
+  "feature": {
+    "automode": "Automatik",
+    "keylock": "Tastensperre",
+    "carbon": "Aktivkohlefilter ersetzen"
+  },
+  "pair": {
+    "title": "Novy Dunstabzugshaube verbinden",
+    "scan_intro": "Achte darauf, dass die Haube Strom hat und die Novy-App auf deinem Handy geschlossen ist.",
+    "scanning": "Suche nach Bluetooth-Geräten…",
+    "pick": "Wähle deine Haube:",
+    "none": "Nichts gefunden. Geh näher an Homey heran und suche erneut.",
+    "rescan": "Erneut suchen",
+    "not_found": "Gerät nicht mehr gefunden, bitte erneut suchen.",
+    "confirm_intro": "Wie die Novy-App bittet Homey die Haube um eine Bestätigung mit der Fernbedienung.",
+    "confirm_1": "Tippe auf Start. Die Haube schaltet sich aus und wartet auf die Bestätigung.",
+    "confirm_2": "Drücke die Ein/Aus-Taste deiner Novy-Fernbedienung.",
+    "confirm_3": "Sobald die Haube bestätigt, wird das Gerät hinzugefügt.",
+    "back": "Zurück",
+    "start": "Start",
+    "connecting": "Verbinden…",
+    "waiting": "Verbunden – warte auf Bestätigung…",
+    "confirm_now": "Drücke jetzt die Ein/Aus-Taste deiner Novy-Fernbedienung.",
+    "details": "Technische Details",
+    "cancel": "Abbrechen",
+    "success": "Bestätigt!",
+    "failed": "Die Haube hat nicht geantwortet. Kopiere die technischen Details unten und versuche es erneut.",
+    "retry": "Erneut versuchen",
+    "press_remote": "Warte auf die Ein/Aus-Taste der Fernbedienung…",
+    "skip": "Ohne Bestätigung hinzufügen",
+    "skip_hint": "Auch die Novy-App lässt diesen Schritt überspringen; nutze das, wenn die Fernbedienung nicht zur Hand ist."
+  },
+  "settings": {
+    "title": "Protokoll",
+    "intro": "Was die App tut und welche Fehler auftreten: Bluetooth-Verbindung, Befehle an die Haube und ihre Antworten. Das Protokoll liegt nur im Arbeitsspeicher (max. 256 KB, älteste Zeilen zuerst entfernt) und ist nach einem Neustart leer.",
+    "enabled": "Protokoll führen",
+    "filter": "Filter (z. B. Fehler, TX, ACK)",
+    "only_errors": "Nur Fehler",
+    "refresh": "Aktualisieren",
+    "copy": "Kopieren",
+    "clear": "Löschen",
+    "loading": "Laden…",
+    "no_match": "Keine Zeilen für diesen Filter.",
+    "empty": "Das Protokoll ist noch leer.",
+    "load_failed": "Protokoll konnte nicht geladen werden:",
+    "size": "{size} KB von {max} KB",
+    "lines": "{n} Zeilen",
+    "save_failed": "Speichern fehlgeschlagen",
+    "log_on": "Protokoll ist an",
+    "log_off": "Protokoll ist aus",
+    "cleared": "Protokoll gelöscht",
+    "copied": "Kopiert",
+    "confirm_clear": "Das gesamte Protokoll löschen?"
+  },
+  "status": {
+    "off": "Aus",
+    "running": "Läuft",
+    "boost": "Boost",
+    "afterrun": "Nachlauf"
+  }
+}

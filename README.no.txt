@@ -1,0 +1,1 @@
+Skru opp avtrekket når CO2-nivået på kjøkkenet stiger, demp lyset i viften til middagen, eller få en påminnelse når fettfilteret må rengjøres. Homey snakker direkte med Novy-kjøkkenviften din via Bluetooth, uten sky: viftehastighet, lys, resirkulasjon og forsinket avslåing, og på vifter med luftkvalitetssensor også temperatur, luftfuktighet og CO2.

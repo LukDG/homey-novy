@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Cappa non raggiungibile via Bluetooth"
+  },
+  "feature": {
+    "automode": "Modalità automatica",
+    "keylock": "Blocco tasti",
+    "carbon": "Sostituire filtro al carbone"
+  },
+  "pair": {
+    "title": "Collega la cappa Novy",
+    "scan_intro": "Assicurati che la cappa sia alimentata e che l'app Novy sul telefono sia chiusa.",
+    "scanning": "Ricerca di dispositivi Bluetooth…",
+    "pick": "Scegli la tua cappa:",
+    "none": "Nessun risultato. Avvicinati a Homey e cerca di nuovo.",
+    "rescan": "Cerca di nuovo",
+    "not_found": "Dispositivo non più trovato, cerca di nuovo.",
+    "confirm_intro": "Come l'app Novy, Homey chiede alla cappa una conferma con il telecomando.",
+    "confirm_1": "Tocca Avvia. La cappa si spegne e attende la conferma.",
+    "confirm_2": "Premi il tasto on/off del telecomando Novy.",
+    "confirm_3": "Appena la cappa conferma, il dispositivo viene aggiunto.",
+    "back": "Indietro",
+    "start": "Avvia",
+    "connecting": "Connessione…",
+    "waiting": "Connesso – in attesa di conferma…",
+    "confirm_now": "Premi ora il tasto on/off del telecomando Novy.",
+    "details": "Dettagli tecnici",
+    "cancel": "Annulla",
+    "success": "Confermato!",
+    "failed": "La cappa non ha risposto. Copia i dettagli tecnici qui sotto e riprova.",
+    "retry": "Riprova",
+    "press_remote": "In attesa del tasto on/off del telecomando…",
+    "skip": "Aggiungi senza conferma",
+    "skip_hint": "Anche l'app Novy permette di saltare questo passaggio; usalo se il telecomando non è a portata di mano."
+  },
+  "settings": {
+    "title": "Registro",
+    "intro": "Cosa fa l'app e quali errori si verificano: connessione Bluetooth, comandi alla cappa e relative risposte. Il registro resta solo in memoria (max. 256 KB, righe più vecchie rimosse per prime) e riparte vuoto dopo un riavvio.",
+    "enabled": "Tieni il registro",
+    "filter": "Filtro (es. errore, TX, ACK)",
+    "only_errors": "Solo errori",
+    "refresh": "Aggiorna",
+    "copy": "Copia",
+    "clear": "Cancella",
+    "loading": "Caricamento…",
+    "no_match": "Nessuna riga per questo filtro.",
+    "empty": "Il registro è ancora vuoto.",
+    "load_failed": "Impossibile caricare il registro:",
+    "size": "{size} KB di {max} KB",
+    "lines": "{n} righe",
+    "save_failed": "Salvataggio non riuscito",
+    "log_on": "Registro attivo",
+    "log_off": "Registro disattivato",
+    "cleared": "Registro cancellato",
+    "copied": "Copiato",
+    "confirm_clear": "Cancellare l'intero registro?"
+  },
+  "status": {
+    "off": "Spento",
+    "running": "In funzione",
+    "boost": "Boost",
+    "afterrun": "Spegnimento ritardato"
+  }
+}

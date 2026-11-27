@@ -1,0 +1,6 @@
+test/
+*.zip
+scripts/
+README.md
+CHANGELOG.md
+VERSIONING.md

@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Emhætten kan ikke nås via Bluetooth"
+  },
+  "feature": {
+    "automode": "Automatisk tilstand",
+    "keylock": "Tastelås",
+    "carbon": "Udskift kulfilter"
+  },
+  "pair": {
+    "title": "Forbind Novy-emhætte",
+    "scan_intro": "Sørg for, at emhætten har strøm, og at Novy-appen på telefonen er lukket.",
+    "scanning": "Søger efter Bluetooth-enheder…",
+    "pick": "Vælg din emhætte:",
+    "none": "Intet fundet. Gå tættere på Homey, og søg igen.",
+    "rescan": "Søg igen",
+    "not_found": "Enheden findes ikke længere, søg igen.",
+    "confirm_intro": "Ligesom Novy-appen beder Homey emhætten om en bekræftelse med fjernbetjeningen.",
+    "confirm_1": "Tryk på Start. Emhætten slukker og venter på bekræftelse.",
+    "confirm_2": "Tryk på tænd/sluk-knappen på din Novy-fjernbetjening.",
+    "confirm_3": "Så snart emhætten bekræfter, tilføjes enheden.",
+    "back": "Tilbage",
+    "start": "Start",
+    "connecting": "Forbinder…",
+    "waiting": "Forbundet – venter på bekræftelse…",
+    "confirm_now": "Tryk nu på tænd/sluk-knappen på din Novy-fjernbetjening.",
+    "details": "Tekniske detaljer",
+    "cancel": "Annuller",
+    "success": "Bekræftet!",
+    "failed": "Emhætten svarede ikke. Kopiér de tekniske detaljer nedenfor, og prøv igen.",
+    "retry": "Prøv igen",
+    "press_remote": "Venter på tænd/sluk-knappen på fjernbetjeningen…",
+    "skip": "Tilføj uden bekræftelse",
+    "skip_hint": "Også Novy-appen lader dig springe dette trin over; brug det, hvis fjernbetjeningen ikke er ved hånden."
+  },
+  "settings": {
+    "title": "Log",
+    "intro": "Hvad appen gør, og hvilke fejl der opstår: Bluetooth-forbindelse, kommandoer til emhætten og dens svar. Loggen ligger kun i hukommelsen (maks. 256 KB, ældste linjer fjernes først) og er tom efter en genstart.",
+    "enabled": "Før log",
+    "filter": "Filter (f.eks. fejl, TX, ACK)",
+    "only_errors": "Kun fejl",
+    "refresh": "Opdater",
+    "copy": "Kopiér",
+    "clear": "Ryd",
+    "loading": "Indlæser…",
+    "no_match": "Ingen linjer for dette filter.",
+    "empty": "Loggen er stadig tom.",
+    "load_failed": "Kunne ikke indlæse loggen:",
+    "size": "{size} KB af {max} KB",
+    "lines": "{n} linjer",
+    "save_failed": "Kunne ikke gemme",
+    "log_on": "Loggen er slået til",
+    "log_off": "Loggen er slået fra",
+    "cleared": "Loggen ryddet",
+    "copied": "Kopieret",
+    "confirm_clear": "Rydde hele loggen?"
+  },
+  "status": {
+    "off": "Slukket",
+    "running": "Kører",
+    "boost": "Boost",
+    "afterrun": "Forsinket slukning"
+  }
+}

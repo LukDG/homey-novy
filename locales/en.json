@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Hood not reachable over Bluetooth"
+  },
+  "feature": {
+    "automode": "Auto mode",
+    "keylock": "Keypad lock",
+    "carbon": "Replace carbon filter"
+  },
+  "pair": {
+    "title": "Connect Novy hood",
+    "scan_intro": "Make sure the hood is powered and that the Novy app on your phone is closed.",
+    "scanning": "Searching for Bluetooth devices…",
+    "pick": "Select your hood:",
+    "none": "Nothing found. Move closer to Homey and search again.",
+    "rescan": "Search again",
+    "not_found": "Device not found anymore, search again.",
+    "confirm_intro": "Just like the Novy app, Homey asks the hood for a confirmation with the remote control.",
+    "confirm_1": "Tap Start. The hood switches off and waits for confirmation.",
+    "confirm_2": "Press the on/off button on your Novy remote control.",
+    "confirm_3": "As soon as the hood confirms, the device is added.",
+    "back": "Back",
+    "start": "Start",
+    "connecting": "Connecting…",
+    "waiting": "Connected – waiting for confirmation…",
+    "confirm_now": "Press the on/off button on your Novy remote control now.",
+    "details": "Technical details",
+    "cancel": "Cancel",
+    "success": "Confirmed!",
+    "failed": "The hood did not answer. Copy the technical details below and try again.",
+    "retry": "Try again",
+    "press_remote": "Waiting for the on/off button on the remote…",
+    "skip": "Add without confirmation",
+    "skip_hint": "The Novy app also lets you skip this step; use it if your remote is not at hand."
+  },
+  "settings": {
+    "title": "Log",
+    "intro": "What the app does and which errors occur: Bluetooth connection, commands to the hood and its replies. The log is kept in memory only (max. 256 KB, oldest lines removed first) and starts empty after a restart.",
+    "enabled": "Keep log",
+    "filter": "Filter (e.g. error, TX, ACK)",
+    "only_errors": "Errors only",
+    "refresh": "Refresh",
+    "copy": "Copy",
+    "clear": "Clear",
+    "loading": "Loading…",
+    "no_match": "No lines for this filter.",
+    "empty": "The log is still empty.",
+    "load_failed": "Could not load the log:",
+    "size": "{size} KB of {max} KB",
+    "lines": "{n} lines",
+    "save_failed": "Saving failed",
+    "log_on": "Log is on",
+    "log_off": "Log is off",
+    "cleared": "Log cleared",
+    "copied": "Copied",
+    "confirm_clear": "Clear the entire log?"
+  },
+  "status": {
+    "off": "Off",
+    "running": "Running",
+    "boost": "Boost",
+    "afterrun": "Run-on"
+  }
+}

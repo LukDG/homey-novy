@@ -1,0 +1,1 @@
+Skru op for udsugningen, når CO2-niveauet i køkkenet stiger, dæmp emhættens lys til aftensmaden, eller få en påmindelse, når fedtfilteret skal renses. Homey taler direkte med din Novy-emhætte via Bluetooth, uden sky: blæserhastighed, lys, recirkulation og forsinket slukning, og på emhætter med luftkvalitetssensor også temperatur, luftfugtighed og CO2.

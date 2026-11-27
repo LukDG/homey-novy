@@ -1,0 +1,1 @@
+Höj utsuget när koldioxidhalten i köket stiger, dimma fläktens belysning till middagen eller få en påminnelse när fettfiltret behöver rengöras. Homey pratar direkt med din Novy-köksfläkt via Bluetooth, utan moln: fläkthastighet, belysning, recirkulation och fördröjd avstängning, och på fläktar med luftkvalitetssensor även temperatur, luftfuktighet och CO2.

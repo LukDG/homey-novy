@@ -1,0 +1,64 @@
+{
+  "error": {
+    "unreachable": "Bluetooth로 후드에 연결할 수 없습니다"
+  },
+  "feature": {
+    "automode": "자동 모드",
+    "keylock": "키 잠금",
+    "carbon": "탄소 필터 교체"
+  },
+  "pair": {
+    "title": "Novy 후드 연결",
+    "scan_intro": "후드에 전원이 들어와 있고 휴대폰의 Novy 앱이 닫혀 있는지 확인하세요.",
+    "scanning": "Bluetooth 기기 검색 중…",
+    "pick": "후드를 선택하세요:",
+    "none": "찾은 기기가 없습니다. Homey 가까이에서 다시 검색하세요.",
+    "rescan": "다시 검색",
+    "not_found": "기기를 더 이상 찾을 수 없습니다. 다시 검색하세요.",
+    "confirm_intro": "Novy 앱과 마찬가지로 Homey가 리모컨으로 확인해 달라고 후드에 요청합니다.",
+    "confirm_1": "시작을 누르세요. 후드가 꺼지고 확인을 기다립니다.",
+    "confirm_2": "Novy 리모컨의 전원 버튼을 누르세요.",
+    "confirm_3": "후드가 확인하는 즉시 기기가 추가됩니다.",
+    "back": "뒤로",
+    "start": "시작",
+    "connecting": "연결 중…",
+    "waiting": "연결됨 – 확인 대기 중…",
+    "confirm_now": "지금 Novy 리모컨의 전원 버튼을 누르세요.",
+    "details": "기술 정보",
+    "cancel": "취소",
+    "success": "확인되었습니다!",
+    "failed": "후드가 응답하지 않았습니다. 아래 기술 정보를 복사한 후 다시 시도하세요.",
+    "retry": "다시 시도",
+    "press_remote": "리모컨 전원 버튼 대기 중…",
+    "skip": "확인 없이 추가",
+    "skip_hint": "Novy 앱에서도 이 단계를 건너뛸 수 있습니다. 리모컨이 없을 때 사용하세요."
+  },
+  "settings": {
+    "title": "로그",
+    "intro": "앱의 동작과 발생한 오류: Bluetooth 연결, 후드로 보낸 명령과 응답. 로그는 메모리에만 보관되며(최대 256KB, 오래된 줄부터 삭제) 재시작하면 비워집니다.",
+    "enabled": "로그 기록",
+    "filter": "필터 (예: 오류, TX, ACK)",
+    "only_errors": "오류만",
+    "refresh": "새로 고침",
+    "copy": "복사",
+    "clear": "지우기",
+    "loading": "불러오는 중…",
+    "no_match": "이 필터에 해당하는 줄이 없습니다.",
+    "empty": "로그가 아직 비어 있습니다.",
+    "load_failed": "로그를 불러올 수 없습니다:",
+    "size": "{size}KB / {max}KB",
+    "lines": "{n}줄",
+    "save_failed": "저장 실패",
+    "log_on": "로그 켜짐",
+    "log_off": "로그 꺼짐",
+    "cleared": "로그를 지웠습니다",
+    "copied": "복사했습니다",
+    "confirm_clear": "로그 전체를 지울까요?"
+  },
+  "status": {
+    "off": "꺼짐",
+    "running": "작동 중",
+    "boost": "부스트",
+    "afterrun": "지연 꺼짐"
+  }
+}
