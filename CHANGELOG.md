@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.1127.7
+
+- **en**: Reset the grease filter from the device: Maintenance → Reset grease filter, after cleaning the filter.
+- **nl**: Reset de vetfilter vanuit het toestel: Onderhoud → Vetfilter resetten, na het reinigen van de filter.
+- **de**: Setze den Fettfilter direkt am Gerät zurück: Wartung → Fettfilter zurücksetzen, nach dem Reinigen des Filters.
+- **fr**: Réinitialisez le filtre à graisse depuis l'appareil : Maintenance → Réinitialiser le filtre à graisse, après l'avoir nettoyé.
+- **it**: Azzera il filtro grassi dal dispositivo: Manutenzione → Azzera filtro grassi, dopo aver pulito il filtro.
+- **sv**: Återställ fettfiltret från enheten: Underhåll → Återställ fettfilter, efter att filtret har rengjorts.
+- **no**: Tilbakestill fettfilteret fra enheten: Vedlikehold → Tilbakestill fettfilter, etter at filteret er rengjort.
+- **es**: Restablece el filtro de grasa desde el dispositivo: Mantenimiento → Restablecer filtro de grasa, tras limpiar el filtro.
+- **da**: Nulstil fedtfilteret fra enheden: Vedligeholdelse → Nulstil fedtfilter, når filteret er renset.
+- **ru**: Сброс жирового фильтра прямо с устройства: Обслуживание → Сбросить жировой фильтр, после очистки фильтра.
+- **pl**: Zresetuj filtr tłuszczowy z poziomu urządzenia: Konserwacja → Zresetuj filtr tłuszczowy, po wyczyszczeniu filtra.
+- **ko**: 필터를 청소한 후 기기에서 바로 기름 필터를 초기화하세요: 유지보수 → 기름 필터 초기화.
+- **ar**: أعد ضبط مرشح الدهون من الجهاز: الصيانة ← إعادة ضبط مرشح الدهون، بعد تنظيف المرشح.
+
 ## 2026.1127.6
 
 - **en**: The hood device now shows the Bluetooth signal strength (dBm) as a tile, with a history in Insights.

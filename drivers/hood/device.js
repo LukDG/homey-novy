@@ -43,6 +43,7 @@ class NovyHoodDevice extends Homey.Device {
     this.registerCapabilityListener('onoff', value => this.setFan(value));
     this.registerCapabilityListener('dim', value => this.setFanSpeed(Math.round(value * 100)));
     this.registerCapabilityListener('onoff.recirculate', value => this.setRecirculate(value));
+    this.registerCapabilityListener('button.reset_grease', () => this.resetGreaseFilter());
 
     for (const feature of Object.values(FEATURES)) {
       if (this.hasCapability(feature.cap)) this._registerFeatureListener(feature.cap);
@@ -95,7 +96,7 @@ class NovyHoodDevice extends Homey.Device {
   }
 
   async _migrateCapabilities() {
-    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_light', 'novy_timer', 'alarm_generic', 'novy_grease_hours', 'novy_rssi'];
+    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_light', 'novy_timer', 'alarm_generic', 'novy_grease_hours', 'novy_rssi', 'button.reset_grease'];
     for (const cap of wanted) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(this.error);
     }
@@ -460,6 +461,9 @@ class NovyHoodDevice extends Homey.Device {
 
   async resetGreaseFilter() {
     await this._command([[CMD.RESET_GREASE, 0]], CMD.STATUS_402);
+    // the "clean grease filter" alarm comes from the main status packet
+    await this.client.send(CMD.STATUS, 0).catch(this.error);
+    this.log('Grease filter reset');
   }
 
   async pressPower() {
