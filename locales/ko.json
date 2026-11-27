@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Bluetooth로 후드에 연결할 수 없습니다"
+    "unreachable": "Bluetooth로 후드에 연결할 수 없습니다",
+    "no_hood": "먼저 Novy 후드를 추가하세요. 조명은 후드를 통해 작동합니다."
   },
   "feature": {
     "automode": "자동 모드",
@@ -54,6 +55,21 @@
     "cleared": "로그를 지웠습니다",
     "copied": "복사했습니다",
     "confirm_clear": "로그 전체를 지울까요?"
+  },
+  "light": {
+    "name_suffix": "조명"
+  },
+  "widget": {
+    "fan": "흡입",
+    "light": "조명",
+    "white": "흰색",
+    "ambient": "분위기",
+    "runon": "지연 꺼짐",
+    "recirc": "재순환",
+    "auto": "자동",
+    "grease": "기름 필터 청소",
+    "nohood": "먼저 Novy 후드를 추가하세요.",
+    "min": "분"
   },
   "status": {
     "off": "꺼짐",

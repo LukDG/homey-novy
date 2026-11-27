@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Fläkten nås inte via Bluetooth"
+    "unreachable": "Fläkten nås inte via Bluetooth",
+    "no_hood": "Lägg först till Novy-fläkten; belysningen styrs via fläkten."
   },
   "feature": {
     "automode": "Autoläge",
@@ -54,6 +55,21 @@
     "cleared": "Loggen rensad",
     "copied": "Kopierat",
     "confirm_clear": "Rensa hela loggen?"
+  },
+  "light": {
+    "name_suffix": "belysning"
+  },
+  "widget": {
+    "fan": "Utsug",
+    "light": "Belysning",
+    "white": "Vitt",
+    "ambient": "Stämning",
+    "runon": "Fördröjd avstängning",
+    "recirc": "Recirkulation",
+    "auto": "Auto",
+    "grease": "Rengör fettfilter",
+    "nohood": "Lägg först till en Novy-fläkt.",
+    "min": "min"
   },
   "status": {
     "off": "Av",

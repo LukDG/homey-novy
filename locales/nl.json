@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Dampkap niet bereikbaar via Bluetooth"
+    "unreachable": "Dampkap niet bereikbaar via Bluetooth",
+    "no_hood": "Voeg eerst de Novy-dampkap toe; het licht werkt via de kap."
   },
   "feature": {
     "automode": "Automodus",
@@ -54,6 +55,21 @@
     "cleared": "Logboek gewist",
     "copied": "Gekopieerd",
     "confirm_clear": "Het volledige logboek wissen?"
+  },
+  "light": {
+    "name_suffix": "licht"
+  },
+  "widget": {
+    "fan": "Afzuiging",
+    "light": "Licht",
+    "white": "Wit",
+    "ambient": "Sfeer",
+    "runon": "Nalopen",
+    "recirc": "Recirculatie",
+    "auto": "Auto",
+    "grease": "Vetfilter reinigen",
+    "nohood": "Voeg eerst een Novy-dampkap toe.",
+    "min": "min"
   },
   "status": {
     "off": "Uit",

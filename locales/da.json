@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Emhætten kan ikke nås via Bluetooth"
+    "unreachable": "Emhætten kan ikke nås via Bluetooth",
+    "no_hood": "Tilføj først Novy-emhætten; lyset styres via emhætten."
   },
   "feature": {
     "automode": "Automatisk tilstand",
@@ -54,6 +55,21 @@
     "cleared": "Loggen ryddet",
     "copied": "Kopieret",
     "confirm_clear": "Rydde hele loggen?"
+  },
+  "light": {
+    "name_suffix": "lys"
+  },
+  "widget": {
+    "fan": "Udsugning",
+    "light": "Lys",
+    "white": "Hvidt",
+    "ambient": "Stemning",
+    "runon": "Forsinket slukning",
+    "recirc": "Recirkulation",
+    "auto": "Auto",
+    "grease": "Rens fedtfilter",
+    "nohood": "Tilføj først en Novy-emhætte.",
+    "min": "min"
   },
   "status": {
     "off": "Slukket",

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #ffffff; --fg: #1c1c1e; --muted: #8a8a8e; --chip: #f0f0f3; --chip-fg: #1c1c1e;
+      --accent: #2a7de1; --accent-fg: #ffffff; --light: #f5a623; --warn: #d9480f; --line: rgba(0, 0, 0, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1c1c1e; --fg: #f2f2f7; --muted: #98989f; --chip: #2c2c2e; --chip-fg: #f2f2f7; --line: rgba(255, 255, 255, .1); --warn: #ff8a50; }
+    }
+    html.homey-dark-mode { --bg: #1c1c1e; --fg: #f2f2f7; --muted: #98989f; --chip: #2c2c2e; --chip-fg: #f2f2f7; --line: rgba(255, 255, 255, .1); --warn: #ff8a50; }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+      font: 14px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    #app { padding: 14px; }
+    .row { display: flex; align-items: center; gap: 8px; }
+    .between { justify-content: space-between; }
+    .name { font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sub { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+    .dot.on { background: #34c759; }
+    button { font: inherit; color: var(--chip-fg); background: var(--chip); border: 0; border-radius: 10px;
+      padding: 8px 10px; cursor: pointer; transition: transform .08s, opacity .2s; }
+    button:active { transform: scale(.96); }
+    button.sel { background: var(--accent); color: var(--accent-fg); }
+    #lightPower.sel, #presets button.sel { background: var(--light); color: #1c1c1e; }
+    .icon { width: 40px; height: 40px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; flex: none; }
+    .icon svg { width: 20px; height: 20px; fill: currentColor; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chips button { padding: 6px 10px; font-size: 13px; }
+    .section { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 12px; }
+    .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+    .value { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    input[type=range] { flex: 1; min-width: 0; accent-color: var(--accent); }
+    #brightness { accent-color: var(--light); }
+    #colortemp { accent-color: var(--light); }
+    .ct { margin-top: 10px; }
+    .ct .cool, .ct .warm { font-size: 11px; color: var(--muted); }
+    .sensors { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .sensors b { color: var(--fg); font-weight: 600; }
+    .warn { color: var(--warn); font-size: 13px; margin-top: 6px; }
+    .hidden { display: none !important; }
+    .err { color: var(--warn); font-size: 12px; min-height: 16px; margin-top: 6px; }
+    .dim { opacity: .35; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="row between">
+      <div class="row" style="min-width:0">
+        <span id="dot" class="dot"></span>
+        <span id="name" class="name">Novy</span>
+      </div>
+      <span id="status" class="sub"></span>
+    </div>
+
+    <div class="section">
+      <div class="row between">
+        <span class="label" data-t="fan">Extraction</span>
+        <span id="speedValue" class="value"></span>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button id="fanPower" class="icon" title="Fan">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="5.8" rx="3" ry="4.6"/><ellipse cx="12" cy="5.8" rx="3" ry="4.6" transform="rotate(120 12 12)"/><ellipse cx="12" cy="5.8" rx="3" ry="4.6" transform="rotate(240 12 12)"/></svg>
+        </button>
+        <input id="speed" type="range" min="0" max="100" step="5" />
+      </div>
+      <div class="chips">
+        <button data-speed="25">25%</button>
+        <button data-speed="50">50%</button>
+        <button data-speed="75">75%</button>
+        <button data-speed="100">100%</button>
+        <button id="runon" data-t="runon">Run-on</button>
+        <button id="recirc" class="hidden" data-t="recirc">Recirculation</button>
+        <button id="auto" class="hidden" data-t="auto">Auto</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="row between">
+        <span class="label" data-t="light">Light</span>
+        <span id="brightValue" class="value"></span>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button id="lightPower" class="icon" title="Light">
+          <svg viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1zm3-19a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/></svg>
+        </button>
+        <input id="brightness" type="range" min="1" max="100" step="1" />
+      </div>
+      <div id="lightControls">
+        <div id="presets" class="chips">
+          <button data-preset="white" data-t="white">White</button>
+          <button data-preset="ambi" data-t="ambient">Ambient</button>
+        </div>
+        <div class="row ct">
+          <span class="cool">6500K</span>
+          <input id="colortemp" type="range" min="0" max="100" step="1" />
+          <span class="warm">2700K</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="sensorBox" class="section hidden">
+      <div id="sensors" class="sensors"></div>
+    </div>
+    <div id="warnGrease" class="warn hidden" data-t="grease">Clean grease filter</div>
+    <div id="warnCarbon" class="warn hidden" data-t="carbon">Replace carbon filter</div>
+    <div id="err" class="err"></div>
+  </div>
+
+  <script type="text/javascript">
+    function onHomeyReady(Homey) {
+      var settings = Homey.getSettings() || {};
+      var hoodId = settings.hood && settings.hood.id ? settings.hood.id : '';
+      var state = null;
+      var dragging = {};
+      var busy = 0;
+
+      var $ = function (id) { return document.getElementById(id); };
+      var tr = function (key, fallback) {
+        try { var v = Homey.__(key); return v && v !== key ? v : fallback; } catch (e) { return fallback; }
+      };
+      var t = function (key, fallback) { return tr('widget.' + key, fallback); };
+      document.querySelectorAll('[data-t]').forEach(function (el) {
+        var key = el.getAttribute('data-t');
+        el.textContent = key === 'carbon' ? tr('feature.carbon', el.textContent) : t(key, el.textContent);
+      });
+
+      function q() { return hoodId ? '?id=' + encodeURIComponent(hoodId) : ''; }
+      function showError(err) { $('err').textContent = err ? (err.message || String(err)) : ''; }
+      function resize() { Homey.setHeight(document.getElementById('app').offsetHeight).catch(function () {}); }
+
+      function act(action, value) {
+        busy++;
+        showError('');
+        if (Homey.hapticFeedback) { try { Homey.hapticFeedback(); } catch (e) { /* */ } }
+        return Homey.api('POST', '/action', { id: hoodId, action: action, value: value })
+          .catch(showError)
+          .then(function () { busy--; setTimeout(refresh, 600); });
+      }
+
+      function render() {
+        if (!state) return;
+        var s = state;
+        $('name').textContent = s.name;
+        $('dot').className = 'dot' + (s.available && (s.fanOn || s.light.on) ? ' on' : '');
+        var status = tr('status.' + s.status, s.status);
+        if (s.timer > 0) status += ' · ' + s.timer + ' ' + t('min', 'min');
+        $('status').textContent = s.available ? status : tr('error.unreachable', '');
+
+        $('fanPower').className = 'icon' + (s.fanOn ? ' sel' : '');
+        if (!dragging.speed) $('speed').value = s.fanSpeed;
+        $('speedValue').textContent = s.fanOn ? s.fanSpeed + '%' : t('off', tr('status.off', 'Off'));
+        document.querySelectorAll('[data-speed]').forEach(function (b) {
+          b.className = s.fanOn && Number(b.getAttribute('data-speed')) === s.fanSpeed ? 'sel' : '';
+        });
+        $('runon').className = s.status === 'afterrun' ? 'sel' : '';
+        $('recirc').classList.toggle('hidden', s.recirculate === null);
+        $('recirc').classList.toggle('sel', !!s.recirculate);
+        $('auto').classList.toggle('hidden', s.automode === null);
+        $('auto').classList.toggle('sel', !!s.automode);
+
+        $('lightPower').className = 'icon' + (s.light.on ? ' sel' : '');
+        if (!dragging.brightness && s.light.on) $('brightness').value = Math.max(1, s.light.brightness);
+        if (!dragging.colortemp) $('colortemp').value = s.light.colorTemp;
+        $('brightValue').textContent = s.light.on ? s.light.brightness + '%' : tr('status.off', 'Off');
+        $('lightControls').classList.toggle('dim', !s.light.on);
+        document.querySelectorAll('[data-preset]').forEach(function (b) {
+          var p = b.getAttribute('data-preset');
+          b.className = s.light.on && ((p === 'ambi' && s.light.mode === 2) || (p === 'white' && s.light.mode === 1)) ? 'sel' : '';
+        });
+
+        var parts = [];
+        if (typeof s.temperature === 'number') parts.push('<span><b>' + s.temperature + '</b> °C</span>');
+        if (typeof s.humidity === 'number') parts.push('<span><b>' + s.humidity + '</b> %</span>');
+        if (typeof s.co2 === 'number') parts.push('<span>CO₂ <b>' + s.co2 + '</b> ppm</span>');
+        $('sensors').innerHTML = parts.join('');
+        $('sensorBox').classList.toggle('hidden', !parts.length);
+        $('warnGrease').classList.toggle('hidden', !s.greaseDirty);
+        $('warnCarbon').classList.toggle('hidden', !s.carbonDirty);
+        resize();
+      }
+
+      function refresh() {
+        if (busy > 0) return;
+        Homey.api('GET', '/state' + q()).then(function (res) { state = res; render(); }).catch(showError);
+      }
+
+      function slider(id, action) {
+        $(id).oninput = function () { dragging[id] = true; };
+        $(id).onchange = function () { dragging[id] = false; act(action, Number($(id).value)); };
+      }
+
+      $('fanPower').onclick = function () { act('fan', !(state && state.fanOn)); };
+      $('lightPower').onclick = function () { act('light', !(state && state.light.on)); };
+      slider('speed', 'speed');
+      slider('brightness', 'brightness');
+      slider('colortemp', 'colortemp');
+      document.querySelectorAll('[data-speed]').forEach(function (b) {
+        b.onclick = function () { act('speed', Number(b.getAttribute('data-speed'))); };
+      });
+      document.querySelectorAll('[data-preset]').forEach(function (b) {
+        b.onclick = function () { act('preset', b.getAttribute('data-preset')); };
+      });
+      $('runon').onclick = function () { act('runon'); };
+      $('recirc').onclick = function () { act('recirculate', !(state && state.recirculate)); };
+      $('auto').onclick = function () { act('automode', !(state && state.automode)); };
+
+      Homey.api('GET', '/state' + q()).then(function (res) {
+        state = res;
+        render();
+        Homey.ready({ height: document.getElementById('app').offsetHeight });
+      }).catch(function (err) {
+        showError(err);
+        Homey.ready();
+      });
+
+      setInterval(refresh, 2500);
+    }
+  </script>
+</body>
+</html>

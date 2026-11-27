@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Hood not reachable over Bluetooth"
+    "unreachable": "Hood not reachable over Bluetooth",
+    "no_hood": "Add the Novy hood first; the light works through it."
   },
   "feature": {
     "automode": "Auto mode",
@@ -54,6 +55,21 @@
     "cleared": "Log cleared",
     "copied": "Copied",
     "confirm_clear": "Clear the entire log?"
+  },
+  "light": {
+    "name_suffix": "light"
+  },
+  "widget": {
+    "fan": "Extraction",
+    "light": "Light",
+    "white": "White",
+    "ambient": "Ambient",
+    "runon": "Run-on",
+    "recirc": "Recirculation",
+    "auto": "Auto",
+    "grease": "Clean grease filter",
+    "nohood": "Add a Novy hood first.",
+    "min": "min"
   },
   "status": {
     "off": "Off",

@@ -158,9 +158,6 @@ class NovyHoodDriver extends Homey.Driver {
 
     action('fan_speed_set', (device, args) => device.setFanSpeed(args.speed));
     action('fan_delayed_off', (device, args) => device.startDelayedOff(args.minutes));
-    action('light_on_preset', (device, args) => device.lightOn(args.preset));
-    action('light_off', device => device.lightOff());
-    action('light_brightness_set', (device, args) => device.setLightBrightness(args.brightness / 100));
     action('recirculate_set', (device, args) => device.setRecirculate(args.state === 'on'));
     action('reset_grease_filter', device => device.resetGreaseFilter());
     action('power_button', device => device.pressPower());
@@ -170,15 +167,12 @@ class NovyHoodDriver extends Homey.Driver {
     action('keylock_set', (device, args) => device.setKeylock(args.state === 'on'));
     action('reset_carbon_filter', device => device.resetCarbonFilter());
 
-    condition('light_is_on', device => device.getCapabilityValue('onoff.light') === true);
     condition('recirculate_is_on', device => device.getCapabilityValue('onoff.recirculate') === true);
     condition('automode_is_on', device => device.getCapabilityValue('onoff.automode') === true);
     condition('keylock_is_on', device => device.getCapabilityValue('onoff.keylock') === true);
     condition('status_is', (device, args) => device.getCapabilityValue('novy_status') === args.status);
 
     this.triggerStatusChanged = this.homey.flow.getDeviceTriggerCard('status_changed');
-    this.triggerLightOn = this.homey.flow.getDeviceTriggerCard('light_turned_on');
-    this.triggerLightOff = this.homey.flow.getDeviceTriggerCard('light_turned_off');
     this.triggerGreaseDirty = this.homey.flow.getDeviceTriggerCard('grease_filter_dirty');
     this.triggerCarbonDirty = this.homey.flow.getDeviceTriggerCard('carbon_filter_dirty');
   }

@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Hotte injoignable en Bluetooth"
+    "unreachable": "Hotte injoignable en Bluetooth",
+    "no_hood": "Ajoutez d'abord la hotte Novy ; l'éclairage passe par la hotte."
   },
   "feature": {
     "automode": "Mode auto",
@@ -54,6 +55,21 @@
     "cleared": "Journal effacé",
     "copied": "Copié",
     "confirm_clear": "Effacer tout le journal ?"
+  },
+  "light": {
+    "name_suffix": "éclairage"
+  },
+  "widget": {
+    "fan": "Aspiration",
+    "light": "Éclairage",
+    "white": "Blanc",
+    "ambient": "Ambiance",
+    "runon": "Arrêt différé",
+    "recirc": "Recyclage",
+    "auto": "Auto",
+    "grease": "Nettoyer le filtre à graisse",
+    "nohood": "Ajoutez d'abord une hotte Novy.",
+    "min": "min"
   },
   "status": {
     "off": "Arrêt",

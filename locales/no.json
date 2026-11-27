@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Viften kan ikke nås via Bluetooth"
+    "unreachable": "Viften kan ikke nås via Bluetooth",
+    "no_hood": "Legg først til Novy-viften; lyset styres via viften."
   },
   "feature": {
     "automode": "Automodus",
@@ -54,6 +55,21 @@
     "cleared": "Loggen tømt",
     "copied": "Kopiert",
     "confirm_clear": "Tømme hele loggen?"
+  },
+  "light": {
+    "name_suffix": "lys"
+  },
+  "widget": {
+    "fan": "Avtrekk",
+    "light": "Lys",
+    "white": "Hvitt",
+    "ambient": "Stemning",
+    "runon": "Forsinket avslåing",
+    "recirc": "Resirkulasjon",
+    "auto": "Auto",
+    "grease": "Rengjør fettfilter",
+    "nohood": "Legg først til en Novy-vifte.",
+    "min": "min"
   },
   "status": {
     "off": "Av",

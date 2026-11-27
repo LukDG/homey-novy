@@ -32,6 +32,8 @@ class NovyHoodDevice extends Homey.Device {
     this._deleted = false;
     this._probed = false;
     this._listenersAdded = new Set();
+    this._light = { on: false, brightness: 0, colorTemp: 0, mode: 0 };
+    this._available = true;
 
     await this._migrateCapabilities();
 
@@ -45,9 +47,6 @@ class NovyHoodDevice extends Homey.Device {
 
     this.registerCapabilityListener('onoff', value => this.setFan(value));
     this.registerCapabilityListener('dim', value => this.setFanSpeed(Math.round(value * 100)));
-    this.registerCapabilityListener('onoff.light', value => (value ? this.lightOn() : this.lightOff()));
-    this.registerCapabilityListener('dim.light', value => this.setLightBrightness(value));
-    this.registerCapabilityListener('light_temperature', value => this.setLightTemperature(value));
     this.registerCapabilityListener('onoff.recirculate', value => this.setRecirculate(value));
 
     for (const feature of Object.values(FEATURES)) {
@@ -59,11 +58,42 @@ class NovyHoodDevice extends Homey.Device {
   }
 
   async _migrateCapabilities() {
-    const wanted = ['onoff', 'dim', 'onoff.light', 'dim.light', 'light_temperature',
-      'onoff.recirculate', 'novy_status', 'novy_timer', 'alarm_generic', 'novy_grease_hours'];
+    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_timer', 'alarm_generic', 'novy_grease_hours'];
     for (const cap of wanted) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(this.error);
     }
+    // 2026.1127.1: the light moved to its own device (driver "light")
+    for (const cap of ['onoff.light', 'dim.light', 'light_temperature']) {
+      if (this.hasCapability(cap)) await this.removeCapability(cap).catch(this.error);
+    }
+  }
+
+  // ---------------------------------------------------------------- light device (same hood)
+
+  _lightDevice() {
+    try {
+      const id = this.getData().id;
+      return this.homey.drivers.getDriver('light').getDevices().find(d => d.getData().id === id) || null;
+    } catch (err) {
+      return null; // light driver not ready yet
+    }
+  }
+
+  getLightState() {
+    return { ...this._light };
+  }
+
+  isHoodAvailable() {
+    return this._available;
+  }
+
+  async _setReachable(ok) {
+    if (this._available === ok) return;
+    this._available = ok;
+    const reason = this.homey.__('error.unreachable');
+    await (ok ? this.setAvailable() : this.setUnavailable(reason)).catch(this.error);
+    const light = this._lightDevice();
+    if (light) await light.syncFromHood(this).catch(this.error);
   }
 
   // ---------------------------------------------------------------- polling
@@ -99,13 +129,11 @@ class NovyHoodDevice extends Homey.Device {
       }
       this._pollCount++;
       this._failCount = 0;
-      if (!this.getAvailable()) await this.setAvailable();
+      await this._setReachable(true);
     } catch (err) {
       this._failCount++;
       this.log(`Poll failed (${this._failCount}):`, err.message);
-      if (this._failCount >= FAILS_BEFORE_UNAVAILABLE && this.getAvailable()) {
-        await this.setUnavailable(this.homey.__('error.unreachable')).catch(this.error);
-      }
+      if (this._failCount >= FAILS_BEFORE_UNAVAILABLE) await this._setReachable(false);
       await this.client.disconnect().catch(() => {});
     } finally {
       if (!keepConnected && this.client.isConnected) {
@@ -254,7 +282,6 @@ class NovyHoodDevice extends Homey.Device {
 
     if ('fanSpeed' in state) {
       const previousStatus = this.getCapabilityValue('novy_status');
-      const previousLight = this.getCapabilityValue('onoff.light');
       const previousGrease = this.getCapabilityValue('alarm_generic');
 
       let status = 'off';
@@ -262,9 +289,9 @@ class NovyHoodDevice extends Homey.Device {
 
       jobs.push(set('onoff', state.fanOn));
       jobs.push(set('dim', state.fanSpeed / 100));
-      jobs.push(set('onoff.light', state.lightOn));
-      if (state.lightOn) jobs.push(set('dim.light', Math.round((state.brightness / 255) * 100) / 100));
-      jobs.push(set('light_temperature', Math.round((state.colorTemp / 255) * 100) / 100));
+      this._light = { on: state.lightOn, brightness: state.brightness, colorTemp: state.colorTemp, mode: state.lightMode };
+      const light = this._lightDevice();
+      if (light) jobs.push(light.syncFromHood(this).catch(this.error));
       jobs.push(set('alarm_generic', state.greaseDirty));
       jobs.push(set('novy_status', status));
       jobs.push(set('novy_timer', Math.ceil(state.timerSeconds / 60)));
@@ -272,9 +299,6 @@ class NovyHoodDevice extends Homey.Device {
       const driver = this.driver;
       if (previousStatus !== null && previousStatus !== status) {
         driver.triggerStatusChanged.trigger(this, { status: this.homey.__(`status.${status}`) }).catch(this.error);
-      }
-      if (previousLight !== null && previousLight !== state.lightOn) {
-        (state.lightOn ? driver.triggerLightOn : driver.triggerLightOff).trigger(this).catch(this.error);
       }
       if (previousGrease === false && state.greaseDirty) {
         driver.triggerGreaseDirty.trigger(this).catch(this.error);
@@ -353,21 +377,20 @@ class NovyHoodDevice extends Homey.Device {
     this._delayedOff = null;
   }
 
-  async lightOn(preset) {
-    const mode = preset || this.getSetting('light_on_mode') || 'white';
-    await this._command([[mode === 'ambi' ? CMD.LIGHT_ON_AMBI : CMD.LIGHT_ON_WHITE, 0]]);
+  async lightOn(preset = 'white') {
+    await this._command([[preset === 'ambi' ? CMD.LIGHT_ON_AMBI : CMD.LIGHT_ON_WHITE, 0]]);
   }
 
   async lightOff() {
     await this._command([[CMD.LIGHT_OFF, 0]]);
   }
 
-  async setLightBrightness(fraction) {
+  async setLightBrightness(fraction, preset = 'white') {
     const raw = Math.round(Math.max(0, Math.min(1, Number(fraction))) * 255);
     if (raw === 0) return this.lightOff();
-    const mode = this.getSetting('light_on_mode') === 'ambi' ? CMD.LIGHT_ON_AMBI : CMD.LIGHT_ON_WHITE;
+    const mode = preset === 'ambi' ? CMD.LIGHT_ON_AMBI : CMD.LIGHT_ON_WHITE;
     const commands = [];
-    if (!this.getCapabilityValue('onoff.light')) commands.push([mode, 0]);
+    if (!this._light.on) commands.push([mode, 0]);
     commands.push([CMD.LIGHT_BRIGHTNESS, 1, raw]);
     return this._command(commands);
   }
@@ -402,6 +425,48 @@ class NovyHoodDevice extends Homey.Device {
     return true;
   }
 
+  // ---------------------------------------------------------------- dashboard widget
+
+  getWidgetState() {
+    const cap = c => (this.hasCapability(c) ? this.getCapabilityValue(c) : null);
+    return {
+      name: this.getName(),
+      available: this._available,
+      fanOn: !!cap('onoff'),
+      fanSpeed: Math.round((cap('dim') || 0) * 100),
+      status: cap('novy_status') || 'off',
+      timer: cap('novy_timer') || 0,
+      recirculate: cap('onoff.recirculate'),
+      automode: cap('onoff.automode'),
+      light: { ...this._light, brightness: Math.round((this._light.brightness / 255) * 100), colorTemp: Math.round((this._light.colorTemp / 255) * 100) },
+      greaseDirty: !!cap('alarm_generic'),
+      carbonDirty: !!cap('alarm_generic.carbon'),
+      temperature: cap('measure_temperature'),
+      humidity: cap('measure_humidity'),
+      co2: cap('measure_co2'),
+    };
+  }
+
+  async widgetAction(action, value) {
+    switch (action) {
+      case 'fan': return this.setFan(!!value);
+      case 'speed': return this.setFanSpeed(value);
+      case 'runon': return this.startDelayedOff();
+      case 'light': return value ? this.lightOn(this._lightPreset()) : this.lightOff();
+      case 'preset': return this.lightOn(value === 'ambi' ? 'ambi' : 'white');
+      case 'brightness': return this.setLightBrightness(Number(value) / 100, this._lightPreset());
+      case 'colortemp': return this.setLightTemperature(Number(value) / 100);
+      case 'recirculate': return this.setRecirculate(!!value);
+      case 'automode': return this.setAutomode(!!value);
+      default: throw new Error(`Unknown action ${action}`);
+    }
+  }
+
+  _lightPreset() {
+    const light = this._lightDevice();
+    return light ? light.getSetting('light_on_mode') || 'white' : 'white';
+  }
+
   // ---------------------------------------------------------------- lifecycle
 
   async onSettings({ newSettings, changedKeys }) {
@@ -418,6 +483,8 @@ class NovyHoodDevice extends Homey.Device {
 
   async onDeleted() {
     this._stop();
+    const light = this._lightDevice();
+    if (light) await light.setUnavailable(this.homey.__('error.no_hood')).catch(this.error);
     await this.client.disconnect().catch(() => {});
   }
 

@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Cappa non raggiungibile via Bluetooth"
+    "unreachable": "Cappa non raggiungibile via Bluetooth",
+    "no_hood": "Aggiungi prima la cappa Novy; la luce funziona tramite la cappa."
   },
   "feature": {
     "automode": "Modalità automatica",
@@ -54,6 +55,21 @@
     "cleared": "Registro cancellato",
     "copied": "Copiato",
     "confirm_clear": "Cancellare l'intero registro?"
+  },
+  "light": {
+    "name_suffix": "luce"
+  },
+  "widget": {
+    "fan": "Aspirazione",
+    "light": "Luce",
+    "white": "Bianco",
+    "ambient": "Atmosfera",
+    "runon": "Spegnimento ritardato",
+    "recirc": "Ricircolo",
+    "auto": "Auto",
+    "grease": "Pulire filtro grassi",
+    "nohood": "Aggiungi prima una cappa Novy.",
+    "min": "min"
   },
   "status": {
     "off": "Spento",

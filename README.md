@@ -9,20 +9,23 @@ probably work too.
 
 ## Features
 
-- **Device**: fan on/off and speed (0–100 %), lighting on/off, brightness and colour
-  temperature (white or ambient), recirculation mode, status (off, running, boost, run-on)
-  with the remaining timer, grease filter alarm and remaining hours
+- **Two devices per hood**, so it is always clear what is on:
+  - *Novy hood*: extraction on/off and speed (0–100 %), recirculation mode, status (off,
+    running, boost, run-on) with the remaining timer, grease filter alarm and remaining hours
+  - *Novy hood light*: on/off, brightness and colour temperature (white or ambient). It has no
+    connection of its own and works through the hood device
+- **Dashboard widget** with extraction, light and air quality on one tile
 - **Optional features**, added automatically when the hood supports them: auto mode, keypad
   lock, carbon filter, temperature, humidity and CO2
 - **Pairing like the Novy app**: the hood is confirmed with the on/off button on the Novy
   remote control (or skipped)
 - **Flows**
-  - Triggers: status changed, light turned on/off, grease filter needs cleaning, carbon
-    filter needs replacing
-  - Conditions: light on, recirculation on, auto mode on, keypad lock on, status is
-  - Actions: fan speed, run on and switch off, light on (white/ambient), light off,
-    brightness, recirculation, auto mode, keypad lock, reset grease/carbon filter, power
-    button, store default speed, send raw command
+  - Triggers: status changed, grease filter needs cleaning, carbon filter needs replacing
+    (the light device has Homey's standard light cards)
+  - Conditions: recirculation on, auto mode on, keypad lock on, status is
+  - Actions: fan speed, run on and switch off, recirculation, auto mode, keypad lock, reset
+    grease/carbon filter, power button, store default speed, send raw command, and on the light
+    device: light on in white or ambient mode
 - **Log** on the app settings page (in memory only, max 256 KB)
 - Translated in all 13 languages Homey supports
 

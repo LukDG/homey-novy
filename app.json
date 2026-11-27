@@ -1,7 +1,7 @@
 {
   "id": "be.lukdg.novy",
-  "version": "2026.1127.0",
-  "compatibility": ">=5.0.0",
+  "version": "2026.1127.1",
+  "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
     "local"
@@ -374,9 +374,6 @@
       "capabilities": [
         "onoff",
         "dim",
-        "onoff.light",
-        "dim.light",
-        "light_temperature",
         "onoff.recirculate",
         "novy_status",
         "novy_timer",
@@ -416,57 +413,6 @@
             "pl": "Prędkość wentylatora",
             "ko": "팬 속도",
             "ar": "سرعة المروحة"
-          }
-        },
-        "onoff.light": {
-          "title": {
-            "en": "Light",
-            "nl": "Verlichting",
-            "de": "Licht",
-            "fr": "Éclairage",
-            "it": "Luce",
-            "sv": "Belysning",
-            "no": "Lys",
-            "es": "Luz",
-            "da": "Lys",
-            "ru": "Освещение",
-            "pl": "Oświetlenie",
-            "ko": "조명",
-            "ar": "الإضاءة"
-          }
-        },
-        "dim.light": {
-          "title": {
-            "en": "Light brightness",
-            "nl": "Helderheid verlichting",
-            "de": "Helligkeit Licht",
-            "fr": "Luminosité de l'éclairage",
-            "it": "Luminosità luce",
-            "sv": "Ljusstyrka belysning",
-            "no": "Lysstyrke",
-            "es": "Brillo de la luz",
-            "da": "Lysstyrke",
-            "ru": "Яркость освещения",
-            "pl": "Jasność oświetlenia",
-            "ko": "조명 밝기",
-            "ar": "سطوع الإضاءة"
-          }
-        },
-        "light_temperature": {
-          "title": {
-            "en": "Light colour temperature",
-            "nl": "Kleurtemperatuur verlichting",
-            "de": "Farbtemperatur Licht",
-            "fr": "Température de couleur",
-            "it": "Temperatura colore luce",
-            "sv": "Färgtemperatur belysning",
-            "no": "Fargetemperatur lys",
-            "es": "Temperatura de color de la luz",
-            "da": "Farvetemperatur lys",
-            "ru": "Цветовая температура",
-            "pl": "Temperatura barwowa oświetlenia",
-            "ko": "조명 색온도",
-            "ar": "درجة حرارة لون الإضاءة"
           }
         },
         "onoff.recirculate": {
@@ -619,84 +565,6 @@
                 "ko": "가장 빠른 반응입니다. Homey가 연결되어 있는 동안에는 휴대폰의 Novy 앱이 보통 연결할 수 없습니다. 끄면 폴링할 때만 연결합니다(이 경우 30초 등 더 긴 간격을 선택하세요).",
                 "ar": "أسرع استجابة. أثناء اتصال Homey، لا يستطيع تطبيق Novy على هاتفك الاتصال عادةً. أوقفه للاتصال عند كل استطلاع فقط (واختر حينها فترة أطول، مثل 30 ث)."
               }
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Behaviour",
-            "nl": "Gedrag",
-            "de": "Verhalten",
-            "fr": "Comportement",
-            "it": "Comportamento",
-            "sv": "Beteende",
-            "no": "Oppførsel",
-            "es": "Comportamiento",
-            "da": "Adfærd",
-            "ru": "Поведение",
-            "pl": "Zachowanie",
-            "ko": "동작",
-            "ar": "السلوك"
-          },
-          "children": [
-            {
-              "id": "light_on_mode",
-              "type": "dropdown",
-              "label": {
-                "en": "Light on uses",
-                "nl": "Licht aan gebruikt",
-                "de": "Licht an verwendet",
-                "fr": "L'allumage utilise",
-                "it": "Accensione luce usa",
-                "sv": "Tänd belysning använder",
-                "no": "Lys på bruker",
-                "es": "Encender la luz usa",
-                "da": "Lys tændt bruger",
-                "ru": "Включение света использует",
-                "pl": "Włączenie światła używa",
-                "ko": "조명 켜기 방식",
-                "ar": "تشغيل الإضاءة يستخدم"
-              },
-              "value": "white",
-              "values": [
-                {
-                  "id": "white",
-                  "label": {
-                    "en": "White (functional) preset",
-                    "nl": "Wit (functioneel)",
-                    "de": "Weiß (funktional)",
-                    "fr": "Blanc (fonctionnel)",
-                    "it": "Bianco (funzionale)",
-                    "sv": "Vitt (funktionellt)",
-                    "no": "Hvitt (funksjonelt)",
-                    "es": "Blanco (funcional)",
-                    "da": "Hvidt (funktionelt)",
-                    "ru": "Белый (рабочий)",
-                    "pl": "Biały (funkcjonalny)",
-                    "ko": "흰색 (기능)",
-                    "ar": "أبيض (وظيفي)"
-                  }
-                },
-                {
-                  "id": "ambi",
-                  "label": {
-                    "en": "Ambient preset",
-                    "nl": "Sfeerlicht (ambi)",
-                    "de": "Stimmungslicht",
-                    "fr": "Ambiance",
-                    "it": "Atmosfera",
-                    "sv": "Stämningsljus",
-                    "no": "Stemningslys",
-                    "es": "Ambiente",
-                    "da": "Stemningslys",
-                    "ru": "Атмосферный",
-                    "pl": "Nastrojowe",
-                    "ko": "분위기 조명",
-                    "ar": "إضاءة الأجواء"
-                  }
-                }
-              ]
             }
           ]
         },
@@ -901,8 +769,242 @@
           ]
         }
       ]
+    },
+    {
+      "id": "light",
+      "name": {
+        "en": "Novy hood light (Bluetooth)",
+        "nl": "Novy dampkapverlichting (Bluetooth)",
+        "de": "Novy Haubenbeleuchtung (Bluetooth)",
+        "fr": "Éclairage de hotte Novy (Bluetooth)",
+        "it": "Luce cappa Novy (Bluetooth)",
+        "sv": "Novy fläktbelysning (Bluetooth)",
+        "no": "Novy viftelys (Bluetooth)",
+        "es": "Luz de campana Novy (Bluetooth)",
+        "da": "Novy emhættelys (Bluetooth)",
+        "ru": "Подсветка вытяжки Novy (Bluetooth)",
+        "pl": "Oświetlenie okapu Novy (Bluetooth)",
+        "ko": "Novy 후드 조명 (Bluetooth)",
+        "ar": "إضاءة شفاط Novy (Bluetooth)"
+      },
+      "class": "light",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "ble"
+      ],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Light",
+            "nl": "Verlichting",
+            "de": "Licht",
+            "fr": "Éclairage",
+            "it": "Luce",
+            "sv": "Belysning",
+            "no": "Lys",
+            "es": "Luz",
+            "da": "Lys",
+            "ru": "Освещение",
+            "pl": "Oświetlenie",
+            "ko": "조명",
+            "ar": "الإضاءة"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Brightness",
+            "nl": "Helderheid",
+            "de": "Helligkeit",
+            "fr": "Luminosité",
+            "it": "Luminosità",
+            "sv": "Ljusstyrka",
+            "no": "Lysstyrke",
+            "es": "Brillo",
+            "da": "Lysstyrke",
+            "ru": "Яркость",
+            "pl": "Jasność",
+            "ko": "밝기",
+            "ar": "السطوع"
+          }
+        },
+        "light_temperature": {
+          "title": {
+            "en": "Colour temperature",
+            "nl": "Kleurtemperatuur",
+            "de": "Farbtemperatur",
+            "fr": "Température de couleur",
+            "it": "Temperatura colore",
+            "sv": "Färgtemperatur",
+            "no": "Fargetemperatur",
+            "es": "Temperatura de color",
+            "da": "Farvetemperatur",
+            "ru": "Цветовая температура",
+            "pl": "Temperatura barwowa",
+            "ko": "색온도",
+            "ar": "درجة حرارة اللون"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/light/assets/images/small.png",
+        "large": "/drivers/light/assets/images/large.png",
+        "xlarge": "/drivers/light/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Behaviour",
+            "nl": "Gedrag",
+            "de": "Verhalten",
+            "fr": "Comportement",
+            "it": "Comportamento",
+            "sv": "Beteende",
+            "no": "Oppførsel",
+            "es": "Comportamiento",
+            "da": "Adfærd",
+            "ru": "Поведение",
+            "pl": "Zachowanie",
+            "ko": "동작",
+            "ar": "السلوك"
+          },
+          "children": [
+            {
+              "id": "light_on_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Light on uses",
+                "nl": "Licht aan gebruikt",
+                "de": "Licht an verwendet",
+                "fr": "L'allumage utilise",
+                "it": "Accensione luce usa",
+                "sv": "Tänd belysning använder",
+                "no": "Lys på bruker",
+                "es": "Encender la luz usa",
+                "da": "Lys tændt bruger",
+                "ru": "Включение света использует",
+                "pl": "Włączenie światła używa",
+                "ko": "조명 켜기 방식",
+                "ar": "تشغيل الإضاءة يستخدم"
+              },
+              "value": "white",
+              "values": [
+                {
+                  "id": "white",
+                  "label": {
+                    "en": "White (functional) preset",
+                    "nl": "Wit (functioneel)",
+                    "de": "Weiß (funktional)",
+                    "fr": "Blanc (fonctionnel)",
+                    "it": "Bianco (funzionale)",
+                    "sv": "Vitt (funktionellt)",
+                    "no": "Hvitt (funksjonelt)",
+                    "es": "Blanco (funcional)",
+                    "da": "Hvidt (funktionelt)",
+                    "ru": "Белый (рабочий)",
+                    "pl": "Biały (funkcjonalny)",
+                    "ko": "흰색 (기능)",
+                    "ar": "أبيض (وظيفي)"
+                  }
+                },
+                {
+                  "id": "ambi",
+                  "label": {
+                    "en": "Ambient preset",
+                    "nl": "Sfeerlicht (ambi)",
+                    "de": "Stimmungslicht",
+                    "fr": "Ambiance",
+                    "it": "Atmosfera",
+                    "sv": "Stämningsljus",
+                    "no": "Stemningslys",
+                    "es": "Ambiente",
+                    "da": "Stemningslys",
+                    "ru": "Атмосферный",
+                    "pl": "Nastrojowe",
+                    "ko": "분위기 조명",
+                    "ar": "إضاءة الأجواء"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
+  "widgets": {
+    "novy": {
+      "id": "novy",
+      "name": {
+        "en": "Novy hood",
+        "nl": "Novy-dampkap",
+        "de": "Novy Dunstabzugshaube",
+        "fr": "Hotte Novy",
+        "it": "Cappa Novy",
+        "sv": "Novy köksfläkt",
+        "no": "Novy kjøkkenvifte",
+        "es": "Campana Novy",
+        "da": "Novy emhætte",
+        "ru": "Вытяжка Novy",
+        "pl": "Okap Novy",
+        "ko": "Novy 레인지 후드",
+        "ar": "شفاط Novy"
+      },
+      "height": 420,
+      "transparent": false,
+      "settings": [
+        {
+          "id": "hood",
+          "type": "autocomplete",
+          "title": {
+            "en": "Hood",
+            "nl": "Dampkap",
+            "de": "Haube",
+            "fr": "Hotte",
+            "it": "Cappa",
+            "sv": "Fläkt",
+            "no": "Vifte",
+            "es": "Campana",
+            "da": "Emhætte",
+            "ru": "Вытяжка",
+            "pl": "Okap",
+            "ko": "후드",
+            "ar": "الشفاط"
+          }
+        }
+      ],
+      "api": {
+        "getState": {
+          "method": "GET",
+          "path": "/state"
+        },
+        "action": {
+          "method": "POST",
+          "path": "/action"
+        }
+      }
+    }
+  },
   "flow": {
     "triggers": [
       {
@@ -967,56 +1069,6 @@
         ]
       },
       {
-        "id": "light_turned_on",
-        "title": {
-          "en": "Light turned on",
-          "nl": "Verlichting ging aan",
-          "de": "Licht ging an",
-          "fr": "L'éclairage s'est allumé",
-          "it": "La luce si è accesa",
-          "sv": "Belysningen tändes",
-          "no": "Lyset ble slått på",
-          "es": "La luz se encendió",
-          "da": "Lyset blev tændt",
-          "ru": "Освещение включилось",
-          "pl": "Oświetlenie zostało włączone",
-          "ko": "조명이 켜짐",
-          "ar": "تم تشغيل الإضاءة"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          }
-        ]
-      },
-      {
-        "id": "light_turned_off",
-        "title": {
-          "en": "Light turned off",
-          "nl": "Verlichting ging uit",
-          "de": "Licht ging aus",
-          "fr": "L'éclairage s'est éteint",
-          "it": "La luce si è spenta",
-          "sv": "Belysningen släcktes",
-          "no": "Lyset ble slått av",
-          "es": "La luz se apagó",
-          "da": "Lyset blev slukket",
-          "ru": "Освещение выключилось",
-          "pl": "Oświetlenie zostało wyłączone",
-          "ko": "조명이 꺼짐",
-          "ar": "تم إيقاف الإضاءة"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          }
-        ]
-      },
-      {
         "id": "grease_filter_dirty",
         "title": {
           "en": "Grease filter needs cleaning",
@@ -1068,31 +1120,6 @@
       }
     ],
     "conditions": [
-      {
-        "id": "light_is_on",
-        "title": {
-          "en": "Light !{{is|is not}} on",
-          "nl": "Verlichting !{{is|is niet}} aan",
-          "de": "Licht ist !{{an|nicht an}}",
-          "fr": "L'éclairage !{{est|n'est pas}} allumé",
-          "it": "La luce !{{è|non è}} accesa",
-          "sv": "Belysningen !{{är|är inte}} tänd",
-          "no": "Lyset !{{er|er ikke}} på",
-          "es": "La luz !{{está|no está}} encendida",
-          "da": "Lyset !{{er|er ikke}} tændt",
-          "ru": "Освещение !{{включено|не включено}}",
-          "pl": "Oświetlenie !{{jest|nie jest}} włączone",
-          "ko": "조명이 !{{켜져 있음|켜져 있지 않음}}",
-          "ar": "الإضاءة !{{مشغّلة|غير مشغّلة}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          }
-        ]
-      },
       {
         "id": "automode_is_on",
         "title": {
@@ -1415,162 +1442,6 @@
         ]
       },
       {
-        "id": "light_on_preset",
-        "title": {
-          "en": "Turn light on",
-          "nl": "Zet verlichting aan",
-          "de": "Licht einschalten",
-          "fr": "Allumer l'éclairage",
-          "it": "Accendi la luce",
-          "sv": "Tänd belysningen",
-          "no": "Slå på lyset",
-          "es": "Encender la luz",
-          "da": "Tænd lyset",
-          "ru": "Включить освещение",
-          "pl": "Włącz oświetlenie",
-          "ko": "조명 켜기",
-          "ar": "شغّل الإضاءة"
-        },
-        "titleFormatted": {
-          "en": "Turn light on in [[preset]] mode",
-          "nl": "Zet verlichting aan in [[preset]]-modus",
-          "de": "Licht im Modus [[preset]] einschalten",
-          "fr": "Allumer l'éclairage en mode [[preset]]",
-          "it": "Accendi la luce in modalità [[preset]]",
-          "sv": "Tänd belysningen i läget [[preset]]",
-          "no": "Slå på lyset i modus [[preset]]",
-          "es": "Encender la luz en modo [[preset]]",
-          "da": "Tænd lyset i tilstanden [[preset]]",
-          "ru": "Включить освещение в режиме [[preset]]",
-          "pl": "Włącz oświetlenie w trybie [[preset]]",
-          "ko": "[[preset]] 모드로 조명 켜기",
-          "ar": "شغّل الإضاءة في وضع [[preset]]"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          },
-          {
-            "type": "dropdown",
-            "name": "preset",
-            "values": [
-              {
-                "id": "white",
-                "label": {
-                  "en": "white",
-                  "nl": "wit",
-                  "de": "weiß",
-                  "fr": "blanc",
-                  "it": "bianco",
-                  "sv": "vitt",
-                  "no": "hvitt",
-                  "es": "blanco",
-                  "da": "hvidt",
-                  "ru": "белый",
-                  "pl": "biały",
-                  "ko": "흰색",
-                  "ar": "أبيض"
-                }
-              },
-              {
-                "id": "ambi",
-                "label": {
-                  "en": "ambient",
-                  "nl": "sfeer",
-                  "de": "Stimmung",
-                  "fr": "ambiance",
-                  "it": "atmosfera",
-                  "sv": "stämning",
-                  "no": "stemning",
-                  "es": "ambiente",
-                  "da": "stemning",
-                  "ru": "атмосферный",
-                  "pl": "nastrojowy",
-                  "ko": "분위기",
-                  "ar": "الأجواء"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "light_off",
-        "title": {
-          "en": "Turn light off",
-          "nl": "Zet verlichting uit",
-          "de": "Licht ausschalten",
-          "fr": "Éteindre l'éclairage",
-          "it": "Spegni la luce",
-          "sv": "Släck belysningen",
-          "no": "Slå av lyset",
-          "es": "Apagar la luz",
-          "da": "Sluk lyset",
-          "ru": "Выключить освещение",
-          "pl": "Wyłącz oświetlenie",
-          "ko": "조명 끄기",
-          "ar": "أطفئ الإضاءة"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          }
-        ]
-      },
-      {
-        "id": "light_brightness_set",
-        "title": {
-          "en": "Set light brightness",
-          "nl": "Zet helderheid verlichting",
-          "de": "Helligkeit einstellen",
-          "fr": "Régler la luminosité",
-          "it": "Imposta luminosità",
-          "sv": "Ställ in ljusstyrka",
-          "no": "Still inn lysstyrke",
-          "es": "Ajustar brillo",
-          "da": "Indstil lysstyrke",
-          "ru": "Задать яркость освещения",
-          "pl": "Ustaw jasność oświetlenia",
-          "ko": "조명 밝기 설정",
-          "ar": "ضبط سطوع الإضاءة"
-        },
-        "titleFormatted": {
-          "en": "Set light brightness to [[brightness]] %",
-          "nl": "Zet helderheid verlichting op [[brightness]] %",
-          "de": "Helligkeit auf [[brightness]] % stellen",
-          "fr": "Régler la luminosité à [[brightness]] %",
-          "it": "Imposta la luminosità a [[brightness]] %",
-          "sv": "Ställ in ljusstyrkan på [[brightness]] %",
-          "no": "Still lysstyrken til [[brightness]] %",
-          "es": "Ajustar el brillo a [[brightness]] %",
-          "da": "Indstil lysstyrken til [[brightness]] %",
-          "ru": "Задать яркость освещения [[brightness]] %",
-          "pl": "Ustaw jasność oświetlenia na [[brightness]] %",
-          "ko": "조명 밝기를 [[brightness]] %로 설정",
-          "ar": "اضبط سطوع الإضاءة على [[brightness]] %"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=hood"
-          },
-          {
-            "type": "range",
-            "name": "brightness",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "label": " %",
-            "labelDecimals": 0
-          }
-        ]
-      },
-      {
         "id": "recirculate_set",
         "title": {
           "en": "Set recirculation",
@@ -1825,6 +1696,88 @@
                   "pl": "wył.",
                   "ko": "끄기",
                   "ar": "إيقاف"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "light_on_preset",
+        "title": {
+          "en": "Turn light on",
+          "nl": "Zet verlichting aan",
+          "de": "Licht einschalten",
+          "fr": "Allumer l'éclairage",
+          "it": "Accendi la luce",
+          "sv": "Tänd belysningen",
+          "no": "Slå på lyset",
+          "es": "Encender la luz",
+          "da": "Tænd lyset",
+          "ru": "Включить освещение",
+          "pl": "Włącz oświetlenie",
+          "ko": "조명 켜기",
+          "ar": "شغّل الإضاءة"
+        },
+        "titleFormatted": {
+          "en": "Turn light on in [[preset]] mode",
+          "nl": "Zet verlichting aan in [[preset]]-modus",
+          "de": "Licht im Modus [[preset]] einschalten",
+          "fr": "Allumer l'éclairage en mode [[preset]]",
+          "it": "Accendi la luce in modalità [[preset]]",
+          "sv": "Tänd belysningen i läget [[preset]]",
+          "no": "Slå på lyset i modus [[preset]]",
+          "es": "Encender la luz en modo [[preset]]",
+          "da": "Tænd lyset i tilstanden [[preset]]",
+          "ru": "Включить освещение в режиме [[preset]]",
+          "pl": "Włącz oświetlenie w trybie [[preset]]",
+          "ko": "[[preset]] 모드로 조명 켜기",
+          "ar": "شغّل الإضاءة في وضع [[preset]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=light"
+          },
+          {
+            "type": "dropdown",
+            "name": "preset",
+            "values": [
+              {
+                "id": "white",
+                "label": {
+                  "en": "white",
+                  "nl": "wit",
+                  "de": "weiß",
+                  "fr": "blanc",
+                  "it": "bianco",
+                  "sv": "vitt",
+                  "no": "hvitt",
+                  "es": "blanco",
+                  "da": "hvidt",
+                  "ru": "белый",
+                  "pl": "biały",
+                  "ko": "흰색",
+                  "ar": "أبيض"
+                }
+              },
+              {
+                "id": "ambi",
+                "label": {
+                  "en": "ambient",
+                  "nl": "sfeer",
+                  "de": "Stimmung",
+                  "fr": "ambiance",
+                  "it": "atmosfera",
+                  "sv": "stämning",
+                  "no": "stemning",
+                  "es": "ambiente",
+                  "da": "stemning",
+                  "ru": "атмосферный",
+                  "pl": "nastrojowy",
+                  "ko": "분위기",
+                  "ar": "الأجواء"
                 }
               }
             ]

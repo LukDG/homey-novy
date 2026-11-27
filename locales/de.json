@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Haube per Bluetooth nicht erreichbar"
+    "unreachable": "Haube per Bluetooth nicht erreichbar",
+    "no_hood": "Füge zuerst die Novy-Haube hinzu; das Licht läuft über die Haube."
   },
   "feature": {
     "automode": "Automatik",
@@ -54,6 +55,21 @@
     "cleared": "Protokoll gelöscht",
     "copied": "Kopiert",
     "confirm_clear": "Das gesamte Protokoll löschen?"
+  },
+  "light": {
+    "name_suffix": "Licht"
+  },
+  "widget": {
+    "fan": "Absaugung",
+    "light": "Licht",
+    "white": "Weiß",
+    "ambient": "Stimmung",
+    "runon": "Nachlauf",
+    "recirc": "Umluft",
+    "auto": "Auto",
+    "grease": "Fettfilter reinigen",
+    "nohood": "Füge zuerst eine Novy-Haube hinzu.",
+    "min": "min"
   },
   "status": {
     "off": "Aus",

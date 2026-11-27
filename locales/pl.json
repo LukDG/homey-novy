@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Okap nieosiągalny przez Bluetooth"
+    "unreachable": "Okap nieosiągalny przez Bluetooth",
+    "no_hood": "Najpierw dodaj okap Novy; oświetlenie działa przez okap."
   },
   "feature": {
     "automode": "Tryb automatyczny",
@@ -54,6 +55,21 @@
     "cleared": "Dziennik wyczyszczony",
     "copied": "Skopiowano",
     "confirm_clear": "Wyczyścić cały dziennik?"
+  },
+  "light": {
+    "name_suffix": "oświetlenie"
+  },
+  "widget": {
+    "fan": "Wyciąg",
+    "light": "Światło",
+    "white": "Białe",
+    "ambient": "Nastrojowe",
+    "runon": "Opóźnione wyłączenie",
+    "recirc": "Recyrkulacja",
+    "auto": "Auto",
+    "grease": "Wyczyść filtr tłuszczowy",
+    "nohood": "Najpierw dodaj okap Novy.",
+    "min": "min"
   },
   "status": {
     "off": "Wył.",

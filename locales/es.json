@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "Campana inaccesible por Bluetooth"
+    "unreachable": "Campana inaccesible por Bluetooth",
+    "no_hood": "Añade primero la campana Novy; la luz funciona a través de ella."
   },
   "feature": {
     "automode": "Modo automático",
@@ -54,6 +55,21 @@
     "cleared": "Registro borrado",
     "copied": "Copiado",
     "confirm_clear": "¿Borrar todo el registro?"
+  },
+  "light": {
+    "name_suffix": "luz"
+  },
+  "widget": {
+    "fan": "Extracción",
+    "light": "Luz",
+    "white": "Blanco",
+    "ambient": "Ambiente",
+    "runon": "Apagado retardado",
+    "recirc": "Recirculación",
+    "auto": "Auto",
+    "grease": "Limpiar filtro de grasa",
+    "nohood": "Añade primero una campana Novy.",
+    "min": "min"
   },
   "status": {
     "off": "Apagado",

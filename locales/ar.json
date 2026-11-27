@@ -1,6 +1,7 @@
 {
   "error": {
-    "unreachable": "يتعذر الوصول إلى الشفاط عبر Bluetooth"
+    "unreachable": "يتعذر الوصول إلى الشفاط عبر Bluetooth",
+    "no_hood": "أضف شفاط Novy أولًا؛ تعمل الإضاءة من خلاله."
   },
   "feature": {
     "automode": "الوضع التلقائي",
@@ -54,6 +55,21 @@
     "cleared": "تم مسح السجل",
     "copied": "تم النسخ",
     "confirm_clear": "مسح السجل بالكامل؟"
+  },
+  "light": {
+    "name_suffix": "الإضاءة"
+  },
+  "widget": {
+    "fan": "الشفط",
+    "light": "الإضاءة",
+    "white": "أبيض",
+    "ambient": "الأجواء",
+    "runon": "إيقاف مؤجل",
+    "recirc": "إعادة التدوير",
+    "auto": "تلقائي",
+    "grease": "نظّف مرشح الدهون",
+    "nohood": "أضف شفاط Novy أولًا.",
+    "min": "د"
   },
   "status": {
     "off": "إيقاف",

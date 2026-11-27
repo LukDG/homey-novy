@@ -19,6 +19,14 @@ class NovyApp extends Homey.App {
     });
     process.on('unhandledRejection', reason => this.error('Onverwerkte fout:', reason));
 
+    const widget = this.homey.dashboards.getWidget('novy');
+    widget.registerSettingAutocompleteListener('hood', async query => {
+      const q = String(query || '').toLowerCase();
+      return this.homey.drivers.getDriver('hood').getDevices()
+        .filter(d => d.getName().toLowerCase().includes(q))
+        .map(d => ({ name: d.getName(), description: d.getStoreValue('localName') || '', id: String(d.getData().id) }));
+    });
+
     this.log('Novy (Bluetooth) app started');
   }
 

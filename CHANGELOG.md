@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.1127.1
+
+- **en**: The light is now a separate device, so you can see at a glance whether the extraction or the light is on. Add it via Novy hood light. New dashboard widget with extraction, light and air quality on one tile.
+- **nl**: Het licht is nu een apart toestel, zodat je in één oogopslag ziet of de afzuiging of het licht aanstaat. Voeg het toe via Novy dampkapverlichting. Nieuwe dashboardwidget met afzuiging, licht en luchtkwaliteit op één tegel.
+- **de**: Das Licht ist jetzt ein eigenes Gerät, sodass du auf einen Blick siehst, ob Absaugung oder Licht an ist. Füge es über Novy Haubenbeleuchtung hinzu. Neues Dashboard-Widget mit Absaugung, Licht und Luftqualität auf einer Kachel.
+- **fr**: L'éclairage est désormais un appareil séparé : vous voyez d'un coup d'œil si l'aspiration ou l'éclairage est allumé. Ajoutez-le via Éclairage de hotte Novy. Nouveau widget de tableau de bord avec aspiration, éclairage et qualité de l'air sur une seule tuile.
+- **it**: La luce ora è un dispositivo separato, così vedi a colpo d'occhio se è accesa l'aspirazione o la luce. Aggiungila tramite Luce cappa Novy. Nuovo widget della dashboard con aspirazione, luce e qualità dell'aria in un unico riquadro.
+- **sv**: Belysningen är nu en egen enhet, så att du direkt ser om utsuget eller belysningen är på. Lägg till den via Novy fläktbelysning. Ny widget för instrumentpanelen med utsug, belysning och luftkvalitet på en ruta.
+- **no**: Lyset er nå en egen enhet, slik at du raskt ser om avtrekket eller lyset er på. Legg det til via Novy viftelys. Ny dashbord-widget med avtrekk, lys og luftkvalitet på én flis.
+- **es**: La luz ahora es un dispositivo aparte, para ver de un vistazo si está encendida la extracción o la luz. Añádela con Luz de campana Novy. Nuevo widget del panel con extracción, luz y calidad del aire en un solo mosaico.
+- **da**: Lyset er nu en separat enhed, så du med et blik kan se, om udsugningen eller lyset er tændt. Tilføj det via Novy emhættelys. Ny dashboard-widget med udsugning, lys og luftkvalitet på én flise.
+- **ru**: Освещение теперь отдельное устройство: сразу видно, что включено — вытяжка или свет. Добавьте его через «Подсветка вытяжки Novy». Новый виджет панели: вытяжка, свет и качество воздуха на одной плитке.
+- **pl**: Oświetlenie jest teraz osobnym urządzeniem, więc od razu widać, czy włączony jest wyciąg, czy światło. Dodaj je przez Oświetlenie okapu Novy. Nowy widżet pulpitu z wyciągiem, światłem i jakością powietrza na jednym kafelku.
+- **ko**: 이제 조명이 별도 기기가 되어 흡입과 조명 중 무엇이 켜져 있는지 한눈에 볼 수 있습니다. Novy 후드 조명으로 추가하세요. 흡입, 조명, 공기질을 한 타일에 보여 주는 새 대시보드 위젯이 추가되었습니다.
+- **ar**: أصبحت الإضاءة جهازًا منفصلًا، لترى بنظرة واحدة هل الشفط أم الإضاءة قيد التشغيل. أضفها عبر «إضاءة شفاط Novy». أداة جديدة للوحة المعلومات تعرض الشفط والإضاءة وجودة الهواء في مربع واحد.
+
 ## 2026.1127.0
 
 - **en**: First release: control your Novy cooker hood over Bluetooth, with fan, lighting, recirculation, run-on and filters, plus temperature, humidity and CO2 on hoods with a sensor. Includes a log on the app settings page.
