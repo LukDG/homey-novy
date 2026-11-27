@@ -65,7 +65,7 @@ class NovyHoodDevice extends Homey.Device {
     });
     this.client.on('state', state => this._applyState(state).catch(this.error));
     this.client.on('disconnect', () => this._schedulePoll(1000));
-    this.client.on('rssi', rssi => this._setInfo({ signal: this._signalText(rssi) }).catch(this.error));
+    this.client.on('rssi', rssi => this._showRssi(rssi).catch(this.error));
   }
 
   // ---------------------------------------------------------------- repair
@@ -82,7 +82,7 @@ class NovyHoodDevice extends Homey.Device {
     await this.setStoreValue('peripheralUuid', adv.uuid);
     await this.setStoreValue('address', adv.address || '');
     await this._setInfo({ ble_address: adv.address || '-', ble_name: adv.localName || '-', firmware: firmware || '-' });
-    if (typeof adv.rssi === 'number') await this._setInfo({ signal: this._signalText(adv.rssi) });
+    if (typeof adv.rssi === 'number') await this._showRssi(adv.rssi);
   }
 
   async resumeAfterRepair() {
@@ -95,7 +95,7 @@ class NovyHoodDevice extends Homey.Device {
   }
 
   async _migrateCapabilities() {
-    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_light', 'novy_timer', 'alarm_generic', 'novy_grease_hours'];
+    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_light', 'novy_timer', 'alarm_generic', 'novy_grease_hours', 'novy_rssi'];
     for (const cap of wanted) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(this.error);
     }
@@ -363,6 +363,13 @@ class NovyHoodDevice extends Homey.Device {
     }
 
     await Promise.all(jobs);
+  }
+
+  async _showRssi(rssi) {
+    await this._setInfo({ signal: this._signalText(rssi) });
+    if (this.hasCapability('novy_rssi') && this.getCapabilityValue('novy_rssi') !== rssi) {
+      await this.setCapabilityValue('novy_rssi', rssi);
+    }
   }
 
   _signalText(rssi) {

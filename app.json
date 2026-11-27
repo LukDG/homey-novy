@@ -1,6 +1,6 @@
 {
   "id": "be.lukdg.novy",
-  "version": "2026.1127.5",
+  "version": "2026.1127.6",
   "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
@@ -267,6 +267,45 @@
         }
       ]
     },
+    "novy_rssi": {
+      "type": "number",
+      "title": {
+        "en": "Bluetooth signal",
+        "nl": "Bluetooth-signaal",
+        "de": "Bluetooth-Signal",
+        "fr": "Signal Bluetooth",
+        "it": "Segnale Bluetooth",
+        "sv": "Bluetooth-signal",
+        "no": "Bluetooth-signal",
+        "es": "Señal Bluetooth",
+        "da": "Bluetooth-signal",
+        "ru": "Сигнал Bluetooth",
+        "pl": "Sygnał Bluetooth",
+        "ko": "Bluetooth 신호",
+        "ar": "إشارة Bluetooth"
+      },
+      "units": {
+        "en": "dBm",
+        "nl": "dBm",
+        "de": "dBm",
+        "fr": "dBm",
+        "it": "dBm",
+        "sv": "dBm",
+        "no": "dBm",
+        "es": "dBm",
+        "da": "dBm",
+        "ru": "dBm",
+        "pl": "dBm",
+        "ko": "dBm",
+        "ar": "dBm"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/signal.svg",
+      "insights": true
+    },
     "novy_light": {
       "type": "enum",
       "title": {
@@ -458,7 +497,8 @@
         "novy_light",
         "novy_timer",
         "alarm_generic",
-        "novy_grease_hours"
+        "novy_grease_hours",
+        "novy_rssi"
       ],
       "capabilitiesOptions": {
         "onoff": {

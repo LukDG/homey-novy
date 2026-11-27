@@ -1,4 +1,19 @@
 {
+  "2026.1127.6": {
+    "en": "The hood device now shows the Bluetooth signal strength (dBm) as a tile, with a history in Insights.",
+    "nl": "Het dampkaptoestel toont nu de Bluetooth-signaalsterkte (dBm) als tegel, met een verloop in Insights.",
+    "de": "Das Haubengerät zeigt jetzt die Bluetooth-Signalstärke (dBm) als Kachel, mit Verlauf in Insights.",
+    "fr": "L'appareil hotte affiche désormais la force du signal Bluetooth (dBm) dans une tuile, avec un historique dans Insights.",
+    "it": "Il dispositivo cappa ora mostra la potenza del segnale Bluetooth (dBm) in un riquadro, con lo storico in Insights.",
+    "sv": "Fläktenheten visar nu Bluetooth-signalstyrkan (dBm) som en ruta, med historik i Insights.",
+    "no": "Vifteenheten viser nå Bluetooth-signalstyrken (dBm) som en flis, med historikk i Insights.",
+    "es": "El dispositivo campana muestra ahora la intensidad de la señal Bluetooth (dBm) en un mosaico, con historial en Insights.",
+    "da": "Emhætteenheden viser nu Bluetooth-signalstyrken (dBm) som en flise, med historik i Insights.",
+    "ru": "Устройство вытяжки теперь показывает уровень сигнала Bluetooth (дБм) на плитке, с историей в Insights.",
+    "pl": "Urządzenie okapu pokazuje teraz siłę sygnału Bluetooth (dBm) na kafelku, z historią w Insights.",
+    "ko": "이제 후드 기기에 Bluetooth 신호 세기(dBm)가 타일로 표시되며 Insights에서 기록을 볼 수 있습니다.",
+    "ar": "يعرض جهاز الشفاط الآن قوة إشارة Bluetooth (dBm) في مربع، مع سجل في Insights."
+  },
   "2026.1127.5": {
     "en": "Clearer device view: the status is now labelled Extraction, and a separate Light tile shows whether the light is off, white or ambient.",
     "nl": "Duidelijker toestelscherm: de status heet nu Afzuiging, en een aparte tegel Licht toont of het licht uit, wit of sfeer is.",
