@@ -159,7 +159,7 @@
     "email": "luk@lukdg.be"
   },
   "support": "https://github.com/LukDG",
-  "source": "https://github.com/LukDG/be.lukdg.novy",
+  "source": "https://github.com/LukDG/homey-novy",
   "api": {
     "getLog": {
       "method": "GET",
