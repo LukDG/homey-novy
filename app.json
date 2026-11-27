@@ -1,6 +1,6 @@
 {
   "id": "be.lukdg.novy",
-  "version": "2026.1127.4",
+  "version": "2026.1127.5",
   "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
@@ -174,24 +174,24 @@
     "novy_status": {
       "type": "enum",
       "title": {
-        "en": "Status",
-        "nl": "Status",
-        "de": "Status",
-        "fr": "État",
-        "it": "Stato",
-        "sv": "Status",
-        "no": "Status",
-        "es": "Estado",
-        "da": "Status",
-        "ru": "Состояние",
-        "pl": "Stan",
-        "ko": "상태",
-        "ar": "الحالة"
+        "en": "Extraction",
+        "nl": "Afzuiging",
+        "de": "Absaugung",
+        "fr": "Aspiration",
+        "it": "Aspirazione",
+        "sv": "Utsug",
+        "no": "Avtrekk",
+        "es": "Extracción",
+        "da": "Udsugning",
+        "ru": "Вытяжка",
+        "pl": "Wyciąg",
+        "ko": "흡입",
+        "ar": "الشفط"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icon.svg",
+      "icon": "/assets/fan.svg",
       "values": [
         {
           "id": "off",
@@ -267,22 +267,101 @@
         }
       ]
     },
+    "novy_light": {
+      "type": "enum",
+      "title": {
+        "en": "Light",
+        "nl": "Licht",
+        "de": "Licht",
+        "fr": "Éclairage",
+        "it": "Luce",
+        "sv": "Belysning",
+        "no": "Lys",
+        "es": "Luz",
+        "da": "Lys",
+        "ru": "Освещение",
+        "pl": "Oświetlenie",
+        "ko": "조명",
+        "ar": "الإضاءة"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/light.svg",
+      "insights": false,
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Arrêt",
+            "it": "Spento",
+            "sv": "Av",
+            "no": "Av",
+            "es": "Apagado",
+            "da": "Slukket",
+            "ru": "Выкл.",
+            "pl": "Wył.",
+            "ko": "꺼짐",
+            "ar": "إيقاف"
+          }
+        },
+        {
+          "id": "white",
+          "title": {
+            "en": "White",
+            "nl": "Wit",
+            "de": "Weiß",
+            "fr": "Blanc",
+            "it": "Bianco",
+            "sv": "Vitt",
+            "no": "Hvitt",
+            "es": "Blanco",
+            "da": "Hvidt",
+            "ru": "Белый",
+            "pl": "Białe",
+            "ko": "흰색",
+            "ar": "أبيض"
+          }
+        },
+        {
+          "id": "ambient",
+          "title": {
+            "en": "Ambient",
+            "nl": "Sfeer",
+            "de": "Stimmung",
+            "fr": "Ambiance",
+            "it": "Atmosfera",
+            "sv": "Stämning",
+            "no": "Stemning",
+            "es": "Ambiente",
+            "da": "Stemning",
+            "ru": "Атмосферный",
+            "pl": "Nastrojowe",
+            "ko": "분위기",
+            "ar": "الأجواء"
+          }
+        }
+      ]
+    },
     "novy_timer": {
       "type": "number",
       "title": {
-        "en": "Timer remaining",
-        "nl": "Timer resterend",
-        "de": "Restzeit Timer",
-        "fr": "Minuterie restante",
-        "it": "Timer residuo",
-        "sv": "Återstående timer",
-        "no": "Gjenstående tid",
-        "es": "Temporizador restante",
-        "da": "Resterende timer",
-        "ru": "Осталось по таймеру",
-        "pl": "Pozostały czas",
-        "ko": "남은 타이머",
-        "ar": "الوقت المتبقي"
+        "en": "Run-on timer",
+        "nl": "Naloop-timer",
+        "de": "Nachlauf-Timer",
+        "fr": "Minuterie d'arrêt différé",
+        "it": "Timer spegnimento ritardato",
+        "sv": "Timer fördröjd avstängning",
+        "no": "Timer forsinket avslåing",
+        "es": "Temporizador de apagado",
+        "da": "Timer forsinket slukning",
+        "ru": "Таймер отложенного выключения",
+        "pl": "Timer opóźnionego wyłączenia",
+        "ko": "지연 꺼짐 타이머",
+        "ar": "مؤقت الإيقاف المؤجل"
       },
       "units": {
         "en": "min",
@@ -376,6 +455,7 @@
         "dim",
         "onoff.recirculate",
         "novy_status",
+        "novy_light",
         "novy_timer",
         "alarm_generic",
         "novy_grease_hours"

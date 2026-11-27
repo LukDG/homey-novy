@@ -95,7 +95,7 @@ class NovyHoodDevice extends Homey.Device {
   }
 
   async _migrateCapabilities() {
-    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_timer', 'alarm_generic', 'novy_grease_hours'];
+    const wanted = ['onoff', 'dim', 'onoff.recirculate', 'novy_status', 'novy_light', 'novy_timer', 'alarm_generic', 'novy_grease_hours'];
     for (const cap of wanted) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(this.error);
     }
@@ -331,6 +331,7 @@ class NovyHoodDevice extends Homey.Device {
       jobs.push(set('onoff', state.fanOn));
       jobs.push(set('dim', state.fanSpeed / 100));
       this._light = { on: state.lightOn, brightness: state.brightness, colorTemp: state.colorTemp, mode: state.lightMode };
+      jobs.push(set('novy_light', state.lightOn ? (state.lightMode === 2 ? 'ambient' : 'white') : 'off'));
       const light = this._lightDevice();
       if (light) jobs.push(light.syncFromHood(this).catch(this.error));
       jobs.push(set('alarm_generic', state.greaseDirty));

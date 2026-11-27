@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.1127.5
+
+- **en**: Clearer device view: the status is now labelled Extraction, and a separate Light tile shows whether the light is off, white or ambient.
+- **nl**: Duidelijker toestelscherm: de status heet nu Afzuiging, en een aparte tegel Licht toont of het licht uit, wit of sfeer is.
+- **de**: Übersichtlichere Geräteansicht: Der Status heißt jetzt Absaugung, und eine eigene Kachel Licht zeigt, ob das Licht aus, weiß oder Stimmung ist.
+- **fr**: Vue de l'appareil plus claire : l'état s'appelle désormais Aspiration, et une tuile Éclairage séparée indique si la lumière est éteinte, blanche ou d'ambiance.
+- **it**: Vista del dispositivo più chiara: lo stato ora si chiama Aspirazione e un riquadro Luce separato mostra se la luce è spenta, bianca o d'atmosfera.
+- **sv**: Tydligare enhetsvy: statusen heter nu Utsug, och en separat ruta Belysning visar om ljuset är av, vitt eller stämningsljus.
+- **no**: Tydeligere enhetsvisning: statusen heter nå Avtrekk, og en egen flis Lys viser om lyset er av, hvitt eller stemningslys.
+- **es**: Vista del dispositivo más clara: el estado ahora se llama Extracción y un mosaico Luz aparte muestra si la luz está apagada, blanca o de ambiente.
+- **da**: Tydeligere enhedsvisning: status hedder nu Udsugning, og en separat flise Lys viser, om lyset er slukket, hvidt eller stemningslys.
+- **ru**: Понятнее карточка устройства: состояние теперь называется «Вытяжка», а отдельная плитка «Свет» показывает, выключен ли свет, белый или атмосферный.
+- **pl**: Czytelniejszy widok urządzenia: stan nazywa się teraz Wyciąg, a osobny kafelek Światło pokazuje, czy światło jest wyłączone, białe czy nastrojowe.
+- **ko**: 더 명확한 기기 화면: 상태가 이제 '흡입'으로 표시되고, 별도의 '조명' 타일에서 조명이 꺼짐, 흰색, 분위기 중 무엇인지 보여 줍니다.
+- **ar**: عرض أوضح للجهاز: أصبحت الحالة تُسمى «الشفط»، ومربع «الإضاءة» المنفصل يبيّن ما إذا كانت الإضاءة مطفأة أو بيضاء أو للأجواء.
+
 ## 2026.1127.4
 
 - **en**: New repair function for the hood: it releases the Bluetooth connection, searches for the hood again and reconnects, optionally with confirmation on the remote.
