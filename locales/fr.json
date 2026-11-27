@@ -71,6 +71,13 @@
     "nohood": "Ajoutez d'abord une hotte Novy.",
     "min": "min"
   },
+  "signal": {
+    "good": "bon",
+    "fair": "moyen",
+    "weak": "faible",
+    "too_weak": "trop faible – rapprochez Homey",
+    "none": "introuvable – trop loin ou connectée ailleurs"
+  },
   "status": {
     "off": "Arrêt",
     "running": "En marche",

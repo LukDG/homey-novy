@@ -71,6 +71,13 @@
     "nohood": "Añade primero una campana Novy.",
     "min": "min"
   },
+  "signal": {
+    "good": "buena",
+    "fair": "aceptable",
+    "weak": "débil",
+    "too_weak": "demasiado débil – acerca Homey",
+    "none": "no encontrada – demasiado lejos o conectada a otro"
+  },
   "status": {
     "off": "Apagado",
     "running": "En marcha",

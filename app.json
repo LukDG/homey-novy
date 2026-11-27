@@ -1,6 +1,6 @@
 {
   "id": "be.lukdg.novy",
-  "version": "2026.1127.2",
+  "version": "2026.1127.3",
   "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
@@ -623,6 +623,26 @@
                 "pl": "Adres Bluetooth",
                 "ko": "Bluetooth 주소",
                 "ar": "عنوان Bluetooth"
+              },
+              "value": "-"
+            },
+            {
+              "id": "signal",
+              "type": "label",
+              "label": {
+                "en": "Bluetooth signal",
+                "nl": "Bluetooth-signaal",
+                "de": "Bluetooth-Signal",
+                "fr": "Signal Bluetooth",
+                "it": "Segnale Bluetooth",
+                "sv": "Bluetooth-signal",
+                "no": "Bluetooth-signal",
+                "es": "Señal Bluetooth",
+                "da": "Bluetooth-signal",
+                "ru": "Сигнал Bluetooth",
+                "pl": "Sygnał Bluetooth",
+                "ko": "Bluetooth 신호",
+                "ar": "إشارة Bluetooth"
               },
               "value": "-"
             },

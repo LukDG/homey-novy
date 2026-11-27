@@ -71,6 +71,13 @@
     "nohood": "Lägg först till en Novy-fläkt.",
     "min": "min"
   },
+  "signal": {
+    "good": "bra",
+    "fair": "godtagbar",
+    "weak": "svag",
+    "too_weak": "för svag – flytta Homey närmare",
+    "none": "hittades inte – för långt bort eller ansluten till annat"
+  },
   "status": {
     "off": "Av",
     "running": "Igång",

@@ -1,6 +1,6 @@
 {
   "name": "be.lukdg.novy",
-  "version": "2026.1127.2",
+  "version": "2026.1127.3",
   "description": "Local Bluetooth control of Novy cooker hoods for Homey",
   "main": "app.js",
   "scripts": {

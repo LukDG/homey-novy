@@ -71,6 +71,13 @@
     "nohood": "Najpierw dodaj okap Novy.",
     "min": "min"
   },
+  "signal": {
+    "good": "dobry",
+    "fair": "średni",
+    "weak": "słaby",
+    "too_weak": "za słaby – przestaw Homey bliżej",
+    "none": "nie znaleziono – za daleko lub połączony gdzie indziej"
+  },
   "status": {
     "off": "Wył.",
     "running": "Pracuje",

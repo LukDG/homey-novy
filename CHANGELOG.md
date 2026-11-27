@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.1127.3
+
+- **en**: The device settings now show the Bluetooth signal strength of the hood, so you can see whether Homey is close enough.
+- **nl**: De toestelinstellingen tonen nu de Bluetooth-signaalsterkte van de kap, zodat je ziet of Homey dichtbij genoeg staat.
+- **de**: Die Geräteeinstellungen zeigen jetzt die Bluetooth-Signalstärke der Haube, damit du siehst, ob Homey nah genug steht.
+- **fr**: Les réglages de l'appareil affichent désormais la force du signal Bluetooth de la hotte, pour voir si Homey est assez proche.
+- **it**: Le impostazioni del dispositivo mostrano ora la potenza del segnale Bluetooth della cappa, così vedi se Homey è abbastanza vicino.
+- **sv**: Enhetsinställningarna visar nu fläktens Bluetooth-signalstyrka, så att du ser om Homey står tillräckligt nära.
+- **no**: Enhetsinnstillingene viser nå viftens Bluetooth-signalstyrke, slik at du ser om Homey står nær nok.
+- **es**: Los ajustes del dispositivo muestran ahora la intensidad de la señal Bluetooth de la campana, para ver si Homey está lo bastante cerca.
+- **da**: Enhedsindstillingerne viser nu emhættens Bluetooth-signalstyrke, så du kan se, om Homey står tæt nok på.
+- **ru**: В настройках устройства теперь показан уровень сигнала Bluetooth вытяжки, чтобы видеть, достаточно ли близко стоит Homey.
+- **pl**: Ustawienia urządzenia pokazują teraz siłę sygnału Bluetooth okapu, dzięki czemu widać, czy Homey stoi wystarczająco blisko.
+- **ko**: 이제 기기 설정에 후드의 Bluetooth 신호 세기가 표시되어 Homey가 충분히 가까운지 확인할 수 있습니다.
+- **ar**: تعرض إعدادات الجهاز الآن قوة إشارة Bluetooth للشفاط، لتعرف ما إذا كان Homey قريبًا بما يكفي.
+
 ## 2026.1127.2
 
 - **en**: More reliable Bluetooth connection: when the hood is no longer found, the app releases the old connection and reconnects by itself, without restarting the app.

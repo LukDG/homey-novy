@@ -71,6 +71,13 @@
     "nohood": "먼저 Novy 후드를 추가하세요.",
     "min": "분"
   },
+  "signal": {
+    "good": "좋음",
+    "fair": "보통",
+    "weak": "약함",
+    "too_weak": "너무 약함 – Homey를 더 가까이 두세요",
+    "none": "찾을 수 없음 – 너무 멀거나 다른 기기에 연결됨"
+  },
   "status": {
     "off": "꺼짐",
     "running": "작동 중",

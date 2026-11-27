@@ -71,6 +71,13 @@
     "nohood": "Tilføj først en Novy-emhætte.",
     "min": "min"
   },
+  "signal": {
+    "good": "god",
+    "fair": "rimelig",
+    "weak": "svag",
+    "too_weak": "for svag – flyt Homey tættere på",
+    "none": "ikke fundet – for langt væk eller forbundet andetsteds"
+  },
   "status": {
     "off": "Slukket",
     "running": "Kører",

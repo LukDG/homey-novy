@@ -71,6 +71,13 @@
     "nohood": "Voeg eerst een Novy-dampkap toe.",
     "min": "min"
   },
+  "signal": {
+    "good": "goed",
+    "fair": "redelijk",
+    "weak": "zwak",
+    "too_weak": "te zwak – zet Homey dichterbij",
+    "none": "niet gevonden – te ver of elders verbonden"
+  },
   "status": {
     "off": "Uit",
     "running": "Aan",

@@ -71,6 +71,13 @@
     "nohood": "Füge zuerst eine Novy-Haube hinzu.",
     "min": "min"
   },
+  "signal": {
+    "good": "gut",
+    "fair": "mittel",
+    "weak": "schwach",
+    "too_weak": "zu schwach – Homey näher aufstellen",
+    "none": "nicht gefunden – zu weit oder anderweitig verbunden"
+  },
   "status": {
     "off": "Aus",
     "running": "Läuft",

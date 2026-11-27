@@ -71,6 +71,13 @@
     "nohood": "Aggiungi prima una cappa Novy.",
     "min": "min"
   },
+  "signal": {
+    "good": "buono",
+    "fair": "discreto",
+    "weak": "debole",
+    "too_weak": "troppo debole – avvicina Homey",
+    "none": "non trovata – troppo lontana o connessa altrove"
+  },
   "status": {
     "off": "Spento",
     "running": "In funzione",

@@ -44,6 +44,7 @@ class NovyHoodDevice extends Homey.Device {
     });
     this.client.on('state', state => this._applyState(state).catch(this.error));
     this.client.on('disconnect', () => this._schedulePoll(1000));
+    this.client.on('rssi', rssi => this._setInfo({ signal: this._signalText(rssi) }).catch(this.error));
 
     this.registerCapabilityListener('onoff', value => this.setFan(value));
     this.registerCapabilityListener('dim', value => this.setFanSpeed(Math.round(value * 100)));
@@ -133,6 +134,7 @@ class NovyHoodDevice extends Homey.Device {
     } catch (err) {
       this._failCount++;
       this.log(`Poll failed (${this._failCount}):`, err.message);
+      if (/not found/i.test(err.message)) await this._setInfo({ signal: this.homey.__('signal.none') });
       if (this._failCount >= FAILS_BEFORE_UNAVAILABLE) await this._setReachable(false);
       await this.client.disconnect().catch(() => {});
     } finally {
@@ -321,6 +323,11 @@ class NovyHoodDevice extends Homey.Device {
     }
 
     await Promise.all(jobs);
+  }
+
+  _signalText(rssi) {
+    const level = rssi >= -70 ? 'good' : rssi >= -80 ? 'fair' : rssi >= -88 ? 'weak' : 'too_weak';
+    return `${rssi} dBm – ${this.homey.__(`signal.${level}`)}`;
   }
 
   async _setInfo(values) {

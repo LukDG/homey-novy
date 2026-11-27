@@ -71,6 +71,13 @@
     "nohood": "Add a Novy hood first.",
     "min": "min"
   },
+  "signal": {
+    "good": "good",
+    "fair": "fair",
+    "weak": "weak",
+    "too_weak": "too weak – move Homey closer",
+    "none": "not found – too far or connected elsewhere"
+  },
   "status": {
     "off": "Off",
     "running": "Running",

@@ -71,6 +71,13 @@
     "nohood": "Legg først til en Novy-vifte.",
     "min": "min"
   },
+  "signal": {
+    "good": "god",
+    "fair": "middels",
+    "weak": "svak",
+    "too_weak": "for svak – flytt Homey nærmere",
+    "none": "ikke funnet – for langt unna eller koblet til annet"
+  },
   "status": {
     "off": "Av",
     "running": "Går",
