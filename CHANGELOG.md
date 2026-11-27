@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.1127.2
+
+- **en**: More reliable Bluetooth connection: when the hood is no longer found, the app releases the old connection and reconnects by itself, without restarting the app.
+- **nl**: Betrouwbaardere Bluetooth-verbinding: wordt de kap niet meer gevonden, dan laat de app de oude verbinding los en verbindt ze zelf opnieuw, zonder de app te herstarten.
+- **de**: Zuverlässigere Bluetooth-Verbindung: Wird die Haube nicht mehr gefunden, gibt die App die alte Verbindung frei und verbindet sich selbst neu, ohne Neustart der App.
+- **fr**: Connexion Bluetooth plus fiable : si la hotte n'est plus trouvée, l'app libère l'ancienne connexion et se reconnecte d'elle-même, sans redémarrer l'app.
+- **it**: Connessione Bluetooth più affidabile: se la cappa non viene più trovata, l'app rilascia la vecchia connessione e si ricollega da sola, senza riavviare l'app.
+- **sv**: Stabilare Bluetooth-anslutning: hittas fläkten inte längre släpper appen den gamla anslutningen och ansluter igen av sig själv, utan att appen startas om.
+- **no**: Mer pålitelig Bluetooth-tilkobling: finnes ikke viften lenger, slipper appen den gamle tilkoblingen og kobler til igjen av seg selv, uten omstart av appen.
+- **es**: Conexión Bluetooth más fiable: si ya no se encuentra la campana, la app libera la conexión anterior y vuelve a conectarse sola, sin reiniciar la app.
+- **da**: Mere pålidelig Bluetooth-forbindelse: findes emhætten ikke længere, slipper appen den gamle forbindelse og forbinder igen af sig selv, uden genstart af appen.
+- **ru**: Более надёжное Bluetooth-соединение: если вытяжка перестаёт находиться, приложение освобождает старое соединение и само подключается снова, без перезапуска.
+- **pl**: Bardziej niezawodne połączenie Bluetooth: gdy okap nie jest już wykrywany, aplikacja zwalnia stare połączenie i sama łączy się ponownie, bez restartu aplikacji.
+- **ko**: 더 안정적인 Bluetooth 연결: 후드를 더 이상 찾을 수 없으면 앱이 이전 연결을 해제하고 앱을 다시 시작하지 않아도 스스로 다시 연결합니다.
+- **ar**: اتصال Bluetooth أكثر موثوقية: عندما يتعذر العثور على الشفاط، يحرر التطبيق الاتصال القديم ويعيد الاتصال تلقائيًا دون إعادة تشغيل التطبيق.
+
 ## 2026.1127.1
 
 - **en**: The light is now a separate device, so you can see at a glance whether the extraction or the light is on. Add it via Novy hood light. New dashboard widget with extraction, light and air quality on one tile.
